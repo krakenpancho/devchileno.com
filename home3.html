@@ -1,0 +1,770 @@
+<html lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <meta property="og:image" content="./images/shibagodmeta.jpg" />
+  <title>
+    Navarro Development Blog
+  </title>
+  <!-- Favicon retrocompatible con navegadores antiguos -->
+  <link rel="shortcut icon" href="./images/shibagod.ico" type="image/x-icon">
+  <link href="./tw_style_dev.css" rel="stylesheet" />
+  <!-- Tailwind CSS con comando watch que detecta los cambios 
+  npx tailwindcss -i tw_style_start.css -o tw_style_dev.css --watch
+  Para version min final 
+  npx tailwindcss -i tw_style_start.css -o tw_style_min.css --minify -->
+  <!-- Instalar CSS clásico para la barra de desplazamiento -->
+  <link href="./estilo_barra.css" rel="stylesheet" />
+  
+  <!-- Archivo CSS -->
+  <style>
+    @font-face {
+      font-family: 'Orbitron';
+      src: url('./fonts/Orbitron/Orbitron-VariableFont_wght.ttf') format('truetype');
+    }
+
+    @font-face {
+      font-family: 'Roboto';
+      src: url('./fonts/Roboto/Roboto-Regular.ttf') format('truetype');
+    }
+
+    body {
+
+      margin: 0 !important;
+      padding: 0 !important;
+
+      font-family: 'Roboto', sans-serif;
+      letter-spacing: 0.05em;
+    }
+
+    .orbitron {
+      font-family: 'Orbitron', sans-serif;
+    }
+
+    .roboto {
+    font-family: 'Roboto', sans-serif;
+}
+
+    /* clases para el color de los iconos, tailwind css no afecta a propiedades fill de un svg, funciona mejor con texto */
+    .svg-icon svg {
+      fill: white;
+      /* Color inicial */
+    }
+
+    .svg-icon:hover svg {
+      fill: #bec1c4;
+      /* Color al hacer hover, usando el color 'gray-500' de Tailwind como ejemplo */
+    }
+
+    .border-transparent {
+    border-color: transparent !important;
+}
+    
+/* Nuevo modo oscuro  */
+    body {
+    background-color: #111827 !important; /* bg-gray-900 */
+    color: #F3F4F6 !important; /* text-gray-100 */
+  }
+
+  .bg-gray-100 {
+    background-color: #1F2937 !important; /* bg-gray-800 */
+  }
+
+  .bg-black {
+    background-color: #111827 !important; /* bg-gray-900 */
+  }
+
+  .text-black {
+    color: #F3F4F6 !important; /* text-gray-100 */
+  }
+
+  .hover\:text-black:hover {
+    color: #111827 !important;
+  }
+
+  .hover\:bg-yellow-100:hover {
+    background-color: #FCD34D !important; /* bg-yellow-300 */
+  }
+
+  /* Ajuste de sombras */
+  .shadow-sm, .shadow-2xl {
+    box-shadow: 0 1px 3px 0 rgba(255, 255, 255, 0.1), 
+                0 1px 2px 0 rgba(255, 255, 255, 0.06) !important;
+  }
+
+  /* Ajuste para los reproductores */
+  #playerMobile, #playerDesktop, #soundCloudPlayerContainerMobile, #soundCloudPlayerContainerDesktop {
+    box-shadow: 0 8px 8px -4px rgba(255, 255, 255, 0.1), 
+                0 -8px 8px -4px rgba(255, 255, 255, 0.1) !important;
+  }
+
+  </style>
+</head>
+
+
+<!-- ----------------------------------------------------------------
+navbar y titulo
+---------------------------------------------------------------- -->
+
+
+<body class="bg-gray-900 text-gray-100 overflow-y-scroll">
+  <header class="bg-black text-white  border-gray-800">
+
+    <div class="flex justify-center items-center w-full py-2">
+      <div class="text-4xl font-bold orbitron text-center px-4">
+        <a class="hover:text-gray-300" href="./home.html">NAVARRO DEV BLOG (95%)</a>
+        <p class="text-xl text-gray-400 roboto" style="font-weight: 400;">Desarrollador FullStack</p>
+      </div>
+    </div>
+    </div>
+
+
+
+    <!-- Iconos sociales -->
+    <div class="flex justify-center items-center w-full">
+      <a class="svg-icon text-lg hover:text-gray-300 transition-transform duration-300 ease-in-out transform hover:scale-105 px-4"
+        href="https://www.linkedin.com/in/francisconavarroflores/" target="_blank" rel="noopener noreferrer">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" style="width: 1.150rem; height: 1.150rem;">
+          <path
+            d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z" />
+        </svg>
+      </a>
+
+
+      <a class="svg-icon text-lg hover:text-gray-300 transition-transform duration-300 ease-in-out transform hover:scale-105 px-4"
+        href="https://github.com/fnavarro-dev" target="_blank" rel="noopener noreferrer">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" style="width: 1.150rem; height: 1.150rem;">
+          <path
+            d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3 .3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5 .3-6.2 2.3zm44.2-1.7c-2.9 .7-4.9 2.6-4.6 4.9 .3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3 .7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3 .3 2.9 2.3 3.9 1.6 1 3.6 .7 4.3-.7 .7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3 .7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3 .7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z" />
+        </svg>
+      </a>
+
+      <a class="svg-icon text-lg hover:text-gray-300 transition-transform duration-300 ease-in-out transform hover:scale-105 px-4"
+        href="mailto:francisconavarroflores@gmail.com">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" style="width: 1.150rem; height: 1.150rem;">
+          <path
+            d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48H48zM0 176V384c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V176L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z" />
+        </svg>
+      </a>
+    </div>
+
+    <!-- Menu Links -->
+    <!-- Version Escritorio y Movil-->
+    <nav class="w-full mx-auto max-w-full flex-wrap justify-between items-center pt-4  border-white">
+      <!-- Botón visible solo en móvil -->
+      <button
+        class="flex items-center justify-center w-full px-4 py-2 hover:text-gray-300 transition-transform duration-300 ease-in-out transform  md:hidden"
+        id="menu-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+          style="width: 1.150rem; height: 1.150rem;">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+
+      <!-- Enlaces del menú -->
+      <!-- En móviles se oculta, y en escritorio se muestra -->
+      <div class="hidden md:flex w-full justify-center pb-2" id="menu-links">
+        <a class="block text-center text-white hover:text-black px-6 py-4   font-bold hover:bg-yellow-100 border-b-4 border-yellow-100"
+   href="./home.html">Inicio</a>
+       
+   <!-- <a class="block text-center text-white hover:text-black px-6 py-4   font-bold hover:bg-yellow-100 border-b-4 border-transparent"
+          href="./resume.html">Contacto y CV</a> -->
+          
+          <a class="block text-center text-white hover:text-black px-6 py-4   font-bold hover:bg-yellow-100 border-b-4 border-transparent"
+          href="./projects.html">Proyectos</a>
+          <a class="block text-center text-white hover:text-black px-6 py-4   font-bold hover:bg-yellow-100 border-b-4 border-transparent"
+   href="./posts/all.html">Blog</a>
+          <a class="block text-center text-white hover:text-black px-6 py-4   font-bold hover:bg-yellow-100 border-b-4 border-transparent"
+          href="./inspiracion.html">Inspiración</a>
+      </div>
+    </nav>
+    <script>
+      document.getElementById('menu-btn').addEventListener('click', function () {
+        document.getElementById('menu-links').classList.toggle('hidden');
+      });
+    </script>
+
+
+
+  </header>
+
+  <!-- ----------------------------------------- -->
+  <!-- Sección About Me -->
+  <!-- ----------------------------------------- -->
+<!-- Sección Sobre Mí con diseño mejorado -->
+<div class="bg-black text-white  ">
+  <div class="container mx-auto ">
+
+    <!-- Versión móvil con toggle -->
+    <div class="bg-black px-4 pt-1 pb-6 block md:hidden text-center">
+      <img id="profileIcon" src="./images/profilemybro.jpg" alt="Ver más" class="mx-auto rounded-full w-10 h-10 object-cover cursor-pointer mt-1 transition-transform duration-300 ease-in-out transform hover:scale-105" onclick="toggleMobileAbout()">
+      <div id="mobileAbout" class="hidden px-4" onclick="toggleMobileAbout()">
+        <img src="./images/profilemybro.jpg" alt="Foto" class="object-cover mx-auto rounded-full w-32 h-32 my-4">
+        <p>¡Saludos desde Chile! 🚀 Soy desarrollador FullStack en Desarrollo Mobile para Android. 📱 Busco team creativo para innovar y crecer juntos. ✌️
+        </p>
+      </div>
+    </div>
+    
+
+        <!-- Versión desktop con toggle -->
+        <div class="px-4 pt-1 pb-6 hidden md:flex items-center justify-center text-center">
+          <img id="profileIconDesktop" src="./images/profilemybro.jpg" alt="Ver más" class="mx-auto rounded-full w-10 h-10 object-cover cursor-pointer transition-transform duration-300 ease-in-out transform hover:scale-105" onclick="toggleDesktopAbout()">
+          <div id="desktopAbout" class="md:hidden md:pt-2 px-8 flex flex-col items-center justify-center rounded-lg shadow-2xl" onclick="toggleDesktopAbout()">
+            <img src="./images/profilemybro.jpg" alt="Foto" class="object-cover rounded-full w-32 h-32 mx-8 mb-4">
+            <p class="text-white text-sm text-center max-w-md md:max-w-lg lg:max-w-2xl xl:max-w-4xl xl:max-w-5xl mb-4" style="letter-spacing: 0.05em;">¡Saludos desde Chile! 🚀 Soy desarrollador FullStack en Desarrollo Mobile para Android. 📱<br>Busco team creativo para innovar y crecer juntos. ✌️</p>
+          </div>
+          
+          
+        
+        
+        
+        </div>
+
+
+  </div>
+</div>
+
+
+<script>
+ function toggleAbout(aboutId, iconId, displayStyle = 'block') {
+  const aboutElement = document.getElementById(aboutId);
+  const iconElement = document.getElementById(iconId);
+
+  const isShowing = aboutElement.classList.contains('show');
+
+  if (isShowing) {
+    aboutElement.classList.remove('show');
+    setTimeout(() => {
+      aboutElement.style.display = 'none';
+      iconElement.style.display = displayStyle; // 'block' para mobile, 'flex' para desktop
+    }, 500); // Tiempo de transición CSS
+  } else {
+    aboutElement.style.display = displayStyle;
+    iconElement.style.display = 'none';
+    setTimeout(() => aboutElement.classList.add('show'), 10);
+  }
+}
+
+// Uso para móvil
+function toggleMobileAbout() {
+  toggleAbout('mobileAbout', 'profileIcon');
+}
+
+// Uso para desktop
+function toggleDesktopAbout() {
+  toggleAbout('desktopAbout', 'profileIconDesktop', 'flex');
+}
+
+  </script>
+
+<!-- Finaliza sección About Me -->
+
+
+<!-- ----------------------------------------------------------------
+main body
+---------------------------------------------------------------- -->
+  <main class="shadow-sm pt-4 md:pt-0 pb-8 sm:px-16 md:px-24 xl:px-48 2xl:px-52 3xl:px-64">
+    <div class="flex flex-col lg:flex-row space-y-4 lg:space-y-0 lg:space-x-4">
+      <!-- Secciones irán aquí -->
+    
+    
+<!-- ----------------------------------------------------------------
+seccion experiencia
+---------------------------------------------------------------- -->
+<div class="lg:w-1/3">
+  <!-- Contenido de Experiencia -->
+    
+<div class="bg-gray-100  px-2 md:px-0 container  mx-auto md:pt-8  text-black">
+  <!--Yotube Mobile Player-->
+  <div class="sm:block md:hidden lg:block pb-8 bg-gray-100 pb-8">
+    <div class="bg-gray-100 w-full h-20" style="box-shadow: 0 8px 8px -4px black, 0 -8px 8px -4px black;">
+      <div id="playerMobile" class="sm:block md:hidden lg:block" style="width: 100%; height: 100%;"></div>
+    </div>
+  </div>
+  <!---->
+  
+      <div class="bg-gray-100 flex flex-wrap md:flex-row justify-between">
+
+        <div class="sm:w-full md:w-2/3 lg:w-full  pr-0 md:pr-8 lg:px-0">
+
+          <h2 class="text-3xl font-bold orbitron mb-8 pl-2">
+            EXPERIENCIA
+          </h2>
+          <!-- Reproductor SoundCloud para móvil arriba -->
+          <!-- Contenedores de experiencia debajo del SoundCloud en móvil -->
+          <div class="flex flex-wrap">
+            <div class="w-1/2 md:w-1/2 pl-1 ">
+              <div class="rounded-lg sm:px-2 px-2 sm:py-2  py-0 text-center items-center justify-center   md:pr-4 pb-4 md:pb-0 transition-transform duration-300 ease-in-out transform hover:scale-105">
+              <div>
+                <div class="mb-8">
+                  <div class="w-full lg:w-full h-32 bg-gray-100 px-4  flex items-center justify-center relative">
+                    <div class="w-2/3 md:w-1/2 lg:w-full ">
+                    <img src="./images/talento digital icono.png" alt="Imagen de computadora gif"
+                      class="object-contain w-full h-full p-4" />
+                    </div>
+                  </div>
+                  
+                  <div class="justify-center min-h-[2.1875rem] md:min-h-[2.375rem] lg:min-h-[2.1875rem] pt-4">
+                    <h2 class="text-lg md:text-xl lg:text-lg line-clamp-1">
+                      Talento Digital
+                    </h2>
+                  </div>
+                  <div class="justify-center flex items-center min-h-[4.5rem] md:min-h-[5.625rem] lg:min-h-[4.5rem] xl:min-h-[5.625rem] my-1">
+                    <h1 class="text-2xl md:text-3xl lg:text-xl xl:text-2xl 2xl:text-3xl font-bold tracking-normal line-clamp-2">
+                      Desarrollo Android
+                    </h1>
+                  </div>
+                  <div class="justify-center min-h-[4.5rem]">
+                    <p class="text-base mb-4 line-clamp-4">
+                      Aplicaciones Mobile Android
+                    </p>
+                  </div>
+
+
+
+                </div>
+              </div>
+              <!-- ... otras experiencias ... -->
+            </div>
+            </div>
+            <div class="w-1/2 md:w-1/2 pr-1">
+              <div class="rounded-lg sm:px-2 px-2 sm:py-2  py-0 text-center items-center justify-center   md:pr-4 pb-4 md:pb-0 transition-transform duration-300 ease-in-out transform hover:scale-105">
+              <!-- experiencia columna izquierda -->
+              <a href="./posts/experiencia-entel.html">
+                
+                <div class="mb-8">
+            
+                  <div class="w-full  lg:w-full h-32 bg-gray-100 px-4 flex md:flex items-center justify-center relative">
+                    <div class="w-2/3 md:w-1/2 lg:w-full">
+                    <img src="./images/entel-chile-original.png" alt="Imagen de Entel PCS Chile Logo" class="object-contain w-full h-full">
+                    </div>
+                  </div>
+                
+                  
+                  <div class="justify-center min-h-[2.1875rem] md:min-h-[2.375rem] lg:min-h-[2.1875rem] pt-4">
+                    <h2 class="text-lg md:text-xl lg:text-lg line-clamp-1">
+                      ENTEL Chile
+                    </h2>
+                  </div>
+                  <div class="justify-center flex items-center min-h-[4.5rem] md:min-h-[5.625rem] lg:min-h-[4.5rem] xl:min-h-[5.625rem] my-1">
+                    <h1 class="text-2xl md:text-3xl lg:text-xl xl:text-2xl 2xl:text-3xl font-bold tracking-normal line-clamp-2">
+                      Fullstack Developer
+                    </h1>
+                  </div>
+                  <div class="justify-center min-h-[4.5rem]">
+                    <p class="text-base mb-4 line-clamp-3">
+                      Empresa telecom (Chile-Perú)
+                    </p>
+                  </div>
+                  
+                </div>
+              </a>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+        
+       
+         <!--Youtube Mobile Desktop-->
+         <div  class="hidden md:block lg:hidden w-1/3 mr-4 md:mr-0 hover:scale-105 transition-transform duration-300 ease-in-out transform hover:scale-105 ">
+          <h2 class="text-3xl font-bold orbitron mb-8 invisible">.</h2>
+          <div  class="mb-8">
+            <div id="playerDesktop" class="hidden md:block lg:hidden w-full h-80" style="box-shadow: 0 8px 8px -4px black, 0 -8px 8px -4px black; color: white; position: relative;">
+            </div>
+          </div>
+        </div>
+        <!---->
+      </div>
+    </div>
+
+    
+     <script>
+      
+
+      function addRefreshIcon(container) {
+    // Primero, se agrega un contenedor para la imagen de fondo y el SVG.
+    container.innerHTML = `<div style="position: relative; display: flex; justify-content: center; align-items: center; height: 100%; width: 100%;">
+        <img src="./images/loader2.jpg" alt="Fondo" style="position: absolute; width: 100%; height: 100%; object-fit: cover; ">
+        <svg id="reloadWidgetIcon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="50" height="50" style="cursor: pointer; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 1;"><path d="M463.5 224H472c13.3 0 24-10.7 24-24V72c0-9.7-5.8-18.5-14.8-22.2s-19.3-1.7-26.2 5.2L413.4 96.6c-87.6-86.5-228.7-86.2-315.8 1c-87.5 87.5-87.5 229.3 0 316.8s229.3 87.5 316.8 0c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0c-62.5 62.5-163.8 62.5-226.3 0s-62.5-163.8 0-226.3c62.2-62.2 162.7-62.5 225.3-1L327 183c-6.9 6.9-8.9 17.2-5.2 26.2s12.5 14.8 22.2 14.8H463.5z"/></svg>
+    </div>`;
+    container.querySelector('#reloadWidgetIcon').addEventListener('click', function() {
+          window.location.reload();
+        });
+}
+
+    
+      let playerMobile, playerDesktop;
+    
+      // Cargar la API de YouTube IFrame Player de forma asincrónica.
+      const tag = document.createElement('script');
+      tag.src = "https://www.youtube.com/iframe_api";
+      const firstScriptTag = document.getElementsByTagName('script')[0];
+      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+    
+      window.onYouTubeIframeAPIReady = () => {
+        const mobileContainer = document.getElementById("playerMobile");
+        const desktopContainer = document.getElementById("playerDesktop");
+    
+        // Limpia los contenedores
+        mobileContainer.innerHTML = '';
+        desktopContainer.innerHTML = '';
+    
+        // Destruye los reproductores existentes si están definidos
+        playerMobile?.destroy();
+        playerDesktop?.destroy();
+    
+        const mobileStyleYT = window.getComputedStyle(mobileContainer);
+        const desktopStyleYT = window.getComputedStyle(desktopContainer);
+    
+        // Carga el reproductor según la visibilidad y añade el icono de refresco
+        if (mobileStyleYT.display !== 'none') {
+          playerMobile = createPlayer('playerMobile', 'AO8_SVbEdwM');
+          addRefreshIcon(desktopContainer);
+        } else {
+          playerDesktop = createPlayer('playerDesktop', 'AO8_SVbEdwM');
+          addRefreshIcon(mobileContainer);
+        }
+      };
+    
+      function createPlayer(containerId, videoId) {
+        return new YT.Player(containerId, {
+          height: '100%',
+          width: '100%',
+          videoId: videoId,
+          events: {
+            'onReady': event => event.target.setVolume(20)
+          }
+        });
+      }
+    </script>
+      
+      
+
+
+  </div>
+  <div class="lg:w-1/3">
+    <div class="bg-gray-800 px-2 md:px-0 container mx-auto md:pt-8 text-gray-100">
+      <!-- Encabezado con foto de perfil -->
+      <div class="flex flex-col items-center pb-8">
+        <div class="w-32 h-32 rounded-full overflow-hidden mb-4 border-2 border-yellow-400">
+          <img src="./images/profilemybro.jpg" 
+               alt="Foto de perfil" 
+               class="w-full h-full object-cover"
+          />
+        </div>
+        <h2 class="text-2xl font-bold orbitron mb-2">Francisco Navarro</h2>
+        <p class="text-gray-300 text-lg mb-4">Desarrollador FullStack</p>
+      </div>
+  
+      <!-- Descripción y estado actual -->
+      <div class="bg-gray-900 rounded-lg p-6 mb-8 transform transition-all duration-300 hover:scale-105">
+        <div class="space-y-4">
+          <div>
+            <h3 class="text-yellow-400 text-lg font-bold mb-2">Sobre mí</h3>
+            <p class="text-gray-300">
+              Desarrollador FullStack especializado en tecnologías mobile y web. 
+              Apasionado por crear soluciones innovadoras y experiencias de usuario excepcionales.
+            </p>
+          </div>
+  
+          <div>
+            <h3 class="text-yellow-400 text-lg font-bold mb-2">Proyecto Actual</h3>
+            <div class="bg-gray-800 rounded p-4">
+              <h4 class="font-bold mb-2">Tocata Con Los Cabros</h4>
+              <p class="text-gray-300 text-sm">
+                Plataforma para músicos independientes desarrollada con React + TypeScript.
+                Enfocada en conectar artistas y facilitar la organización de eventos.
+              </p>
+              <div class="flex gap-2 mt-3">
+                <span class="bg-blue-600 text-xs px-2 py-1 rounded">React</span>
+                <span class="bg-blue-600 text-xs px-2 py-1 rounded">TypeScript</span>
+                <span class="bg-blue-600 text-xs px-2 py-1 rounded">TailwindCSS</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <!-- ----------------------------------------------------------------
+seccion proyectos
+---------------------------------------------------------------- -->
+<div class="lg:w-1/3">
+  <!-- Contenido de Proyectos -->
+
+    <div class="bg-gray-100  px-2 container mx-auto mt-0 md:mt-8  text-black" id="proyectos">
+      <!--Soundcloud Mobile Player-->
+      <div id="soundCloudPlayerContainerMobile" class="bg-gray-100 mb-8  block md:hidden lg:block  transform  w-full h-20" style="box-shadow: 0 8px 8px -4px black, 0 -8px 8px -4px black;" >
+      </div>
+      <!---->
+      <div class="flex flex-wrap md:flex-row bg-gray-100 justify-between">
+        <div class="sm:w-full md:w-2/3 lg:w-full  pr-0 md:pr-8 lg:px-0">
+          <a href="./projects.html">
+            <h2 class="text-3xl font-bold orbitron mb-8 pl-2">
+              PROYECTOS
+            </h2>
+          </a>
+          <div class="flex flex-wrap">
+            <div class="w-1/2 md:w-1/2 " style="padding-right: 0.05rem;">
+            <div class="rounded-lg sm:px-2 px-2 sm:py-2  py-0 text-center items-center justify-center   md:pr-4 pb-4 md:pb-0 transition-transform duration-300 ease-in-out transform hover:scale-105">
+              <!-- experiencia columna izquierda -->
+              <a href="">
+                <div class="mb-8">
+                  <!-- Contenedor para controlar el tamaño y la respuesta de la imagen -->
+                  <div class="w-full lg:w-full h-32 bg-gray-100 flex items-center justify-center relative">
+                    <!-- Contenedor de la imagen ajustado -->
+                    <div class="relative w-full h-full">
+                      <img src="./images/sitiowebpersonal.png" alt="Imagen de Entel PCS Chile Logo" class="absolute object-cover w-full h-full top-0 left-0 rounded-lg" />
+                    </div>
+                  </div>
+                  
+
+
+                  <div class="min-h-[2.1875rem] md:min-h-[2.375rem] lg:min-h-[2.1875rem] pt-4">
+                    <h2 class="text-lg md:text-xl lg:text-lg line-clamp-1">
+                      2024
+                    </h2>
+                  </div>
+                  <div class="flex items-center min-h-[4.5rem] md:min-h-[5.625rem] lg:min-h-[4.5rem] xl:min-h-[5.625rem] my-1">
+                    <h1 class="text-2xl md:text-3xl lg:text-xl xl:text-2xl 2xl:text-3xl font-bold tracking-normal line-clamp-2">
+                      Sitio Web Personal
+                    </h1>
+                  </div>
+                  <div class="min-h-[4.5rem]">
+                    <p class="text-base mb-4 line-clamp-4">
+                      HTML - TailwindCSS - CSS - JS
+                    </p>
+                  </div>
+
+
+                  
+                </div>
+              </a>
+            </div>
+            </div>
+            <div class="w-1/2 md:w-1/2 " style="padding-left: 0.05rem;">
+            <div class="rounded-lg sm:px-2 px-2 sm:py-2  py-0 text-center items-center justify-center   md:pr-4 pb-4 md:pb-0 transition-transform duration-300 ease-in-out transform hover:scale-105">
+              <!-- experiencia columna izquierda -->
+              <a href="">
+                <div class="mb-8">
+                  <!-- Contenedor para controlar el tamaño y la respuesta de la imagen -->
+                  <div class="w-full lg:w-full h-32 bg-gray-100 flex items-center justify-center relative">
+                    <!-- Contenedor de la imagen ajustado -->
+                    <div class="relative w-full h-full">
+                      <img src="./images/landing_page_TCLC.png" alt="" class="absolute object-cover w-full h-full top-0 left-0 rounded-lg" />
+                    </div>
+                  </div>
+
+
+
+                  <div class="min-h-[2.1875rem] md:min-h-[2.375rem] lg:min-h-[2.1875rem] pt-4">
+                    <h2 class="text-lg md:text-xl lg:text-lg line-clamp-1">
+                      Desarrollo
+                    </h2>
+                  </div>
+                  <div class="flex items-center min-h-[4.5rem] md:min-h-[5.625rem] lg:min-h-[4.5rem] xl:min-h-[5.625rem] my-1">
+                    <h1 class="text-2xl md:text-3xl lg:text-xl xl:text-2xl 2xl:text-3xl font-bold tracking-normal line-clamp-2">
+                      Proyecto Tocata Con Los Cabros
+                    </h1>
+                  </div>
+                  <div class="min-h-[4.5rem]">
+                    <p class="text-base mb-4 line-clamp-4">
+                      REACT + Typescript + Tailwind CSS
+                    </p>
+                  </div>
+
+
+                  
+                </div>
+              </a>
+            </div>
+            </div>
+
+            
+          </div>
+          
+        
+
+        </div>
+        
+         <!-- Reproductor SoundCloud Desktop -->
+         <div  class="hidden md:block lg:hidden w-1/3 mr-4 md:mr-0 hover:scale-105 transition-transform duration-300 ease-in-out transform hover:scale-105 ">
+          <h2 class="text-3xl font-bold orbitron mb-8 invisible">.</h2>
+          <div  class="mb-8">
+            <div id="soundCloudPlayerContainerDesktop" class="hidden md:block lg:hidden w-full h-80" style="box-shadow: 0 8px 8px -4px black, 0 -8px 8px -4px black; color: white; position: relative;">
+            </div>
+<!--             <iframe class="w-full h-80" style="box-shadow: 0 8px 8px -4px black, 0 -8px 8px -4px black;"
+              src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/panchonavarrof/sets/personal-webpage-soundtrack&amp;color=%23ff5500&amp;auto_play=false&amp;sharing=false&amp;show_user=true&amp;visual=true">
+            </iframe> -->
+            
+          </div>
+        </div>
+        <!---->
+
+  
+        
+        
+      </div>
+    </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", loadSoundCloudWidget);
+      
+      function loadSoundCloudWidget() {
+          const mobileContainer = document.getElementById('soundCloudPlayerContainerMobile');
+          const desktopContainer = document.getElementById('soundCloudPlayerContainerDesktop');
+      
+          // Determina el contenedor activo basado en la visibilidad
+          const activeContainer = window.getComputedStyle(mobileContainer).display !== 'none' ? mobileContainer : desktopContainer;
+          const isActiveMobile = activeContainer === mobileContainer;
+          
+          const iframeHTML = `<iframe src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/panchonavarrof/sets/personal-webpage-soundtrack&amp;color=%23ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=false&amp;sharing=false&amp;visual=true" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen class="w-full ${isActiveMobile ? 'h-20' : 'h-80'}"></iframe>`;
+    
+          // Limpia y establece el contenido del contenedor activo
+          activeContainer.innerHTML = iframeHTML;
+          addReloadIcon(isActiveMobile ? desktopContainer : mobileContainer); // Añade el icono de recarga al contenedor inactivo
+      }
+      
+      function addReloadIcon(container) {
+    // Primero, se agrega un contenedor para la imagen de fondo y el SVG.
+    container.innerHTML = `<div style="position: relative; display: flex; justify-content: center; align-items: center; height: 100%; width: 100%;">
+        <img src="./images/loader1.jpg" alt="Fondo" style="position: absolute; width: 100%; height: 100%; object-fit: cover; z-index: -1;">
+        <svg id="reloadWidgetIcon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="50" height="50" style="cursor: pointer; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 1;"><path d="M463.5 224H472c13.3 0 24-10.7 24-24V72c0-9.7-5.8-18.5-14.8-22.2s-19.3-1.7-26.2 5.2L413.4 96.6c-87.6-86.5-228.7-86.2-315.8 1c-87.5 87.5-87.5 229.3 0 316.8s229.3 87.5 316.8 0c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0c-62.5 62.5-163.8 62.5-226.3 0s-62.5-163.8 0-226.3c62.2-62.2 162.7-62.5 225.3-1L327 183c-6.9 6.9-8.9 17.2-5.2 26.2s12.5 14.8 22.2 14.8H463.5z"/></svg>
+    </div>`;
+    // Se añade el evento para recargar la página al hacer clic en el SVG.
+    document.getElementById('reloadWidgetIcon').addEventListener('click', () => window.location.reload());
+}
+
+    </script>
+    
+  </div>
+    <!-- ----------------------------------------------------------------
+seccion blog 
+---------------------------------------------------------------- -->
+<div class="lg:w-1/3">
+  <!-- Contenido de Blog -->
+
+    <div class="bg-gray-100  px-2 container mx-auto mt-0 md:mt-8  text-black">
+      <div class="sm:block md:hidden lg:block pb-8 bg-gray-100 ">
+        <div class="bg-gray-100 w-full h-20" style="box-shadow: 0 8px 8px -4px black, 0 -8px 8px -4px black;">
+          <img src="./images/matrix_big.gif" class="object-cover w-full h-full"></img>
+        </div>
+      </div>
+     
+        <div class="flex flex-wrap md:flex-row bg-gray-100 justify-between">
+        <div class="w-full lg:px-0">
+          <h2 class="text-3xl font-bold orbitron mb-8 pl-2">
+            BLOG
+          </h2>
+          <div class="flex flex-wrap">
+            <div class="w-1/2 " style="padding-left: 0.05rem;">
+              <div class="rounded-lg sm:px-2 px-2 sm:py-2  py-0 text-center items-center justify-center   md:pr-4 pb-4 md:pb-0 transition-transform duration-300 ease-in-out transform hover:scale-105">
+                <!-- experiencia columna izquierda -->
+                <a href="">
+                  <div class="mb-8">
+                    <!-- Contenedor para controlar el tamaño y la respuesta de la imagen -->
+                    <div class="w-full lg:w-full h-32 bg-gray-100 flex items-center justify-center relative">
+                      <!-- Contenedor de la imagen ajustado -->
+                      <div class="relative w-full h-full">
+                        <img src="./images/chile satelital.jpg" alt="Imagen de Entel PCS Chile Logo" class="absolute object-cover w-full h-full top-0 left-0 rounded-lg" />
+                      </div>
+                    </div>
+  
+  
+  
+                    <div class="min-h-[2.1875rem] md:min-h-[2.375rem] lg:min-h-[2.1875rem] pt-4">
+                      <h2 class="text-lg md:text-xl lg:text-lg line-clamp-1">
+                        11/06/2024
+                      </h2>
+                    </div>
+                    <div class="flex items-center min-h-[4.5rem] md:min-h-[5.625rem] lg:min-h-[4.5rem] xl:min-h-[5.625rem] my-1">
+                      <h1 class="text-2xl md:text-3xl lg:text-xl xl:text-2xl 2xl:text-3xl font-bold tracking-normal line-clamp-2">
+                        Teletrabajo, IA, y Cómo harías tu empresa
+                      </h1>
+                    </div>
+                    <div class="min-h-[4.5rem]">
+                      <p class="text-base mb-4 line-clamp-4">
+                        Opiniones neutras del teletrabajo, ventajas y desventajas
+                      </p>
+                    </div>
+  
+  
+                    
+                  </div>
+                </a>
+              </div>
+              </div>
+            <div class="w-1/2 " style="padding-right: 0.05rem;">
+            <div class="rounded-lg sm:px-2 px-2 sm:py-2  py-0 text-center items-center justify-center   md:pr-4 pb-4 md:pb-0 transition-transform duration-300 ease-in-out transform hover:scale-105">
+              <!-- experiencia columna izquierda -->
+              <a href="">
+                <div class="mb-8">
+                  <!-- Contenedor para controlar el tamaño y la respuesta de la imagen -->
+                  <div class="w-full lg:w-full h-32 bg-gray-100 flex items-center justify-center relative">
+                    <!-- Contenedor de la imagen ajustado -->
+                    <div class="relative w-full h-full">
+                      <img src="./images/shibagodmeta.jpg" alt="Imagen de Entel PCS Chile Logo" class="absolute object-cover w-full h-full top-0 left-0 rounded-lg" />
+                    </div>
+                  </div>
+
+
+
+                  <div class="min-h-[2.1875rem] md:min-h-[2.375rem] lg:min-h-[2.1875rem] pt-4">
+                    <h2 class="text-lg md:text-xl lg:text-lg line-clamp-1">
+                      29/02/2024
+                    </h2>
+                  </div>
+                  <div class="flex items-center min-h-[4.5rem] md:min-h-[5.625rem] lg:min-h-[4.5rem] xl:min-h-[5.625rem] my-1">
+                    <h1 class="text-2xl md:text-3xl lg:text-xl xl:text-2xl 2xl:text-3xl font-bold tracking-normal line-clamp-2">
+                      Finalmente, Sitio Web Personal
+                    </h1>
+                  </div>
+                  <div class="min-h-[4.5rem]">
+                    <p class="text-base mb-4 line-clamp-4">
+                      ¿¡Ya era hora, no!? All fin sacamos la web personal.
+                      <br>💻🔥
+                    </p>
+                  </div>
+
+
+                  
+                </div>
+              </a>
+            </div>
+            </div>
+            
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+<!-- ----------------------------------------------------------------
+cierre del main body
+---------------------------------------------------------------- -->
+</div>  
+</main>
+
+  <!-- ----------------------------------------------------------------
+footer nuevo
+---------------------------------------------------------------- -->
+  <footer class="py-8 text-center"
+    style="display: flex; align-items: center; justify-content: center; flex-direction: column;">
+    <div style="display: flex; align-items: center; justify-content: center; text-align: center;">
+      <div style="display: inline-flex; align-items: center;">
+        <span style="padding-left: 8px;">Navarro Development Blog - 2024</span>
+      </div>
+    </div>
+  </footer>
+  <!-- ----------------------------------------------------------------
+-
+---------------------------------------------------------------- -->
+</body>
+</html>
