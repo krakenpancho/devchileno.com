@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8" />
+        <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+        <meta property="og:image" content="../images/shibagodmeta.jpg" />
+        <title>
+          Blog de un developer chileno
+        </title>
+        <!-- Favicon retrocompatible con navegadores antiguos -->
+        <link rel="shortcut icon" href="../images/shibagod.ico" type="image/x-icon">
+        <link href="../tw_style_dev.css" rel="stylesheet" />
+        <!-- Tailwind CSS con comando watch que detecta los cambios 
+        npx tailwindcss -i tw_style_start.css -o tw_style_dev.css --watch
+        Para version min final 
+        npx tailwindcss -i tw_style_start.css -o tw_style_min.css --minify -->
+        <!-- Instalar CSS clásico para la barra de desplazamiento -->
+        <link href="../estilo_barra.css" rel="stylesheet" />
+        
+        <!-- Archivo CSS -->
+  <style>
+    @font-face {
+      font-family: 'Orbitron';
+      src: url('../fonts/Fira_Code/FiraCode-Bold.ttf') format('truetype');
+    }
+
+    @font-face {
+      font-family: 'Roboto';
+      src: url('../fonts/Fira_Code/FiraCode-Light.ttf') format('truetype');
+    }
+
+    body {
+
+      margin: 0 !important;
+      padding: 0 !important;
+
+      font-family: 'Roboto', sans-serif;
+      letter-spacing: 0.05em;
+    }
+
+    .orbitron {
+      font-family: 'Orbitron', sans-serif;
+    }
+
+    .roboto {
+    font-family: 'Roboto', sans-serif;
+}
+
+    /* clases para el color de los iconos, tailwind css no afecta a propiedades fill de un svg, funciona mejor con texto */
+    .svg-icon svg {
+      fill: white;
+      /* Color inicial */
+    }
+
+    .svg-icon:hover svg {
+      fill: #bec1c4;
+      /* Color al hacer hover, usando el color 'gray-500' de Tailwind como ejemplo */
+    }
+
+    .border-transparent {
+    border-color: transparent !important;
+}
+    
+/* Nuevo modo oscuro  */
+    body {
+    background-color: #000000 !important; /* bg-gray-900 */
+    color: #F3F4F6 !important; /* text-gray-100 */
+  }
+
+  .bg-gray-100 {
+    background-color: #1F2937 !important; /* bg-gray-100 */
+  }
+
+  .bg-gray-800 {
+    background-color: #000000 !important; /* bg-gray-800 */
+  }
+
+  .bg-black {
+    background-color: #000000 !important; /* bg-gray-900 */
+  }
+
+  .text-black {
+    color: #F3F4F6 !important; /* text-gray-100 */
+  }
+
+  .hover\:text-black:hover {
+    color: #111827 !important;
+  }
+
+  .hover\:bg-yellow-100:hover {
+    background-color: #FCD34D !important; /* bg-yellow-300 */
+  }
+
+  /* Ajuste de sombras */
+  .shadow-sm, .shadow-2xl {
+    box-shadow: 0 1px 3px 0 rgba(255, 255, 255, 0.1), 
+                0 1px 2px 0 rgba(255, 255, 255, 0.06) !important;
+  }
+
+  /* Ajuste para los reproductores */
+  #playerMobile, #playerDesktop, #soundCloudPlayerContainerMobile, #soundCloudPlayerContainerDesktop {
+    box-shadow: 0 8px 8px -4px rgba(255, 255, 255, 0.1), 
+                0 -8px 8px -4px rgba(255, 255, 255, 0.1) !important;
+  }
+
+  </style>
+</head>
+
+
+<!-- ----------------------------------------------------------------
+navbar y titulo
+---------------------------------------------------------------- -->
+
+
+<body class="bg-gray-900 text-gray-100 min-h-screen">
+  <header class="bg-black text-white  border-gray-800">
+
+    <div class="flex justify-center items-center w-full py-2">
+      <div class="text-4xl font-bold orbitron text-center px-4">
+        <a class="hover:text-gray-300" href="./home.html">BLOG DE UN DEVELOPER CHILENO</a>
+        <p class="text-xl text-gray-400 roboto" style="font-weight: 400;">Narrando el camino más difícil que encontrar pega sin pituto: el crear una empresa de videojuegos chilena</p>
+      </div>
+    </div>
+    </div>
+
+
+
+    <!-- Iconos sociales -->
+    <div class="flex justify-center items-center w-full">
+      <a class="svg-icon text-lg hover:text-gray-300 transition-transform duration-300 ease-in-out transform hover:scale-105 px-4"
+        href="https://www.linkedin.com/in/francisconavarroflores/" target="_blank" rel="noopener noreferrer">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" style="width: 1.150rem; height: 1.150rem;">
+          <path
+            d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z" />
+        </svg>
+      </a>
+
+
+      <a class="svg-icon text-lg hover:text-gray-300 transition-transform duration-300 ease-in-out transform hover:scale-105 px-4"
+        href="https://github.com/francisconavarrof" target="_blank" rel="noopener noreferrer">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" style="width: 1.150rem; height: 1.150rem;">
+          <path
+            d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3 .3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5 .3-6.2 2.3zm44.2-1.7c-2.9 .7-4.9 2.6-4.6 4.9 .3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3 .7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3 .3 2.9 2.3 3.9 1.6 1 3.6 .7 4.3-.7 .7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3 .7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3 .7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z" />
+        </svg>
+      </a>
+
+      <a class="svg-icon text-lg hover:text-gray-300 transition-transform duration-300 ease-in-out transform hover:scale-105 px-4"
+        href="mailto:francisconavarroflores@gmail.com">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" style="width: 1.150rem; height: 1.150rem;">
+          <path
+            d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48H48zM0 176V384c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V176L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z" />
+        </svg>
+      </a>
+    </div>
+
+    <!-- Menu Links -->
+    <!-- Version Escritorio y Movil-->
+    <nav class="w-full mx-auto max-w-full flex-wrap justify-between items-center pt-4  border-white">
+      <!-- Botón visible solo en móvil -->
+      <button
+        class="flex items-center justify-center w-full px-4 py-2 hover:text-gray-300 transition-transform duration-300 ease-in-out transform  md:hidden"
+        id="menu-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+          style="width: 1.150rem; height: 1.150rem;">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+
+      <!-- Enlaces del menú -->
+      <!-- En móviles se oculta, y en escritorio se muestra -->
+      <div class="hidden md:flex w-full justify-center pb-2" id="menu-links">
+        <a class="block text-center text-white hover:text-black px-6 py-4   font-bold hover:bg-yellow-100 border-b-4 border-yellow-100"
+   href="./home.html">Inicio</a>
+       
+   <!-- <a class="block text-center text-white hover:text-black px-6 py-4   font-bold hover:bg-yellow-100 border-b-4 border-transparent"
+          href="./resume.html">Contacto y CV</a> -->
+          
+          <a class="block text-center text-white hover:text-black px-6 py-4   font-bold hover:bg-yellow-100 border-b-4 border-transparent"
+          href="./projects.html">Proyectos</a>
+          <a class="block text-center text-white hover:text-black px-6 py-4   font-bold hover:bg-yellow-100 border-b-4 border-transparent"
+   href="./posts/all.html">Blog</a>
+          <a class="block text-center text-white hover:text-black px-6 py-4   font-bold hover:bg-yellow-100 border-b-4 border-transparent"
+          href="./inspiracion.html">Inspiración</a>
+      </div>
+    </nav>
+    <script>
+      document.getElementById('menu-btn').addEventListener('click', function () {
+        document.getElementById('menu-links').classList.toggle('hidden');
+      });
+    </script>
+
+
+
+  </header>
+
+  
+
+
+
+  <!-- Navbar flotante -->
+  <nav class="top-navbar fixed top-0 left-0 right-0 bg-white hidden z-50">
+    <div class="container mx-auto flex justify-center">
+      <a class="no-underline" href="#">
+        <div class="font-bold text-center">
+          <div class="px-4 text-gray-900 font-bold text-3xl orbitron">NAVARRO DEV BLOG</div>
+          <p class="text-base roboto">Desarrollador FullStack</p>
+        </div>
+      </a>
+    </div>
+  </nav>
+
+  <script>
+    document.addEventListener('scroll', function() {
+      var mainElement = document.querySelector('main');
+      var navElement = document.querySelector('.top-navbar');
+      var mainPosition = mainElement.getBoundingClientRect();
+      
+      if(mainPosition.bottom < 0) {
+        navElement.classList.remove('hidden');
+      } else {
+        navElement.classList.add('hidden');
+      }
+    });
+  </script>
+
+  <!-- Contenido principal del artículo -->
+  <main class="container mx-auto px-4">
+    <article>
+      <div class="flex flex-wrap">
+        <div class="w-full lg:w-2/3 mx-auto">
+          <h1 class="font-bold mt-4 text-3xl">Progressive Web Apps with React.js: Part I — Introduction</h1>
+          <p class="text-gray-400 text-xl">Progressive Web Apps take advantage of new technologies to bring the best of mobile sites & native apps
+            to users. They're reliable, fast, and engaging. They originate from a secure origin and load regardless
+            of network state.
+          </p>
+          <img class="w-full my-4" src="assets/images/img8.png" alt="Progressive Web Apps">
+          <p class="my-3">There's much new in the world of <a href="#" class="text-blue-400 hover:underline">Progressive Web Apps</a> (PWAs) and you might be wondering
+            how compatible they are with existing architectures using libraries like <a href="#" class="text-blue-400 hover:underline">React</a> and
+            JS module bundlers like
+            <a href="#" class="text-blue-400 hover:underline">Webpack</a>. Does a PWA require a wholesale rewrite? What web performance metrics do
+            you need to keep an eye on? In this series of posts I'll share my experience turning React-based
+            web apps into PWAs. We'll also cover why shipping just what users need for a route & throwing out
+            all other scripts are good ideas for fast perf.</p>
+        </div>
+      </div>
+
+      <section class="mt-10">
+        <div class="flex flex-wrap">
+          <div class="w-full lg:w-2/3 mx-auto">
+            <h2 class="font-bold text-2xl">Lighthouse</h2>
+            <p class="my-3">Let's begin with a PWA checklist. For this we'll be using <a href="#" class="font-bold text-blue-400 hover:underline">Lighthouse</a> — a
+              tool for auditing <a href="#" class="text-blue-400 hover:underline">an app for PWA features</a> and checking your app meets a respectable
+              bar for web performance under emulated mobile conditions. Lighthouse is available as a <a href="#" class="text-blue-400 hover:underline">Chrome extension</a> (I use this version of it most often) and a <a href="#" class="text-blue-400 hover:underline">CLI</a>, both of which present a report
+              that looks a little like this:</p>
+          </div>
+        </div>
+        
+        <div class="flex justify-center">
+          <figure class="my-6">
+            <img class="w-full" src="assets/images/img5.jpg" alt="Lighthouse report">
+            <figcaption class="text-center text-gray-500 text-sm mt-2">Results from the Lighthouse Chrome extension</figcaption>
+          </figure>
+        </div>
+        
+        <div class="flex flex-wrap">
+          <div class="w-full lg:w-2/3 mx-auto">
+            <p class="my-3">The top-level audits Lighthouse runs effectively a collection of modern web best practices refined
+              for a mobile world:</p>
+            <ul class="space-y-3 list-disc pl-5 my-4">
+              <li class="mt-3"><strong>Network connection is secure</strong></li>
+              <li class="mt-3"><strong>User can be prompted to Add to Homescreen</strong></li>
+              <li class="mt-3"><strong>Installed web app will launch with custom splash screen</strong></li>
+              <li class="mt-3"><strong>App can load on offline/flaky connections</strong></li>
+              <li class="mt-3"><strong>Page load performance is fast</strong></li>
+              <li class="mt-3"><strong>Design is mobile-friendly</strong></li>
+              <li class="mt-3"><strong>Site is progressively enhanced</strong></li>
+              <li class="mt-3"><strong>Address bar matches brand colors</strong></li>
+            </ul>
+            <p class="my-3">Btw, there's a <a href="#" class="text-blue-400 hover:underline">getting started guide</a> for Lighthouse and it also works over <a href="#" class="text-blue-400 hover:underline">remote debugging</a>.
+              Super cool.</p>
+            <p class="my-3">Regardless of what libraries are in your stack, I want to emphasize that everything in the above
+              list can be accomplished today with a little work. There are caveats however.</p>
+            <p class="my-3"><strong>We know the mobile web is <a href="#" class="text-blue-400 hover:underline">slow</a>.</strong></p>
+            <p class="my-3">The web has evolved from a document-centric platform to a first-class application platform. At the same time the bulk of our computing has moved from powerful desktop machines with fast, reliable network connections to relatively underpowered mobile devices with connections that are often <i>slow, flaky or both</i>. This is especially true in parts of the world where the next billion users are coming online. To unlock a faster mobile web:
+            </p>
+            <ul class="space-y-4 list-disc pl-5 my-4">
+              <li><strong>We need to collectively shift to testing on real mobile devices under realistic network connections</strong> (e.g <a href="#" class="text-blue-400 hover:underline">Regular 3G in DevTools</a>). <a href="#" class="text-blue-400 hover:underline">chrome://inspect</a> and <a href="#" class="text-blue-400 hover:underline">WebPageTest</a> (<a href="#" class="text-blue-400 hover:underline">video</a>) are your friend. Lighthouse emulates a Nexus 5X with touch events, viewport emulation and a throttled network connection (150ms latency, 1.6Mbps throughput).</li>
+              <li class="mt-4"><strong>If the JS libraries you're using aren't developed with mobile in mind, you may be running an uphill battle for perf</strong> when it comes to being interactive. We're ideally aiming for being interactive in under 5 seconds on a representative device so more of that budget for our app code is ❤</li>
+            </ul>
+            
+            <figure class="my-6">
+              <img class="w-full" src="assets/images/img9.png" alt="Housing.com performance">
+              <figcaption class="text-gray-500 text-sm mt-2">
+                With some work, it's possible to write PWAs with React that do perform well on real devices under limited network conditions <a href="#" class="text-blue-400 hover:underline">as demonstrated by Housing.com</a>. We'll talk about how to achieve this in great <strong>detail</strong> later on in the series.
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+        
+        <div class="flex flex-wrap items-start mt-8">
+          <div class="w-full lg:w-2/3 mx-auto">
+            <p>
+              That said, this is an area many libraries are working to improve on and may need to if they're going to stay viable for performance
+              on physical devices.
+              <mark class="bg-yellow-200 text-black">Just take a look at the A+ job <a href="#" class="text-blue-600">Preact</a> is doing on <a href="#" class="text-blue-600">perf with real-world devices.</a></mark>
+            </p>
+          </div>
+          <div class="w-full lg:w-1/6 hidden lg:block">
+            <a href="#" class="text-gray-400 text-sm">Top highlight</a>
+          </div>
+        </div>
+        
+        <div class="flex flex-wrap">
+          <div class="w-full lg:w-2/3 mx-auto">
+            <p class="font-bold mt-6">Open-source React Progressive Web App samples</p>
+            <img class="w-full my-4" src="assets/images/img3.png" alt="PWA samples">
+            <p class="mt-4 italic">If you're after relatively non-trivial examples of PWAs built with React and optimized with Lighthouse, you may be interested in: <a href="#" class="text-blue-400 hover:underline">ReactHN</a> — a HackerNews client with server-side rendering & offline support or <a href="#" class="text-blue-400 hover:underline">iFixit</a> — a hardware repair guide built with React but which uses Redux for state management.</p>
+            <p class="mt-4">Let's now walk through what we need to do to check off each item in the Lighthouse report, continuing
+              with React.js specific tips throughout the series.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Nuevas secciones del artículo -->
+      <section class="mt-10">
+        <div class="flex flex-wrap">
+          <div class="w-full lg:w-2/3 mx-auto">
+            <h2 class="font-bold text-2xl">Network connection is secure</h2>
+            <h5 class="font-bold mt-4 text-lg">Tooling and tips for HTTPS</h5>
+          </div>
+        </div>
+        
+        <div class="flex flex-wrap mt-4">
+          <div class="w-full lg:w-1/2">
+            <img class="w-full" src="assets/images/img11.jpeg" alt="HTTPS">
+          </div>
+          <div class="w-full lg:w-1/3 hidden lg:block">
+            <p>
+              <a href="#" class="text-blue-400 hover:underline">HTTPS</a> prevents bad-actors from tampering with communications between your app
+              and the browser your users are using and you might have read that Google is pushing to <a href="#" class="text-blue-400 hover:underline">shame</a> sites that are unencrypted. Powerful new web platform APIs, like <a href="#" class="text-blue-400 hover:underline">Service Worker</a>,
+              <a href="#" class="text-blue-400 hover:underline">require</a>
+            </p>
+          </div>
+        </div>
+        
+        <div class="flex flex-wrap">
+          <div class="w-full lg:w-2/3 mx-auto">
+            <p class="lg:hidden mt-4">
+              <a href="#" class="text-blue-400 hover:underline">HTTPS</a> prevents bad-actors from tampering with communications between your app and the browser your users are using and you might have read that Google is pushing to <a href="#" class="text-blue-400 hover:underline">shame</a> sites that are unencrypted. Powerful new web platform APIs, like <a href="#" class="text-blue-400 hover:underline">Service Worker</a>, <a href="#" class="text-blue-400 hover:underline">require</a>
+            </p>
+            <p class="mt-4">
+              secure origins via HTTPS but the good news is thanks to services like <a href="#" class="text-blue-400 hover:underline">LetsEncrypt</a> providing free <a href="#" class="text-blue-400 hover:underline">SSL certificates</a> and low-cost options like <a href="#" class="text-blue-400 hover:underline">Cloudflare</a> enabling end-to-end traffic encryption <a href="#" class="text-blue-400 hover:underline">for all</a>, it's never been more straight-forward to get this setup.
+            </p>
+            <p class="mt-4">
+              For my personal projects, I usually deploy to <a href="#" class="text-blue-400 hover:underline">Google App Engine</a> which supports
+              serving SSL traffic through an appspot.com domain if you add the 'secure' parameter to your app.yaml
+              file. For my React apps that need Node.js support for Universal Rendering, I use <a href="#" class="text-blue-400 hover:underline">Node on App Engine</a>.
+              <a href="#" class="text-blue-400 hover:underline">Github Pages</a> and Zeit.co also now support HTTPS.
+            </p>
+            <img class="w-full mt-6" src="assets/images/img6.jpg" alt="Chrome DevTools Security panel">
+            <p class="mt-4 italic">
+              The <a href="#" class="text-blue-400 hover:underline">Chrome DevTools Security panel</a> allows you to validate issues with security certificates and mixed content errors.
+            </p>
+            <p class="mt-6">Some more tips to get your site more secure:</p>
+            <ul class="space-y-3 list-disc pl-5 mt-4">
+              <li class="mt-3">Upgrade unsecure requests ("HTTP" connections) to "HTTPS" redirecting users as needed. Take a
+                look at <a href="#" class="text-blue-400 hover:underline">Content Security Policy</a> and <a href="#" class="text-blue-400 hover:underline">upgrade-insecure-requests</a>.
+              </li>
+              <li class="mt-3">Update all links referencing "http://" to "https://". If you rely on third-party scripts or content,
+                talk to them about making their resources available over HTTPS too</li>
+              <li class="mt-3">Use HTTP <a href="#" class="text-blue-400 hover:underline">Strict Transport Security</a> (HSTS) headers when serving pages. It's a
+                directive that forces browsers to only talk to your site in HTTPS.</li>
+            </ul>
+            <p class="mt-4">I'd recommend watching <a href="#" class="text-blue-400 hover:underline">Deploying HTTPS: The Green Lock and Beyond</a> and <a href="#" class="text-blue-400 hover:underline">Mythbusting HTTPS: Squashing security's urban legends</a> for more.</p>
+          </div>
+        </div>
+      </section>
+    </article>
+  </main>
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+</body>
+</html>
