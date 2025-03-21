@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redireccionando...</title>
+    
+    <!-- Redirección META (por si JavaScript está desactivado) -->
+    <meta http-equiv="refresh" content="0;url=home.html">
+    
+    <!-- Redirección JavaScript (más rápida) -->
+    <script>
+        window.location.href = "home.html";
+    </script>
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #111827;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            text-align: center;
+        }
+        .loader {
+            border: 4px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            border-top: 4px solid white;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px auto;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Contenido visible solo si la redirección tarda -->
+    <div>
+        <div class="loader"></div>
+        <p>Redirigiendo a la página principal...</p>
+        <p>Si no eres redirigido automáticamente, <a href="home.html" style="color: #60A5FA;">haz clic aquí</a>.</p>
+    </div>
+</body>
+</html>
