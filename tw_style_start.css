@@ -1,6 +1,6 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+
 
 
 /* 
@@ -9,3 +9,8 @@ npx tailwindcss -i tw_style_start.css -o tw_style_dev.css --watch
 Para cocinar la version min final para disminuir el tamaño hacia producción al mínimo
 npx tailwindcss -i tw_style_start.css -o tw_style_dev.css --minify 
 */ 
+
+/*
+VERSION 4 DE TAILWIND
+npx @tailwindcss/cli --watch -i tw_style_start.css -o tw_style_dev.css
+*/

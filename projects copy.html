@@ -1,0 +1,288 @@
+<html lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>
+    Navarro Development Blog
+  </title>
+  <link rel="icon" href="./images/shibagod.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="./images/shibagod.ico" type="image/x-icon">
+  <!-- Instalar temporalmente Tailwind CSS, hay que compilar al final para mejorar el rendimiento 
+  <script src="https://cdn.tailwindcss.com"></script> -->
+  <!-- Instalar fuentes e iconos -->
+  <!-- <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;fami:wght@700&amp;display=swaprbitron:wght@700&amp;display=swap" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/> --> 
+  <!-- Instalar Tailwind CSS cocinado para producción (dev o min) -->
+  <link href="./tw_style_dev.css" rel="stylesheet" />
+<!--   Para cocinar la version dev con comando watch que detcta los cambios mientras desarrollas
+  npx tailwindcss -i tw_style_start.css -o tw_style_dev.css --watch
+  Para cocinar la version min final para disminuir el tamaño al mínimo
+  npx tailwindcss -i tw_style_start.css -o tw_style_min.css --minify -->
+  <!-- Instalar CSS clásico para la barra de desplazamiento -->
+  <link href="./estilo_barra.css" rel="stylesheet" />
+  
+  
+  
+  <!-- Archivo CSS -->
+  <style>
+    @font-face {
+      font-family: 'Orbitron';
+      src: url('./fonts/Fira_Code/FiraCode-Bold.ttf') format('truetype');
+    }
+
+    @font-face {
+      font-family: 'Roboto';
+      src: url('./fonts/Fira_Code/FiraCode-Light.ttf') format('truetype');
+    }
+
+    body {
+
+      margin: 0 !important;
+      padding: 0 !important;
+
+      font-family: 'Roboto', sans-serif;
+      letter-spacing: 0.05em;
+    }
+
+    .orbitron {
+      font-family: 'Orbitron', sans-serif;
+    }
+
+    .roboto {
+    font-family: 'Roboto', sans-serif;
+}
+
+    /* clases para el color de los iconos, tailwind css no afecta a propiedades fill de un svg, funciona mejor con texto */
+    .svg-icon svg {
+      fill: white;
+      /* Color inicial */
+    }
+
+    .svg-icon:hover svg {
+      fill: #bec1c4;
+      /* Color al hacer hover, usando el color 'gray-500' de Tailwind como ejemplo */
+    }
+
+    .border-transparent {
+    border-color: transparent !important;
+}
+    
+/* Nuevo modo oscuro  */
+    body {
+    background-color: #000000 !important; /* bg-gray-900 */
+    color: #F3F4F6 !important; /* text-gray-100 */
+  }
+
+  .bg-gray-100 {
+    background-color: #1F2937 !important; /* bg-gray-100 */
+  }
+
+  .bg-gray-800 {
+    background-color: #000000 !important; /* bg-gray-800 */
+  }
+
+  .bg-black {
+    background-color: #000000 !important; /* bg-gray-900 */
+  }
+
+  .text-black {
+    color: #F3F4F6 !important; /* text-gray-100 */
+  }
+
+  .hover\:text-black:hover {
+    color: #111827 !important;
+  }
+
+  .hover\:bg-yellow-100:hover {
+    background-color: #FCD34D !important; /* bg-yellow-300 */
+  }
+
+  /* Ajuste de sombras */
+  .shadow-sm, .shadow-2xl {
+    box-shadow: 0 1px 3px 0 rgba(255, 255, 255, 0.1), 
+                0 1px 2px 0 rgba(255, 255, 255, 0.06) !important;
+  }
+
+  /* Ajuste para los reproductores */
+  #playerMobile, #playerDesktop, #soundCloudPlayerContainerMobile, #soundCloudPlayerContainerDesktop {
+    box-shadow: 0 8px 8px -4px rgba(255, 255, 255, 0.1), 
+                0 -8px 8px -4px rgba(255, 255, 255, 0.1) !important;
+  }
+
+  </style>
+</head>
+
+
+<!-- ----------------------------------------------------------------
+navbar y titulo
+---------------------------------------------------------------- -->
+
+
+<body class="bg-gray-900 text-gray-100 min-h-screen">
+  <header class="bg-black text-white  border-gray-800">
+
+    <div class="flex justify-center items-center w-full py-2">
+      <div class="text-4xl font-bold orbitron text-center px-4">
+        <a class="hover:text-gray-300" href="./home.html">BLOG DE UN DEVELOPER CHILENO</a>
+        <p class="text-xl text-gray-400 roboto" style="font-weight: 400;">Narrando el camino más difícil que encontrar pega sin pituto: el crear una empresa de videojuegos chilena</p>
+      </div>
+    </div>
+    </div>
+
+
+
+    <!-- Iconos sociales -->
+    <div class="flex justify-center items-center w-full">
+      <a class="svg-icon text-lg hover:text-gray-300 transition-transform duration-300 ease-in-out transform hover:scale-105 px-4"
+        href="https://www.linkedin.com/in/francisconavarroflores/" target="_blank" rel="noopener noreferrer">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" style="width: 1.150rem; height: 1.150rem;">
+          <path
+            d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z" />
+        </svg>
+      </a>
+
+
+      <a class="svg-icon text-lg hover:text-gray-300 transition-transform duration-300 ease-in-out transform hover:scale-105 px-4"
+        href="https://github.com/fnavarro-dev" target="_blank" rel="noopener noreferrer">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" style="width: 1.150rem; height: 1.150rem;">
+          <path
+            d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3 .3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5 .3-6.2 2.3zm44.2-1.7c-2.9 .7-4.9 2.6-4.6 4.9 .3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3 .7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3 .3 2.9 2.3 3.9 1.6 1 3.6 .7 4.3-.7 .7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3 .7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3 .7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z" />
+        </svg>
+      </a>
+
+      <a class="svg-icon text-lg hover:text-gray-300 transition-transform duration-300 ease-in-out transform hover:scale-105 px-4"
+        href="mailto:francisconavarroflores@gmail.com">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" style="width: 1.150rem; height: 1.150rem;">
+          <path
+            d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48H48zM0 176V384c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V176L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z" />
+        </svg>
+      </a>
+    </div>
+
+    <!-- Menu Links -->
+    <!-- Version Escritorio y Movil-->
+    <nav class="w-full mx-auto max-w-full flex-wrap justify-between items-center pt-4  border-white">
+      <!-- Botón visible solo en móvil -->
+      <button
+        class="flex items-center justify-center w-full px-4 py-2 hover:text-gray-300 transition-transform duration-300 ease-in-out transform  md:hidden"
+        id="menu-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+          style="width: 1.150rem; height: 1.150rem;">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+
+      <!-- Enlaces del menú -->
+      <!-- En móviles se oculta, y en escritorio se muestra -->
+      <div class="hidden md:flex w-full justify-center pb-2" id="menu-links">
+          <a class="block text-center text-white hover:text-black px-6 py-4   
+          font-bold hover:bg-yellow-100 border-b-4 border-transparent"
+          href="./home.html">Inicio</a>
+          <a class="block text-center text-white hover:text-black px-6 py-4   
+          font-bold hover:bg-yellow-100 border-b-4 border-yellow-100"
+          href="./projects.html">Proyectos</a>
+          <a class="block text-center text-white hover:text-black px-6 py-4   
+          font-bold hover:bg-yellow-100 border-b-4 border-transparent"
+          href="./posts/all.html">Blog</a>
+          <a class="block text-center text-white hover:text-black px-6 py-4   
+          font-bold hover:bg-yellow-100 border-b-4 border-transparent"
+          href="./inspiracion.html">Inspiración</a>
+      </div>
+    </nav>
+    <script>
+      document.getElementById('menu-btn').addEventListener('click', function () {
+        document.getElementById('menu-links').classList.toggle('hidden');
+      });
+    </script>
+
+
+
+  </header>
+
+
+    <!-- ----------------------------------------------------------------
+seccion proyectos 
+---------------------------------------------------------------- -->
+<main class=" sm:px-16 md:px-24  xl:px-56 ">
+    <div class="bg-gray-100 container mx-auto mt-8 bg-white text-black">
+      <div class="bg-gray-100 flex justify-between">
+        <div>
+          
+          
+          
+          <div class="flex flex-wrap mt-4">
+            <div class="w-full md:w-1/3  mb-8">
+              <!-- Proyecto 1 -->
+              <div>
+                <img alt="imagen landing page de esta pagina web personal" class="object-cover w-full h-[30vh] mb-2"
+                  src="./images/sitiowebpersonal.png" />
+                <h2 class="text-xl mb-2">
+                  Esta mismísima página - 2024
+                </h2>
+                <h1 class="text-3xl font-bold mb-4">
+                  Sitio Web Personal
+                </h1>
+                <p>
+                  HTML - TailwindCSS - CSS - JS
+                </p>
+              </div>
+            </div>
+            <div class="w-full md:w-1/3 px-4 mb-8">
+              <!-- Proyecto 2 -->
+              <div>
+                <img alt="Placeholder image for category" class="object-cover w-full h-[30vh] mb-2"
+                  src="./images/landing_page_TCLC.png" />
+                <h2 class="text-xl mb-2">
+                  En desarrollo - Release Date: 2024
+                </h2>
+                <h1 class="text-3xl font-bold mb-4">
+                  Proyecto Tocata Con Los Cabros
+                </h1>
+                <p>
+                  REACT + Typescript + Tailwind CSS
+                </p>
+              </div>
+            </div>
+            <div class="w-full md:w-1/3 px-4 mb-8">
+              <!-- Proyecto 3 -->
+              <div>
+                <img alt="Placeholder image for category" class="object-cover w-full h-[30vh] mb-2"
+                  src="./images/videogames.png" />
+                <h2 class="text-xl mb-2">
+                  Release Date: 2025
+                </h2>
+                <h1 class="text-3xl font-bold mb-4">
+                  Proyecto Alcohol & Multiplayer
+                </h1>
+                <p>
+                  Proyectos Futuros
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  </main>
+  <!-- ----------------------------------------------------------------
+footer nuevo
+---------------------------------------------------------------- -->
+
+
+<footer class="py-8 text-center" style="display: flex; align-items: center; justify-content: center; flex-direction: column;">
+  <div style="display: flex; align-items: center; justify-content: center; text-align: center;">
+    <div style="display: inline-flex; align-items: center;">
+      <span style="padding-left: 8px;">Navarro Development Blog - 2024</span>
+    </div>
+  </div>
+</footer>
+  <!-- ----------------------------------------------------------------
+-
+---------------------------------------------------------------- -->
+
+</body>
+
+</html>

@@ -21,16 +21,19 @@
   npx tailwindcss -i tw_style_start.css -o tw_style_min.css --minify -->
   <!-- Instalar CSS clásico para la barra de desplazamiento -->
   <link href="./estilo_barra.css" rel="stylesheet" />
+  
+  
+  
   <!-- Archivo CSS -->
   <style>
     @font-face {
       font-family: 'Orbitron';
-      src: url('./fonts/Orbitron/Orbitron-VariableFont_wght.ttf') format('truetype');
+      src: url('./fonts/Fira_Code/FiraCode-Bold.ttf') format('truetype');
     }
 
     @font-face {
       font-family: 'Roboto';
-      src: url('./fonts/Roboto/Roboto-Regular.ttf') format('truetype');
+      src: url('./fonts/Fira_Code/FiraCode-Light.ttf') format('truetype');
     }
 
     body {
@@ -60,8 +63,65 @@
       fill: #bec1c4;
       /* Color al hacer hover, usando el color 'gray-500' de Tailwind como ejemplo */
     }
-  </style>
 
+    .border-transparent {
+    border-color: transparent !important;
+}
+
+
+/* Ocultar scrollbar con la clase scrollbar-hide */
+.scrollbar-hide {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;     /* Firefox */
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;             /* Chrome, Safari y Opera */
+  }
+    
+/* Nuevo modo oscuro  */
+    body {
+    background-color: #000000 !important; /* bg-gray-900 */
+    color: #F3F4F6 !important; /* text-gray-100 */
+  }
+
+  .bg-gray-100 {
+    background-color: #1F2937 !important; /* bg-gray-100 */
+  }
+
+  .bg-gray-800 {
+    background-color: #000000 !important; /* bg-gray-800 */
+  }
+
+  .bg-black {
+    background-color: #000000 !important; /* bg-gray-900 */
+  }
+
+  .text-black {
+    color: #F3F4F6 !important; /* text-gray-100 */
+  }
+
+  .hover\:text-black:hover {
+    color: #111827 !important;
+  }
+
+  .hover\:bg-yellow-100:hover {
+    background-color: #FCD34D !important; /* bg-yellow-300 */
+  }
+
+  /* Ajuste de sombras */
+  .shadow-sm, .shadow-2xl {
+    box-shadow: 0 1px 3px 0 rgba(255, 255, 255, 0.1), 
+                0 1px 2px 0 rgba(255, 255, 255, 0.06) !important;
+  }
+
+  /* Ajuste para los reproductores */
+  #playerMobile, #playerDesktop, #soundCloudPlayerContainerMobile, #soundCloudPlayerContainerDesktop {
+    box-shadow: 0 8px 8px -4px rgba(255, 255, 255, 0.1), 
+                0 -8px 8px -4px rgba(255, 255, 255, 0.1) !important;
+  }
+
+  </style>
 </head>
 
 
@@ -70,13 +130,13 @@ navbar y titulo
 ---------------------------------------------------------------- -->
 
 
-<body class="bg-gray-100 text-black overflow-y-scroll">
+<body class="bg-gray-900 text-gray-100 min-h-screen">
   <header class="bg-black text-white  border-gray-800">
 
     <div class="flex justify-center items-center w-full py-2">
       <div class="text-4xl font-bold orbitron text-center px-4">
-        <a class="hover:text-gray-300" href="./home.html">NAVARRO DEV BLOG</a>
-        <p class="text-xl text-gray-400 roboto" style="font-weight: 400;">Desarrollador FullStack</p>
+        <a class="hover:text-gray-300" href="./home.html">BLOG DE UN DEVELOPER CHILENO</a>
+        <p class="text-xl text-gray-400 roboto" style="font-weight: 400;">Narrando el camino más difícil que encontrar pega sin pituto: el crear una empresa de videojuegos chilena</p>
       </div>
     </div>
     </div>
@@ -95,7 +155,7 @@ navbar y titulo
 
 
       <a class="svg-icon text-lg hover:text-gray-300 transition-transform duration-300 ease-in-out transform hover:scale-105 px-4"
-        href="https://github.com/fnavarro-dev" target="_blank" rel="noopener noreferrer">
+        href="https://github.com/francisconavarrof" target="_blank" rel="noopener noreferrer">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" style="width: 1.150rem; height: 1.150rem;">
           <path
             d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3 .3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5 .3-6.2 2.3zm44.2-1.7c-2.9 .7-4.9 2.6-4.6 4.9 .3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3 .7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3 .3 2.9 2.3 3.9 1.6 1 3.6 .7 4.3-.7 .7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3 .7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3 .7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z" />
@@ -113,7 +173,7 @@ navbar y titulo
 
     <!-- Menu Links -->
     <!-- Version Escritorio y Movil-->
-    <nav class="w-full mx-auto max-w-full flex-wrap justify-between items-center py-4  border-white">
+    <nav class="w-full mx-auto max-w-full flex-wrap justify-between items-center pt-4  border-white">
       <!-- Botón visible solo en móvil -->
       <button
         class="flex items-center justify-center w-full px-4 py-2 hover:text-gray-300 transition-transform duration-300 ease-in-out transform  md:hidden"
@@ -127,15 +187,17 @@ navbar y titulo
       <!-- Enlaces del menú -->
       <!-- En móviles se oculta, y en escritorio se muestra -->
       <div class="hidden md:flex w-full justify-center pb-2" id="menu-links">
-        <a class="block text-center text-white hover:text-black px-6 py-4 transition-transform duration-300 ease-in-out transform hover:scale-105 font-bold hover:bg-yellow-100 border-b-4 border-transparent"
-   href="./home.html">Inicio</a>
-        <a class="block text-center text-white hover:text-black px-6 py-4 transition-transform duration-300 ease-in-out transform hover:scale-105 font-bold hover:bg-yellow-100 border-b-4 border-transparent"
-          href="./resume.html">Contacto y CV</a>
-          <a class="block text-center text-white hover:text-black px-6 py-4 transition-transform duration-300 ease-in-out transform hover:scale-105 font-bold hover:bg-yellow-100 border-b-4 border-yellow-100"
+          <a class="block text-center text-white hover:text-black px-6 py-4   
+          font-bold hover:bg-yellow-100 border-b-4 border-transparent"
+          href="./home.html">Inicio</a>
+          <a class="block text-center text-white hover:text-black px-6 py-4   
+          font-bold hover:bg-yellow-100 border-b-4 border-yellow-100"
           href="./projects.html">Proyectos</a>
-          <a class="block text-center text-white hover:text-black px-6 py-4 transition-transform duration-300 ease-in-out transform hover:scale-105 font-bold hover:bg-yellow-100 border-b-4 border-transparent"
-   href="./posts/all.html">Blog</a>
-          <a class="block text-center text-white hover:text-black px-6 py-4 transition-transform duration-300 ease-in-out transform hover:scale-105 font-bold hover:bg-yellow-100 border-b-4 border-transparent"
+          <a class="block text-center text-white hover:text-black px-6 py-4   
+          font-bold hover:bg-yellow-100 border-b-4 border-transparent"
+          href="./posts/all.html">Blog</a>
+          <a class="block text-center text-white hover:text-black px-6 py-4   
+          font-bold hover:bg-yellow-100 border-b-4 border-transparent"
           href="./inspiracion.html">Inspiración</a>
       </div>
     </nav>
@@ -151,73 +213,265 @@ navbar y titulo
 
 
     <!-- ----------------------------------------------------------------
-seccion proyectos 
+PROYECTOS (3 COLUMNAS) 
 ---------------------------------------------------------------- -->
-<main class=" sm:px-16 md:px-24  xl:px-56">
-    <div class="bg-gray-100 container mx-auto mt-8 bg-white text-black">
-      <div class="bg-gray-100 flex justify-between">
-        <div>
+<main class="sm:px-16 md:px-24 xl:px-56">
+  <div class="bg-black container mx-auto mt-8 bg-white text-black">
+    <div class="bg-black flex justify-between">
+      <div class="w-full">
+        <div class="flex flex-wrap mt-4">
           
-          <h2 class="text-3xl font-bold orbitron mb-8 ">
-            PROYECTOS
-          </h2>
-          
-          <div class="flex flex-wrap">
-            <div class="w-full md:w-1/3  mb-8">
-              <!-- Proyecto 1 -->
-              <div>
-                <img alt="imagen landing page de esta pagina web personal" class="object-cover w-full h-[30vh] mb-2"
-                  src="./images/sitiowebpersonal.png" />
-                <h2 class="text-xl mb-2">
-                  Esta mismísima página - 2024
-                </h2>
-                <h1 class="text-3xl font-bold mb-4">
-                  Sitio Web Personal
-                </h1>
-                <p>
-                  HTML - TailwindCSS - CSS - JS
-                </p>
-              </div>
-            </div>
-            <div class="w-full md:w-1/3 px-4 mb-8">
-              <!-- Proyecto 2 -->
-              <div>
-                <img alt="Placeholder image for category" class="object-cover w-full h-[30vh] mb-2"
-                  src="./images/landing_page_TCLC.png" />
-                <h2 class="text-xl mb-2">
-                  En desarrollo - Release Date: 2024
-                </h2>
-                <h1 class="text-3xl font-bold mb-4">
-                  Proyecto Tocata Con Los Cabros
-                </h1>
-                <p>
-                  REACT + Typescript + Tailwind CSS
-                </p>
-              </div>
-            </div>
-            <div class="w-full md:w-1/3 px-4 mb-8">
-              <!-- Proyecto 3 -->
-              <div>
-                <img alt="Placeholder image for category" class="object-cover w-full h-[30vh] mb-2"
-                  src="./images/videogames.png" />
-                <h2 class="text-xl mb-2">
-                  Release Date: 2025
-                </h2>
-                <h1 class="text-3xl font-bold mb-4">
-                  Proyecto Alcohol & Multiplayer
-                </h1>
-                <p>
-                  Proyectos Futuros
-                </p>
+
+
+<!-- ----------------------------------------COLUMNA 1 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ -->          
+          <!-- Columna 1: Desarrollo Web -->
+          <div class="w-full md:w-1/3 px-4 mb-8">
+            <div class="flex flex-col items-center">
+              
+<!-- Contenedor de lista con scroll con estilo premium -->
+<div class="relative rounded-lg w-full h-[30vh] mb-2 bg-black/90 border border-transparent p-[1px] shadow-xl group">
+  <!-- Borde con gradiente animado -->
+  <div class="absolute inset-0 rounded-lg bg-gradient-to-br from-amber-400 via-orange-500 to-rose-500 opacity-70 blur-[1px] transition-all duration-500 group-hover:opacity-100 pointer-events-none"></div>
+  
+  <!-- Contenido interior con scroll -->
+  <div class="relative h-full w-full rounded-lg bg-black/95 p-2 backdrop-blur-sm overflow-y-auto scrollbar-hide">
+    <div class="space-y-2 p-2">
+      
+      <!-- Proyecto 1 -->
+      <div class="flex items-start space-x-4 p-4 rounded-lg hover:bg-gray-700/50 transition-all duration-300">
+        <div class="w-16 h-16 flex-shrink-0 relative">
+        <!-- Icono de completado a "100%" -->
+          <div class="absolute -top-2 -right-2 bg-white rounded-full p-1 shadow-lg">
+            <span class="text-slate-900 text-[8px] font-bold px-1">100%</span>
+          </div>
+          <img src="./images/sitiowebpersonal.png" alt="Portfolio Profesional" class="w-full h-full object-cover rounded-lg"/>
+
+          <!-- Barra de progreso -->
+    <div class="absolute bottom-0 left-0 right-0 h-2 bg-gray-800/80 rounded-b-lg overflow-hidden">
+      <div class="h-full bg-green-500" style="width: 100%;"></div>
+    </div>
+        </div>
+        <div class="flex-1">
+          <span class="text-xs text-gray-400">2025</span>
+          <h3 class="text-sm font-bold mb-2">Portfolio Profesional</h3>
+          <p class="text-gray-300 text-xs">HTML - TailwindCSS - JavaScript</p>
+        </div>
+      </div>
+
+      <!-- Proyecto 2 -->
+      <div class="flex items-start space-x-4 p-4 rounded-lg hover:bg-gray-700/50 transition-all duration-300 cursor-pointer">
+        <div class="w-16 h-16 flex-shrink-0 relative">
+          <!-- Icono de completado -->
+         <!-- Icono de completado a "100%" -->
+         <div class="absolute -top-2 -right-2 bg-white rounded-full p-1 shadow-lg">
+          <span class="text-slate-900 text-[8px] font-bold px-1">15%</span>
+        </div>
+          <img src="./images/landing_page_TCLC.png" alt="Tocata Con Los Cabros" class="w-full h-full object-cover rounded-lg"/>
+                   <!-- Barra de progreso -->
+    <div class="absolute bottom-0 left-0 right-0 h-2 bg-gray-800/80 rounded-b-lg overflow-hidden">
+      <div class="h-full bg-green-500" style="width: 15%;"></div>
+    </div>
+        </div>
+        <div class="flex-1">
+          <span class="text-xs text-gray-400">2025</span>
+          <h3 class="text-sm font-bold mb-2">Tocata Con Los Cabros</h3>
+          <p class="text-gray-300 text-xs">Plataforma para eventos musicales</p>
+        </div>
+      </div>
+      
+      
+      
+      <!-- Proyecto 3 -->
+<!--       <div class="flex items-start space-x-4 p-4 rounded-lg hover:bg-gray-700/50 transition-all duration-300">
+        <div class="w-16 h-16 flex-shrink-0 relative">
+          <div class="absolute -top-2 -right-2 bg-gray-500 rounded-full p-1 shadow-lg">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-white" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"/>
+            </svg>
+          </div>
+          <img src="./images/ecommerce_preview.png" alt="E-commerce Platform" class="w-full h-full object-cover rounded-lg"/>
+        </div>
+        <div class="flex-1">
+          <span class="text-xs text-gray-400">Próximamente</span>
+          <h3 class="text-sm font-bold mb-2">E-commerce Platform</h3>
+          <p class="text-gray-300 text-xs">Next.js - Stripe - MongoDB</p>
+        </div>
+      </div> -->
+
+
+
+
+      
+    </div>
+  </div>
+</div>
+              
+             
+              <h1 class="pt-4 text-2xl font-bold mb-4 text-center">
+                Desarrollo Web
+              </h1>
+              <div class="flex flex-wrap justify-center gap-2 mt-3">
+                <span class="bg-blue-600 text-xs px-2 py-1 rounded">HTML</span>
+                <span class="bg-blue-600 text-xs px-2 py-1 rounded">CSS</span>
+                <span class="bg-blue-600 text-xs px-2 py-1 rounded">JavaScript</span>
+                <span class="bg-blue-600 text-xs px-2 py-1 rounded">React</span>
               </div>
             </div>
           </div>
+          
+          <!-- Columna 2: Desarrollo Mobile -->
+<!-- ----------------------------------------COLUMNA 2 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ -->          
+          <div class="w-full md:w-1/3 px-4 mb-8">
+            <div class="flex flex-col items-center">
+              
+              
+<!-- Contenedor de lista con scroll con estilo premium -->
+<div class="relative rounded-lg w-full h-[30vh] overflow-y-auto mb-2 bg-black/90 border border-transparent p-[1px] shadow-xl group">
+  
+  
+  
+  <!-- Borde con gradiente animado -->
+  <div class="absolute inset-0 rounded-lg bg-gradient-to-br from-rose-500 via-pink-600 to-fuchsia-600 opacity-70 blur-[1px] transition-all duration-500 group-hover:opacity-100"></div>
+  
+
+
+
+  
+  <!-- Contenido interior -->
+  <div class="relative h-full w-full rounded-lg bg-black/95 p-2 backdrop-blur-sm">
+    <div class="p-2 grid grid-cols-3 gap-2">
+     
+     
+      <!-- Proyecto 1 -->
+<!--       <div class="flex flex-col items-center p-2 rounded-lg hover:bg-gray-700/70 cursor-pointer transform transition-all duration-200 hover:scale-[1.05]">
+        <div class="w-14 h-14 bg-blue-600/20 rounded-xl flex items-center justify-center mb-2 relative">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+          </svg>
+          
+          <div class="absolute -top-1 -right-1 bg-black/80 text-white text-[8px] px-1 rounded-full">2%</div>
+      
+          <div class="absolute bottom-0 left-0 right-0 h-2 bg-gray-800/80 rounded-b-xl overflow-hidden">
+            <div class="h-full bg-green-500" style="width: 2%;"></div>
+          </div>
         </div>
+        <p class="font-medium text-xs text-center text-gray-100">Calculadora Sueldo</p>
+      </div> -->
+      
+     
+     
+     
+      <!-- Proyecto 2 -->
+      <div class="flex flex-col items-center p-2 rounded-lg hover:bg-gray-700/70 cursor-pointer transform transition-all duration-200 hover:scale-[1.05]">
+        <div class="w-14 h-14 bg-green-600/20 rounded-xl flex items-center justify-center mb-2 relative">
+          <div class="flex items-center justify-center w-full h-full">
+            <span class="text-5xl">💪</span>
+          </div>
+          
+          <!-- Porcentaje en esquina superior derecha -->
+          <div class="absolute -top-2 -right-2 bg-white rounded-full p-1 shadow-lg">
+            <span class="text-slate-900 text-[8px] font-bold px-1">5%</span>
+          </div>
+          
+          <!-- Barra de progreso -->
+          <div class="absolute bottom-0 left-0 right-0 h-2 bg-gray-800/80 rounded-b-xl overflow-hidden">
+            <div class="h-full bg-green-500" style="width: 5%;"></div>
+          </div>
+        </div>
+        <p class="font-medium text-xs text-center text-gray-100">App de Ejercicio</p>
+      </div>
+      
+      <!-- Proyecto 3 -->
+<!--       <div class="flex flex-col items-center p-2 rounded-lg hover:bg-gray-700/70 cursor-pointer transform transition-all duration-200 hover:scale-[1.05]">
+        <div class="w-14 h-14 bg-purple-600/20 rounded-xl flex items-center justify-center mb-2 relative">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+          </svg>
+          
+          
+          <div class="absolute -top-1 -right-1 bg-black/80 text-white text-[8px] px-1 rounded-full">0%</div>
+          
+          
+          <div class="absolute bottom-0 left-0 right-0 h-2 bg-gray-800/80 rounded-b-xl overflow-hidden">
+            <div class="h-full bg-green-500" style="width: 0%;"></div>
+          </div>
+        </div>
+        <p class="font-medium text-xs text-center text-gray-100">Red Social</p>
+      </div> -->
 
 
+
+
+    </div>
+  </div>
+</div>
+              
+              
+              <h1 class="pt-4 text-2xl font-bold mb-4 text-center">
+                Desarrollo Mobile
+              </h1>
+              <div class="flex flex-wrap justify-center gap-2 mt-3">
+                <span class="bg-blue-600 text-xs px-2 py-1 rounded">Kotlin</span>
+              </div>
+            </div>
+          </div>
+          
+
+
+
+
+<!-- ----------------------------------------COLUMNA 3 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ -->          
+<!-- Columna 3: Videojuegos con borde premium -->
+<div class="w-full md:w-1/3 px-4 mb-8">
+  <div class="flex flex-col items-center">
+    <!-- Contenedor con estilo premium -->
+    <div class="relative rounded-lg w-full h-[30vh] overflow-hidden mb-2 bg-black/90 border border-transparent p-[1px] shadow-xl group">
+      
+      
+      
+      
+      <!-- Borde con gradiente animado -->
+      <div class="absolute inset-0 rounded-lg bg-gradient-to-br from-pink-600 via-fuchsia-500 to-pink-500 opacity-70 blur-[1px] transition-all duration-500 group-hover:opacity-100"></div>      
+
+
+
+
+
+
+      <!-- Contenido interior -->
+      <div class="relative h-full w-full rounded-lg bg-black/95 p-2 backdrop-blur-sm">
+        <!-- Contenedor de imagen con texto superpuesto -->
+        <div class="relative w-full h-full rounded-lg overflow-hidden">
+          <!-- Texto "2027" en esquina superior derecha -->
+          <div class="absolute top-2 right-2 bg-black text-white font-bold text-3xl pl-2 py-1 rounded-md z-20" style="right: 8px !important; left: auto !important;">
+            2027😅
+          </div>
+          
+          <img src="./images/7pecadoscapitales.jpg" alt="7 Pecados Capitales" 
+              class="w-full h-full object-cover opacity-70">
+              
+          <div class="absolute inset-0 flex flex-col items-center justify-center bg-black/40">
+            <p class="text-white font-bold text-lg">Sección en desarrollo</p>
+            <p class="text-gray-200 text-sm text-center w-full">¡Para nada pronto lanzaremos nuestros videojuegos!</p>
+          </div>
+        </div>
       </div>
     </div>
-  </main>
+    
+    <h1 class="pt-4 text-2xl font-bold mb-4 text-center">
+      Videojuegos
+    </h1>
+    <p class="text-center invisible">
+      Unreal Engine - Godot
+    </p>
+  </div>
+</div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
   <!-- ----------------------------------------------------------------
 footer nuevo
 ---------------------------------------------------------------- -->
@@ -226,7 +480,7 @@ footer nuevo
 <footer class="py-8 text-center" style="display: flex; align-items: center; justify-content: center; flex-direction: column;">
   <div style="display: flex; align-items: center; justify-content: center; text-align: center;">
     <div style="display: inline-flex; align-items: center;">
-      <span style="padding-left: 8px;">Navarro Development Blog - 2024</span>
+      <span style="padding-left: 8px;">Blog de un developer chileno - 2025</span>
     </div>
   </div>
 </footer>
