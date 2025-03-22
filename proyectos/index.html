@@ -6,21 +6,21 @@
   <title>
     Navarro Development Blog
   </title>
-  <link rel="icon" href="./images/shibagod.ico" type="image/x-icon">
-  <link rel="shortcut icon" href="./images/shibagod.ico" type="image/x-icon">
+  <link rel="icon" href="../images/shibagod.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="../images/shibagod.ico" type="image/x-icon">
   <!-- Instalar temporalmente Tailwind CSS, hay que compilar al final para mejorar el rendimiento 
   <script src="https://cdn.tailwindcss.com"></script> -->
   <!-- Instalar fuentes e iconos -->
   <!-- <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;fami:wght@700&amp;display=swaprbitron:wght@700&amp;display=swap" rel="stylesheet"/>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/> --> 
   <!-- Instalar Tailwind CSS cocinado para producción (dev o min) -->
-  <link href="./tw_style_dev.css" rel="stylesheet" />
+  <link href="../tw_style_dev.css" rel="stylesheet" />
 <!--   Para cocinar la version dev con comando watch que detcta los cambios mientras desarrollas
   npx tailwindcss -i tw_style_start.css -o tw_style_dev.css --watch
   Para cocinar la version min final para disminuir el tamaño al mínimo
   npx tailwindcss -i tw_style_start.css -o tw_style_min.css --minify -->
   <!-- Instalar CSS clásico para la barra de desplazamiento -->
-  <link href="./estilo_barra.css" rel="stylesheet" />
+  <link href="../estilo_barra.css" rel="stylesheet" />
   
   
   
@@ -28,12 +28,12 @@
   <style>
     @font-face {
       font-family: 'Orbitron';
-      src: url('./fonts/Fira_Code/FiraCode-Bold.ttf') format('truetype');
+      src: url('../fonts/Fira_Code/FiraCode-Bold.ttf') format('truetype');
     }
 
     @font-face {
       font-family: 'Roboto';
-      src: url('./fonts/Fira_Code/FiraCode-Light.ttf') format('truetype');
+      src: url('../fonts/Fira_Code/FiraCode-Light.ttf') format('truetype');
     }
 
     body {
@@ -135,7 +135,7 @@ navbar y titulo
 
     <div class="flex justify-center items-center w-full py-2">
       <div class="text-4xl font-bold orbitron text-center px-4">
-        <a class="hover:text-gray-300" href="./home.html">BLOG DE UN DEVELOPER CHILENO</a>
+        <a class="hover:text-gray-300" href="../home/index.html">BLOG DE UN DEVELOPER CHILENO</a>
         <p class="text-xl text-gray-400 roboto" style="font-weight: 400;">Narrando el camino más difícil que encontrar pega sin pituto: el crear una empresa de videojuegos chilena</p>
       </div>
     </div>
@@ -189,16 +189,16 @@ navbar y titulo
       <div class="hidden md:flex w-full justify-center pb-2" id="menu-links">
           <a class="block text-center text-white hover:text-black px-6 py-4   
           font-bold hover:bg-yellow-100 border-b-4 border-transparent"
-          href="./home.html">Inicio</a>
+          href="../home/index.html">Inicio</a>
           <a class="block text-center text-white hover:text-black px-6 py-4   
           font-bold hover:bg-yellow-100 border-b-4 border-yellow-100"
-          href="./projects.html">Proyectos</a>
+          href="../proyectos/index.html">Proyectos</a>
           <a class="block text-center text-white hover:text-black px-6 py-4   
           font-bold hover:bg-yellow-100 border-b-4 border-transparent"
-          href="./posts/blog.html">Blog</a>
+          href="../posts/all/index.html">Blog</a>
           <a class="block text-center text-white hover:text-black px-6 py-4   
           font-bold hover:bg-yellow-100 border-b-4 border-transparent"
-          href="./inspiracion.html">Inspiración</a>
+          href="../inspiracion/index.html">Inspiración</a>
       </div>
     </nav>
     <script>
@@ -248,7 +248,7 @@ PROYECTOS (3 COLUMNAS)
           <div class="absolute -top-2 -right-2 bg-white rounded-full p-1 shadow-lg">
             <span class="text-slate-900 text-[8px] font-bold px-1">100%</span>
           </div>
-          <img src="./images/sitiowebpersonal.png" alt="Portfolio Profesional" class="w-full h-full object-cover rounded-lg"/>
+          <img src="../images/sitiowebpersonal.png" alt="Portfolio Profesional" class="w-full h-full object-cover rounded-lg"/>
 
           <!-- Barra de progreso -->
     <div class="absolute bottom-0 left-0 right-0 h-2 bg-gray-800/80 rounded-b-lg overflow-hidden">
@@ -270,7 +270,7 @@ PROYECTOS (3 COLUMNAS)
          <div class="absolute -top-2 -right-2 bg-white rounded-full p-1 shadow-lg">
           <span class="text-slate-900 text-[8px] font-bold px-1">15%</span>
         </div>
-          <img src="./images/landing_page_TCLC.png" alt="Tocata Con Los Cabros" class="w-full h-full object-cover rounded-lg"/>
+          <img src="../images/landing_page_TCLC.png" alt="Tocata Con Los Cabros" class="w-full h-full object-cover rounded-lg"/>
                    <!-- Barra de progreso -->
     <div class="absolute bottom-0 left-0 right-0 h-2 bg-gray-800/80 rounded-b-lg overflow-hidden">
       <div class="h-full bg-green-500" style="width: 15%;"></div>
@@ -293,7 +293,7 @@ PROYECTOS (3 COLUMNAS)
               <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"/>
             </svg>
           </div>
-          <img src="./images/ecommerce_preview.png" alt="E-commerce Platform" class="w-full h-full object-cover rounded-lg"/>
+          <img src="../images/ecommerce_preview.png" alt="E-commerce Platform" class="w-full h-full object-cover rounded-lg"/>
         </div>
         <div class="flex-1">
           <span class="text-xs text-gray-400">Próximamente</span>
@@ -454,11 +454,11 @@ PROYECTOS (3 COLUMNAS)
         <!-- Contenedor de imagen con texto superpuesto -->
         <div class="relative w-full h-full rounded-lg overflow-hidden">
           <!-- Texto "2027" en esquina superior derecha -->
-          <div class="absolute top-2 right-2 bg-black text-white font-bold text-3xl pl-2 py-1 rounded-md z-20" style="right: 8px !important; left: auto !important;">
+          <div class="absolute top-2 right-2  text-white font-bold text-3xl pl-2 py-1 rounded-md z-20" style="right: 8px !important; left: auto !important;">
             2027😅
           </div>
           
-          <img src="./images/7pecadoscapitales.jpg" alt="7 Pecados Capitales" 
+          <img src="../images/7pecadoscapitales.jpg" alt="7 Pecados Capitales" 
               class="w-full h-full object-cover opacity-70">
               
           <div class="absolute inset-0 flex flex-col items-center justify-center bg-black/40">

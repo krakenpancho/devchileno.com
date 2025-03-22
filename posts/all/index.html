@@ -3,30 +3,30 @@
     <head>
         <meta charset="utf-8" />
         <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-        <meta property="og:image" content="../images/shibagodmeta.jpg" />
+        <meta property="og:image" content="../../images/shibagodmeta.jpg" />
         <title>
           Blog de un developer chileno
         </title>
         <!-- Favicon retrocompatible con navegadores antiguos -->
-        <link rel="shortcut icon" href="../images/shibagod.ico" type="image/x-icon">
-        <link href="../tw_style_dev.css" rel="stylesheet" />
+        <link rel="shortcut icon" href="../../images/shibagod.ico" type="image/x-icon">
+        <link href="../../tw_style_dev.css" rel="stylesheet" />
         <!-- Tailwind CSS con comando watch que detecta los cambios 
         npx tailwindcss -i tw_style_start.css -o tw_style_dev.css --watch
         Para version min final 
         npx tailwindcss -i tw_style_start.css -o tw_style_min.css --minify -->
         <!-- Instalar CSS clásico para la barra de desplazamiento -->
-        <link href="../estilo_barra.css" rel="stylesheet" />
+        <link href="../../estilo_barra.css" rel="stylesheet" />
         
         <!-- Archivo CSS -->
   <style>
     @font-face {
       font-family: 'Orbitron';
-      src: url('../fonts/Fira_Code/FiraCode-Bold.ttf') format('truetype');
+      src: url('../../fonts/Fira_Code/FiraCode-Bold.ttf') format('truetype');
     }
 
     @font-face {
       font-family: 'Roboto';
-      src: url('../fonts/Fira_Code/FiraCode-Light.ttf') format('truetype');
+      src: url('../../fonts/Fira_Code/FiraCode-Light.ttf') format('truetype');
     }
 
     body {
@@ -117,7 +117,7 @@ navbar y titulo
 
     <div class="flex justify-center items-center w-full py-2">
       <div class="text-4xl font-bold orbitron text-center px-4">
-        <a class="hover:text-gray-300" href="./home.html">BLOG DE UN DEVELOPER CHILENO</a>
+        <a class="hover:text-gray-300" href="../../home/index.html">BLOG DE UN DEVELOPER CHILENO</a>
         <p class="text-xl text-gray-400 roboto" style="font-weight: 400;">Narrando el camino más difícil que encontrar pega sin pituto: el crear una empresa de videojuegos chilena</p>
       </div>
     </div>
@@ -169,18 +169,14 @@ navbar y titulo
       <!-- Enlaces del menú -->
       <!-- En móviles se oculta, y en escritorio se muestra -->
       <div class="hidden md:flex w-full justify-center pb-2" id="menu-links">
-        <a class="block text-center text-white hover:text-black px-6 py-4   font-bold hover:bg-yellow-100 border-b-4 border-transparent"
-   href="../home.html">Inicio</a>
-       
-   <!-- <a class="block text-center text-white hover:text-black px-6 py-4   font-bold hover:bg-yellow-100 border-b-4 border-transparent"
-          href="./resume.html">Contacto y CV</a> -->
-          
           <a class="block text-center text-white hover:text-black px-6 py-4   font-bold hover:bg-yellow-100 border-b-4 border-transparent"
-          href="../projects.html">Proyectos</a>
+          href="../../home/index.html">Inicio</a>
+          <a class="block text-center text-white hover:text-black px-6 py-4   font-bold hover:bg-yellow-100 border-b-4 border-transparent"
+          href="../../proyectos/index.html">Proyectos</a>
           <a class="block text-center text-white hover:text-black px-6 py-4   font-bold hover:bg-yellow-100 border-b-4 border-yellow-100"
-   href="./posts/all.html">Blog</a>
+          href="../../posts/all/index.html">Blog</a>
           <a class="block text-center text-white hover:text-black px-6 py-4   font-bold hover:bg-yellow-100 border-b-4 border-transparent"
-          href="../inspiracion.html">Inspiración</a>
+          href="../../inspiracion/index.html">Inspiración</a>
       </div>
     </nav>
     <script>

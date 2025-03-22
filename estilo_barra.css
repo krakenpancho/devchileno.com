@@ -1,6 +1,7 @@
 /* Desplazamiento suave */
 html {
   scroll-behavior: smooth;
+  overflow-y: scroll;
 }
 
 /* Media Query para aplicar estilos solo en desktop */

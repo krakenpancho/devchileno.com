@@ -8,25 +8,25 @@
     Blog de un developer chileno
   </title>
   <!-- Favicon retrocompatible con navegadores antiguos -->
-  <link rel="shortcut icon" href="./images/shibagod.ico" type="image/x-icon">
-  <link href="./tw_style_dev.css" rel="stylesheet" />
+  <link rel="shortcut icon" href="../images/shibagod.ico" type="image/x-icon">
+  <link href="../tw_style_dev.css" rel="stylesheet" />
   <!-- Tailwind CSS con comando watch que detecta los cambios 
   npx tailwindcss -i tw_style_start.css -o tw_style_dev.css --watch
   Para version min final 
   npx tailwindcss -i tw_style_start.css -o tw_style_min.css --minify -->
   <!-- Instalar CSS clásico para la barra de desplazamiento -->
-  <link href="./estilo_barra.css" rel="stylesheet" />
+  <link href="../estilo_barra.css" rel="stylesheet" />
   
   <!-- Archivo CSS -->
   <style>
     @font-face {
       font-family: 'Orbitron';
-      src: url('./fonts/Fira_Code/FiraCode-Bold.ttf') format('truetype');
+      src: url('../fonts/Fira_Code/FiraCode-Bold.ttf') format('truetype');
     }
 
     @font-face {
       font-family: 'Roboto';
-      src: url('./fonts/Fira_Code/FiraCode-Light.ttf') format('truetype');
+      src: url('../fonts/Fira_Code/FiraCode-Light.ttf') format('truetype');
     }
 
     body {
@@ -117,7 +117,7 @@ navbar y titulo
 
     <div class="flex justify-center items-center w-full py-2">
       <div class="text-4xl font-bold orbitron text-center px-4">
-        <a class="hover:text-gray-300" href="./home.html">BLOG DE UN DEVELOPER CHILENO</a>
+        <a class="hover:text-gray-300" href="../home/index.html">BLOG DE UN DEVELOPER CHILENO</a>
         <p class="text-xl text-gray-400 roboto" style="font-weight: 400;">Narrando el camino más difícil que encontrar pega sin pituto: el crear una empresa de videojuegos chilena</p>
       </div>
     </div>
@@ -202,18 +202,14 @@ navbar y titulo
       <!-- Enlaces del menú -->
       <!-- En móviles se oculta, y en escritorio se muestra -->
       <div class="hidden md:flex w-full justify-center pb-2" id="menu-links">
-        <a class="block text-center text-white hover:text-black px-6 py-4   font-bold hover:bg-yellow-100 border-b-4 border-yellow-100"
-   href="./home.html">Inicio</a>
-       
-   <!-- <a class="block text-center text-white hover:text-black px-6 py-4   font-bold hover:bg-yellow-100 border-b-4 border-transparent"
-          href="./resume.html">Contacto y CV</a> -->
-          
+          <a class="block text-center text-white hover:text-black px-6 py-4   font-bold hover:bg-yellow-100 border-b-4 border-yellow-100"
+          href="../home/index.html">Inicio</a>
           <a class="block text-center text-white hover:text-black px-6 py-4   font-bold hover:bg-yellow-100 border-b-4 border-transparent"
-          href="./projects.html">Proyectos</a>
+          href="../proyectos/index.html">Proyectos</a>
           <a class="block text-center text-white hover:text-black px-6 py-4   font-bold hover:bg-yellow-100 border-b-4 border-transparent"
-   href="./posts/blog.html">Blog</a>
+          href="../posts/all/index.html">Blog</a>
           <a class="block text-center text-white hover:text-black px-6 py-4   font-bold hover:bg-yellow-100 border-b-4 border-transparent"
-          href="./inspiracion.html">Inspiración</a>
+          href="../inspiracion/index.html">Inspiración</a>
       </div>
     </nav>
     <script>
@@ -249,7 +245,7 @@ main body
         
         <div class="rounded-full overflow-hidden mb-4 border-2 border-white-400">
           <div class="h-20 w-20">
-          <img src="./images/foto perfil yeah.jpg" 
+          <img src="../images/foto perfil yeah.jpg" 
                alt="Foto de perfil" 
                class=" object-cover"
           />
@@ -305,7 +301,7 @@ main body
       <!---->
       <div class="flex px-4 flex-wrap   justify-between">
         <div class="sm:w-full  lg:w-full  pr-0  lg:px-0">
-          <a href="./projects.html">
+          <a href="../proyectos/index.html">
             <h2 class="text-3xl font-bold orbitron mb-8 pl-2">
               PROYECTOS
             </h2>
@@ -331,7 +327,7 @@ main body
                     <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
                   </svg>
                 </div>
-                <img src="./images/sitiowebpersonal.png" alt="Sitio Web Personal" class="w-full h-full object-cover rounded-lg"/>
+                <img src="../images/sitiowebpersonal.png" alt="Sitio Web Personal" class="w-full h-full object-cover rounded-lg"/>
               </div>
         <div class="flex-1">
           <span class="text-sm text-gray-400">2024</span>
@@ -367,7 +363,7 @@ main body
                 <path class="opacity-75" fill="black" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"/>
               </svg>
             </div>
-            <img src="./images/landing_page_TCLC.png" alt="TCLC" class="w-full h-full object-cover rounded-lg"/>
+            <img src="../images/landing_page_TCLC.png" alt="TCLC" class="w-full h-full object-cover rounded-lg"/>
           </div>
         <div class="flex-1">
           <span class="text-sm text-gray-400">Desarrollo</span>
@@ -410,7 +406,7 @@ main body
       function addReloadIcon(container) {
     // Primero, se agrega un contenedor para la imagen de fondo y el SVG.
     container.innerHTML = `<div style="position: relative; display: flex; justify-content: center; align-items: center; height: 100%; width: 100%;">
-        <img src="./images/loader1.jpg" alt="Fondo" style="position: absolute; width: 100%; height: 100%; object-fit: cover; z-index: -1;">
+        <img src="../images/loader1.jpg" alt="Fondo" style="position: absolute; width: 100%; height: 100%; object-fit: cover; z-index: -1;">
         <svg id="reloadWidgetIcon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="50" height="50" style="cursor: pointer; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 1;"><path d="M463.5 224H472c13.3 0 24-10.7 24-24V72c0-9.7-5.8-18.5-14.8-22.2s-19.3-1.7-26.2 5.2L413.4 96.6c-87.6-86.5-228.7-86.2-315.8 1c-87.5 87.5-87.5 229.3 0 316.8s229.3 87.5 316.8 0c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0c-62.5 62.5-163.8 62.5-226.3 0s-62.5-163.8 0-226.3c62.2-62.2 162.7-62.5 225.3-1L327 183c-6.9 6.9-8.9 17.2-5.2 26.2s12.5 14.8 22.2 14.8H463.5z"/></svg>
     </div>`;
     // Se añade el evento para recargar la página al hacer clic en el SVG.
@@ -430,7 +426,7 @@ main body
       
       <div class="sm:block  lg:block pb-8">
         <div class="bg-gray-100 w-full h-20" style="box-shadow: 0 8px 8px -4px black, 0 -8px 8px -4px black;">
-          <img src="./images/matrix_big.gif" class="object-cover w-full h-full"/>
+          <img src="../images/matrix_big.gif" class="object-cover w-full h-full"/>
         </div>
       </div>
 
@@ -441,10 +437,10 @@ main body
 
         
           <!-- Card Blog 1 -->
-          <a href="./posts/blog.html" class="block hover:no-underline space-y-4">
+          <a href="../posts/all/index.html" class="block hover:no-underline space-y-4">
           <div class="flex items-start space-x-4 p-4 rounded-lg hover:bg-gray-700/50 transition-all duration-300 cursor-pointer">
             <div class="w-16 h-16 flex-shrink-0">
-              <img src="./images/shibagodmeta.jpg" alt="Blog post" class="w-full h-full object-cover rounded-lg"/>
+              <img src="../images/shibagodmeta.jpg" alt="Blog post" class="w-full h-full object-cover rounded-lg"/>
             </div>
             <div class="flex-1">
               <span class="text-sm text-gray-400">21/03/2025</span>
@@ -456,7 +452,7 @@ main body
           <!-- Card Blog 2 -->
 <!--           <div class="flex items-start space-x-4 p-4 rounded-lg hover:bg-gray-700/50 transition-all duration-300">
             <div class="w-16 h-16 flex-shrink-0">
-              <img src="./images/computer-notebook-2.png" alt="Blog post" class="w-full h-full object-cover rounded-lg"/>
+              <img src="../images/computer-notebook-2.png" alt="Blog post" class="w-full h-full object-cover rounded-lg"/>
             </div>
             <div class="flex-1">
               <span class="text-sm text-gray-400">Febrero/2025</span>

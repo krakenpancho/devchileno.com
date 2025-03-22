@@ -6,21 +6,21 @@
   <title>
     Navarro Development Blog
   </title>
-  <link rel="icon" href="./images/shibagod.ico" type="image/x-icon">
-  <link rel="shortcut icon" href="./images/shibagod.ico" type="image/x-icon">
+  <link rel="icon" href="../images/shibagod.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="../images/shibagod.ico" type="image/x-icon">
   <!-- Instalar temporalmente Tailwind CSS, hay que compilar al final para mejorar el rendimiento 
   <script src="https://cdn.tailwindcss.com"></script> -->
   <!-- Instalar fuentes e iconos -->
   <!-- <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;fami:wght@700&amp;display=swaprbitron:wght@700&amp;display=swap" rel="stylesheet"/>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/> -->
   <!-- Instalar Tailwind CSS cocinado para producción (dev o min) -->
-  <link href="./tw_style_dev.css" rel="stylesheet" />
+  <link href="../tw_style_dev.css" rel="stylesheet" />
   <!--   Para cocinar la version dev con comando watch que detcta los cambios mientras desarrollas
   npx tailwindcss -i tw_style_start.css -o tw_style_dev.css --watch
   Para cocinar la version min final para disminuir el tamaño al mínimo
   npx tailwindcss -i tw_style_start.css -o tw_style_min.css --minify -->
   <!-- Instalar CSS clásico para la barra de desplazamiento -->
-  <link href="./estilo_barra.css" rel="stylesheet" />
+  <link href="../estilo_barra.css" rel="stylesheet" />
   
   
   
@@ -30,12 +30,12 @@
 <style>
   @font-face {
     font-family: 'Orbitron';
-    src: url('./fonts/Fira_Code/FiraCode-Bold.ttf') format('truetype');
+    src: url('../fonts/Fira_Code/FiraCode-Bold.ttf') format('truetype');
   }
 
   @font-face {
     font-family: 'Roboto';
-    src: url('./fonts/Fira_Code/FiraCode-Light.ttf') format('truetype');
+    src: url('../fonts/Fira_Code/FiraCode-Light.ttf') format('truetype');
   }
 
   body {
@@ -126,7 +126,7 @@ navbar y titulo
 
   <div class="flex justify-center items-center w-full py-2">
     <div class="text-4xl font-bold orbitron text-center px-4">
-      <a class="hover:text-gray-300" href="./home.html">BLOG DE UN DEVELOPER CHILENO</a>
+      <a class="hover:text-gray-300" href="../home/index.html">BLOG DE UN DEVELOPER CHILENO</a>
       <p class="text-xl text-gray-400 roboto" style="font-weight: 400;">Narrando el camino más difícil que encontrar pega sin pituto: el crear una empresa de videojuegos chilena</p>
     </div>
   </div>
@@ -178,18 +178,14 @@ navbar y titulo
     <!-- Enlaces del menú -->
     <!-- En móviles se oculta, y en escritorio se muestra -->
     <div class="hidden md:flex w-full justify-center pb-2" id="menu-links">
-      <a class="block text-center text-white hover:text-black px-6 py-4   font-bold hover:bg-yellow-100 border-b-4 border-transparent"
- href="./home.html">Inicio</a>
-     
- <!-- <a class="block text-center text-white hover:text-black px-6 py-4   font-bold hover:bg-yellow-100 border-b-4 border-transparent"
-        href="./resume.html">Contacto y CV</a> -->
-        
         <a class="block text-center text-white hover:text-black px-6 py-4   font-bold hover:bg-yellow-100 border-b-4 border-transparent"
-        href="./projects.html">Proyectos</a>
+        href="../home/index.html">Inicio</a>
         <a class="block text-center text-white hover:text-black px-6 py-4   font-bold hover:bg-yellow-100 border-b-4 border-transparent"
- href="./posts/blog.html">Blog</a>
+        href="../proyectos/index.html">Proyectos</a>
+        <a class="block text-center text-white hover:text-black px-6 py-4   font-bold hover:bg-yellow-100 border-b-4 border-transparent"
+        href="../posts/all/index.html">Blog</a>
         <a class="block text-center text-white hover:text-black px-6 py-4   font-bold hover:bg-yellow-100 border-b-4 border-yellow-100"
-        href="./inspiracion.html">Inspiración</a>
+        href="../inspiracion/index.html">Inspiración</a>
     </div>
   </nav>
   <script>
@@ -217,7 +213,7 @@ navbar y titulo
 <img 
   alt="Probé el mejor videojuego CHILENO" 
   class="rounded-lg w-full h-48 object-cover transition-transform duration-500 group-hover:scale-105" 
-  src="./images/mejorvideojuegochileno.jpg"
+  src="../images/mejorvideojuegochileno.jpg"
   onerror="this.onerror=null; this.src='https://i.ytimg.com/vi/h1C28_e3qQ8/maxresdefault.jpg'; this.alt='Probé el mejor videojuego CHILENO';"
 />
                 <!-- Overlay con ícono de reproducción -->
