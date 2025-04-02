@@ -1,2 +1,0 @@
-http://fnavarro.dev.s3-website-sa-east-1.amazonaws.com
-endpoint de amazon
