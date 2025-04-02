@@ -1,0 +1,524 @@
+<html lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>
+    Navarro Development Blog
+  </title>
+  <link rel="icon" href="../../images/shibagod.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="../../images/shibagod.ico" type="image/x-icon">
+  <!-- Instalar temporalmente Tailwind CSS, hay que compilar al final para mejorar el rendimiento 
+  <script src="https://cdn.tailwindcss.com"></script> -->
+  <!-- Instalar fuentes e iconos -->
+  <!-- <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;fami:wght@700&amp;display=swaprbitron:wght@700&amp;display=swap" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/> --> 
+  <!-- Instalar Tailwind CSS cocinado para producción (dev o min) -->
+  <link href="../../tw_style_dev.css" rel="stylesheet" />
+<!--   Para cocinar la version dev con comando watch que detcta los cambios mientras desarrollas
+  npx tailwindcss -i tw_style_start.css -o tw_style_dev.css --watch
+  Para cocinar la version min final para disminuir el tamaño al mínimo
+  npx tailwindcss -i tw_style_start.css -o tw_style_min.css --minify -->
+  <!-- Instalar CSS clásico para la barra de desplazamiento -->
+  <link href="../../estilo_barra.css" rel="stylesheet" />
+  
+  
+  
+  <!-- Archivo CSS -->
+  <style>
+    @font-face {
+      font-family: 'Orbitron';
+      src: url('../../fonts/Fira_Code/FiraCode-Bold.ttf') format('truetype');
+    }
+
+    @font-face {
+      font-family: 'Roboto';
+      src: url('../../fonts/Fira_Code/FiraCode-Light.ttf') format('truetype');
+    }
+
+    body {
+
+      margin: 0 !important;
+      padding: 0 !important;
+
+      font-family: 'Roboto', sans-serif;
+      letter-spacing: 0.05em;
+    }
+
+    .orbitron {
+      font-family: 'Orbitron', sans-serif;
+    }
+
+    .roboto {
+    font-family: 'Roboto', sans-serif;
+}
+
+    /* clases para el color de los iconos, tailwind css no afecta a propiedades fill de un svg, funciona mejor con texto */
+    .svg-icon svg {
+      fill: white;
+      /* Color inicial */
+    }
+
+    .svg-icon:hover svg {
+      fill: #bec1c4;
+      /* Color al hacer hover, usando el color 'gray-500' de Tailwind como ejemplo */
+    }
+
+    .border-transparent {
+    border-color: transparent !important;
+}
+
+
+/* Ocultar scrollbar con la clase scrollbar-hide */
+.scrollbar-hide {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;     /* Firefox */
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;             /* Chrome, Safari y Opera */
+  }
+    
+/* Nuevo modo oscuro  */
+    body {
+    background-color: #000000 !important; /* bg-gray-900 */
+    color: #F3F4F6 !important; /* text-gray-100 */
+  }
+
+  .bg-gray-100 {
+    background-color: #1F2937 !important; /* bg-gray-100 */
+  }
+
+  .bg-gray-800 {
+    background-color: #000000 !important; /* bg-gray-800 */
+  }
+
+  .bg-black {
+    background-color: #000000 !important; /* bg-gray-900 */
+  }
+
+  .text-black {
+    color: #F3F4F6 !important; /* text-gray-100 */
+  }
+
+  .hover\:text-black:hover {
+    color: #111827 !important;
+  }
+
+  .hover\:bg-yellow-100:hover {
+    background-color: #FCD34D !important; /* bg-yellow-300 */
+  }
+
+  /* Ajuste de sombras */
+  .shadow-sm, .shadow-2xl {
+    box-shadow: 0 1px 3px 0 rgba(255, 255, 255, 0.1), 
+                0 1px 2px 0 rgba(255, 255, 255, 0.06) !important;
+  }
+
+  /* Ajuste para los reproductores */
+  #playerMobile, #playerDesktop, #soundCloudPlayerContainerMobile, #soundCloudPlayerContainerDesktop {
+    box-shadow: 0 8px 8px -4px rgba(255, 255, 255, 0.1), 
+                0 -8px 8px -4px rgba(255, 255, 255, 0.1) !important;
+  }
+
+  </style>
+</head>
+
+
+<!-- ----------------------------------------------------------------
+navbar y titulo
+---------------------------------------------------------------- -->
+
+
+<body data-instant-intensity="viewport" class="bg-gray-900 text-gray-100 min-h-screen">
+  <header class="bg-black text-white  border-gray-800">
+
+    <div class="flex justify-center items-center w-full py-2">
+      <div class="text-4xl font-bold orbitron text-center px-4">
+        <a class="hover:text-gray-300" href="../../home/index.html">BLOG DE UN DEVELOPER CHILENO</a>
+        <p class="text-xl text-gray-400 roboto" style="font-weight: 400;">Narrando el camino más difícil que encontrar pega sin pituto: el crear una empresa de videojuegos chilena</p>
+      </div>
+    </div>
+    </div>
+
+
+
+    <!-- Iconos sociales -->
+    <div class="flex justify-center items-center w-full">
+      <a class="svg-icon text-lg hover:text-gray-300 transition-transform duration-300 ease-in-out transform hover:scale-105 px-4"
+        href="https://www.linkedin.com/in/francisconavarroflores/" target="_blank" rel="noopener noreferrer">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" style="width: 1.150rem; height: 1.150rem;">
+          <path
+            d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z" />
+        </svg>
+      </a>
+
+
+      <a class="svg-icon text-lg hover:text-gray-300 transition-transform duration-300 ease-in-out transform hover:scale-105 px-4"
+        href="https://github.com/francisconavarrof" target="_blank" rel="noopener noreferrer">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" style="width: 1.150rem; height: 1.150rem;">
+          <path
+            d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3 .3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5 .3-6.2 2.3zm44.2-1.7c-2.9 .7-4.9 2.6-4.6 4.9 .3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3 .7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3 .3 2.9 2.3 3.9 1.6 1 3.6 .7 4.3-.7 .7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3 .7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3 .7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z" />
+        </svg>
+      </a>
+
+      <a class="svg-icon text-lg hover:text-gray-300 transition-transform duration-300 ease-in-out transform hover:scale-105 px-4"
+        href="mailto:francisconavarroflores@gmail.com">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" style="width: 1.150rem; height: 1.150rem;">
+          <path
+            d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48H48zM0 176V384c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V176L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z" />
+        </svg>
+      </a>
+    </div>
+
+    <!-- Menu Links -->
+    <!-- Version Escritorio y Movil-->
+    <nav class="w-full mx-auto max-w-full flex-wrap justify-between items-center pt-4  border-white">
+      <!-- Botón visible solo en móvil -->
+      <button
+        class="flex items-center justify-center w-full px-4 py-2 hover:text-gray-300 transition-transform duration-300 ease-in-out transform  md:hidden"
+        id="menu-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+          style="width: 1.150rem; height: 1.150rem;">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+
+      <!-- Enlaces del menú -->
+      <!-- En móviles se oculta, y en escritorio se muestra -->
+      <div class="hidden md:flex w-full justify-center pb-2" id="menu-links">
+          <a class="block text-center text-white hover:text-black px-6 py-4   
+          font-bold hover:bg-yellow-100 border-b-4 border-transparent"
+          href="../../home/">Inicio</a>
+          <a class="block text-center text-white hover:text-black px-6 py-4   
+          font-bold hover:bg-yellow-100 border-b-4 border-yellow-100"
+          href="../../proyectos/">Proyectos</a>
+          <a class="block text-center text-white hover:text-black px-6 py-4   
+          font-bold hover:bg-yellow-100 border-b-4 border-transparent"
+          href="../../posts/all/">Blog</a>
+          <a class="block text-center text-white hover:text-black px-6 py-4   
+          font-bold hover:bg-yellow-100 border-b-4 border-transparent"
+          href="../../inspiracion/">Inspiración</a>
+      </div>
+    </nav>
+    <script>
+      document.getElementById('menu-btn').addEventListener('click', function () {
+        document.getElementById('menu-links').classList.toggle('hidden');
+      });
+    </script>
+
+
+
+  </header>
+
+
+<!-- ----------------------------------------------------------------
+PROYECTO DESTACADO (PORTAFOLIO PERSONAL) 
+---------------------------------------------------------------- -->
+<main class="container mx-auto px-4 sm:px-6 lg:px-8 mt-8 mb-16">
+    <!-- Encabezado de la sección -->
+    <div class="text-center mb-12">
+      <h1 class="text-3xl md:text-4xl font-bold mb-4 orbitron">PORTAFOLIO PERSONAL</h1>
+<!--       <div class="w-24 h-1 bg-gradient-to-r from-purple-600 via-fuchsia-500 to-rose-400 mx-auto"></div>
+ -->    </div>
+  
+    <!-- Contenedor del proyecto con efecto de cristal -->
+    <div class="max-w-5xl mx-auto relative">
+      <!-- Borde con gradiente animado -->
+<!--       <div class="absolute inset-0 rounded-2xl bg-gradient-to-br from-purple-600 via-fuchsia-500 to-rose-400 opacity-70 blur-[2px] transition-all duration-500 group-hover:opacity-100 pointer-events-none"></div>      
+ -->      <!-- Contenido principal -->
+      <div class="relative p-1 rounded-2xl">
+        <div class="bg-black/90 rounded-2xl overflow-hidden">
+          
+          <!-- Vista escritorio -->
+<div class="hidden md:block">
+    <div class="flex">
+      <!-- Columna izquierda: Galería de imágenes -->
+      <div class="w-1/2 p-4">
+        <div class="grid grid-cols-2 gap-3 bg-gray-900/50 rounded-xl p-4">
+          <div class="aspect-video overflow-hidden rounded-lg shadow-lg">
+            <img src="../../images/sitiowebpersonal.png" alt="Portfolio Personal" class="w-full h-full object-cover"/>
+          </div>
+          <div class="aspect-video overflow-hidden rounded-lg shadow-lg">
+            <img src="../../images/wordpress-version.jpg" alt="Versión WordPress" class="w-full h-full object-cover"/>
+          </div>
+          <div class="aspect-video overflow-hidden rounded-lg shadow-lg">
+            <img src="../../images/aws-version.jpg" alt="Versión AWS" class="w-full h-full object-cover"/>
+          </div>
+          <div class="aspect-video overflow-hidden rounded-lg shadow-lg">
+            <img src="../../images/github-version.jpg" alt="Versión GitHub Pages" class="w-full h-full object-cover"/>
+          </div>
+        </div>
+        
+        <!-- Botón Ver Evolución -->
+        <div class="mt-3 flex justify-center">
+          <button onclick="toggleAccordion('desktop-timeline')" 
+                  class="flex items-center gap-2 bg-gradient-to-r from-purple-600 to-fuchsia-500 text-white font-bold py-2 px-5 rounded-md transform hover:scale-105 transition-all duration-300 shadow-lg">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 5l7 7-7 7M5 5l7 7-7 7" />
+            </svg>
+            Ver Evolución
+          </button>
+        </div>
+      </div>
+      
+      <!-- Columna derecha: Información del proyecto -->
+      <div class="w-1/2 p-6">
+        <div class="flex items-center justify-between mb-4">
+          <span class="text-sm text-gray-400">PROYECTO PERSONAL • 2025</span>
+          <div class="bg-white rounded-full p-1 shadow-lg">
+            <span class="text-slate-900 text-xs font-bold px-2">100% COMPLETADO</span>
+          </div>
+        </div>
+        
+        <h2 class="text-2xl font-bold mb-4">Portfolio Personal</h2>
+        
+        <p class="text-gray-300 mb-6 text-sm">
+          Mi primera creación digital pueh, armada con la santa trinidad de la programación: HTML, CSS y JavaScript. Como todo principiante con aspiraciones, me lancé a hacer mi portafolio más pulento que asado dominguero.
+          Le puse un diseño que se adapta a cualquier pantalla (¡hasta en el celular de una abuela se ve la raja!), con animaciones sutiles que no marean pero impresionan, y una navegación más intuitiva.
+        </p>
+        
+        <div class="space-y-3">
+          <div>
+            <h3 class="text-sm font-bold mb-2 text-gray-400">TECNOLOGÍAS UTILIZADAS</h3>
+            <div class="flex flex-wrap gap-2">
+              <span class="bg-blue-600/20 text-blue-400 text-xs px-3 py-1 rounded-full border border-blue-600/30">HTML5</span>
+              <span class="bg-blue-600/20 text-blue-400 text-xs px-3 py-1 rounded-full border border-blue-600/30">TailwindCSS</span>
+              <span class="bg-blue-600/20 text-blue-400 text-xs px-3 py-1 rounded-full border border-blue-600/30">JavaScript</span>
+            </div>
+          </div>
+          
+          <div>
+            <h3 class="text-sm font-bold mb-2 text-gray-400">CARACTERÍSTICAS DESTACADAS</h3>
+            <ul class="text-gray-300 space-y-1 text-sm">
+              <li class="flex items-start">
+                <svg class="h-5 w-5 text-green-500 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                Diseño totalmente responsive
+              </li>
+              <li class="flex items-start">
+                <svg class="h-5 w-5 text-green-500 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                Optimizado para SEO
+              </li>
+              <li class="flex items-start">
+                <svg class="h-5 w-5 text-green-500 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                Animaciones fluidas y transiciones
+              </li>
+            </ul>
+          </div>
+        </div>
+        
+        <!-- Barra de progreso compacta -->
+        <div class="mt-4">
+          <div class="flex justify-between text-xs mb-1">
+            <span>Progreso</span>
+            <span>100%</span>
+          </div>
+          <div class="w-full h-2.5 bg-gray-800/80 rounded-full overflow-hidden">
+            <div class="h-full bg-gradient-to-r from-green-500 to-emerald-400" style="width: 100%;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Timeline compacto que aparece/desaparece debajo -->
+    <div id="desktop-timeline" class="px-4 py-4 mt-2 mb-4 hidden overflow-hidden transition-all duration-500 ease-in-out bg-gray-900/30 rounded-b-xl">
+      <h3 class="text-sm font-bold mb-3 text-gray-400">HISTORIA DEL PROYECTO</h3>
+      
+      <div class="flex space-x-4">
+        <!-- Etapa 1 -->
+        <div class="w-1/4 p-2 bg-gray-900/40 rounded-lg border border-gray-800">
+          <div class="flex items-center mb-1">
+            <div class="h-3 w-3 rounded-full bg-amber-500 mr-2"></div>
+            <h4 class="text-xs font-semibold">La idea inicial</h4>
+          </div>
+          <span class="text-[10px] text-gray-500 block mb-1">Dic 2024</span>
+          <p class="text-[10px] text-gray-400">Si soy informático y no tengo página web, estoy más perdido que Wally en una convención de camisetas a rayas.</p>
+        </div>
+        
+        <!-- Etapa 2 -->
+        <div class="w-1/4 p-2 bg-gray-900/40 rounded-lg border border-gray-800">
+          <div class="flex items-center mb-1">
+            <div class="h-3 w-3 rounded-full bg-orange-500 mr-2"></div>
+            <h4 class="text-xs font-semibold">WordPress</h4>
+          </div>
+          <span class="text-[10px] text-gray-500 block mb-1">Ene 2025</span>
+          <p class="text-[10px] text-gray-400">Primera versión implementada en WordPress utilizando un tema personalizado.</p>
+        </div>
+        
+        <!-- Etapa 3 -->
+        <div class="w-1/4 p-2 bg-gray-900/40 rounded-lg border border-gray-800">
+          <div class="flex items-center mb-1">
+            <div class="h-3 w-3 rounded-full bg-rose-500 mr-2"></div>
+            <h4 class="text-xs font-semibold">Migración a AWS</h4>
+          </div>
+          <span class="text-[10px] text-gray-500 block mb-1">Mar 2025</span>
+          <p class="text-[10px] text-gray-400">Reconstrucción completa con HTML/CSS/JS y despliegue en Amazon S3.</p>
+        </div>
+        
+        <!-- Etapa 4 -->
+        <div class="w-1/4 p-2 bg-gray-900/40 rounded-lg border border-gray-800">
+          <div class="flex items-center mb-1">
+            <div class="h-3 w-3 rounded-full bg-green-500 mr-2"></div>
+            <h4 class="text-xs font-semibold">GitHub Pages</h4>
+          </div>
+          <span class="text-[10px] text-gray-500 block mb-1">Abr 2025</span>
+          <p class="text-[10px] text-gray-400">Rediseño con TailwindCSS e implementación de CI/CD con GitHub Actions.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+          
+          <!-- Vista móvil -->
+          <div class="block md:hidden">
+            <!-- Cabecera con imagen -->
+            <div class="relative">
+              <img src="../../images/sitiowebpersonal.png" alt="Portfolio Personal" class="w-full h-48 object-cover"/>
+              <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent">
+                <div class="absolute bottom-4 left-4 right-4 flex justify-between items-end">
+                  <h2 class="text-xl font-bold text-white">Portfolio Personal</h2>
+                  <div class="bg-white rounded-full p-1 shadow-lg">
+                    <span class="text-slate-900 text-[10px] font-bold px-1.5">100%</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Información del proyecto -->
+            <div class="p-4">
+              <span class="text-xs text-gray-400 block mb-3">PROYECTO PERSONAL • 2025</span>
+              
+              <p class="text-gray-300 text-sm mb-4">
+                Mi portafolio profesional, diseñado y desarrollado desde cero usando tecnologías web modernas. Implementé un diseño responsivo con animaciones sutiles.
+              </p>
+              
+              <div class="space-y-4 mb-4">
+                <div>
+                  <h3 class="text-xs font-bold mb-2 text-gray-400">TECNOLOGÍAS</h3>
+                  <div class="flex flex-wrap gap-1.5">
+                    <span class="bg-blue-600/20 text-blue-400 text-xs px-2.5 py-0.5 rounded-full border border-blue-600/30">HTML5</span>
+                    <span class="bg-blue-600/20 text-blue-400 text-xs px-2.5 py-0.5 rounded-full border border-blue-600/30">TailwindCSS</span>
+                    <span class="bg-blue-600/20 text-blue-400 text-xs px-2.5 py-0.5 rounded-full border border-blue-600/30">JavaScript</span>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Barra de progreso y botón -->
+              <div class="mt-4">
+                <div class="flex justify-between text-xs mb-1">
+                  <span>Progreso</span>
+                  <span>100%</span>
+                </div>
+                <div class="w-full h-2.5 bg-gray-800/80 rounded-full overflow-hidden mb-4">
+                  <div class="h-full bg-gradient-to-r from-green-500 to-emerald-400" style="width: 100%;"></div>
+                </div>
+                
+                <button onclick="toggleAccordion('mobile-timeline')" class="block w-full bg-gradient-to-r from-amber-500 to-orange-600 text-white font-bold py-2.5 px-4 rounded-lg text-center hover:from-amber-600 hover:to-orange-700 transition-colors duration-300">
+                    Ver Evolución
+                  </button>
+              </div>
+
+
+
+              <div id="mobile-timeline" class="mt-4 hidden overflow-hidden transition-all duration-500 ease-in-out">
+                <h3 class="text-xs font-bold mb-3 text-gray-400">HISTORIA DEL PROYECTO</h3>
+                
+                <div class="relative border-l-2 border-gray-700 pl-3">
+                  <!-- Etapa 1 -->
+                  <div class="mb-4 relative">
+                    <div class="absolute -left-4 mt-1 h-3 w-3 rounded-full bg-amber-500"></div>
+                    <div class="mb-1">
+                      <h4 class="text-xs font-semibold">La idea inicial</h4>
+                      <span class="text-[10px] text-gray-500">Ene 2025</span>
+                    </div>
+                    <p class="text-[10px] text-gray-400">El concepto inicial surgió de la necesidad de tener una presencia online profesional.</p>
+                  </div>
+                  
+                  <!-- Etapa 2 -->
+                  <div class="mb-4 relative">
+                    <div class="absolute -left-4 mt-1 h-3 w-3 rounded-full bg-orange-500"></div>
+                    <div class="mb-1">
+                      <h4 class="text-xs font-semibold">Prototipo en WordPress</h4>
+                      <span class="text-[10px] text-gray-500">Feb 2025</span>
+                    </div>
+                    <p class="text-[10px] text-gray-400">Primera versión implementada en WordPress utilizando un tema personalizado.</p>
+                  </div>
+                  
+                  <!-- Etapa 3 -->
+                  <div class="mb-4 relative">
+                    <div class="absolute -left-4 mt-1 h-3 w-3 rounded-full bg-rose-500"></div>
+                    <div class="mb-1">
+                      <h4 class="text-xs font-semibold">Migración a AWS</h4>
+                      <span class="text-[10px] text-gray-500">Mar 2025</span>
+                    </div>
+                    <p class="text-[10px] text-gray-400">Reconstrucción completa y despliegue en Amazon S3 con CloudFront.</p>
+                  </div>
+                  
+                  <!-- Etapa 4 -->
+                  <div class="relative">
+                    <div class="absolute -left-4 mt-1 h-3 w-3 rounded-full bg-green-500"></div>
+                    <div class="mb-1">
+                      <h4 class="text-xs font-semibold">Versión final en GitHub Pages</h4>
+                      <span class="text-[10px] text-gray-500">Abr 2025</span>
+                    </div>
+                    <p class="text-[10px] text-gray-400">Rediseño con TailwindCSS e implementación de CI/CD con GitHub Actions.</p>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </main>
+  <!-- ----------------------------------------------------------------
+footer nuevo
+---------------------------------------------------------------- -->
+
+
+<footer class="py-8 text-center" style="display: flex; align-items: center; justify-content: center; flex-direction: column;">
+  <div style="display: flex; align-items: center; justify-content: center; text-align: center;">
+    <div style="display: inline-flex; align-items: center;">
+      <span style="padding-left: 8px;">Blog de un developer chileno - 2025</span>
+    </div>
+  </div>
+</footer>
+  <!-- ----------------------------------------------------------------
+-
+---------------------------------------------------------------- -->
+
+
+
+<script>
+    function toggleAccordion(id) {
+      const element = document.getElementById(id);
+      
+      if (element.classList.contains('hidden')) {
+        // Mostrar el acordeón
+        element.classList.remove('hidden');
+        element.style.maxHeight = element.scrollHeight + 'px';
+        setTimeout(() => {
+          element.style.overflow = 'visible';
+        }, 500);
+      } else {
+        // Ocultar el acordeón
+        element.style.overflow = 'hidden';
+        element.style.maxHeight = '0px';
+        setTimeout(() => {
+          element.classList.add('hidden');
+        }, 500);
+      }
+    }
+  </script>
+<script src="//instant.page/5.2.0" type="module" 
+integrity="sha384-jnZyxPjiipYXnSU0ygqeac2q7CVYMbh84q0uHVRRxEtvFPiQYbXWUorga2aqZJ0z"></script>
+</body>
+
+</html>

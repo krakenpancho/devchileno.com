@@ -112,7 +112,7 @@ navbar y titulo
 ---------------------------------------------------------------- -->
 
 
-<body class="bg-gray-900 text-gray-100 min-h-screen">
+<body data-instant-intensity="viewport" class="bg-gray-900 text-gray-100 min-h-screen">
   <header class="bg-black text-white  border-gray-800">
 
     <div class="flex justify-center items-center w-full py-2">
@@ -312,7 +312,7 @@ main body
 <!-- div para el popup -->
 <div id="popup" class="hidden fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-50 cursor-pointer" onclick="closePopup()">
   <div class="bg-gray-800 p-6 rounded-lg shadow-xl transform transition-all duration-300 scale-95 hover:scale-100">
-    <p class="text-white text-lg">Es esta misma web bro 😎</p>
+    <p class="text-white text-lg">Es esta misma web 😎</p>
   </div>
 </div>
 
@@ -488,5 +488,8 @@ footer nuevo
   <!-- ----------------------------------------------------------------
 -
 ---------------------------------------------------------------- -->
+<!-- aquí instalamos instant.page, el cual no se te olvide hermano que aumenta las peticiones al servidor, como estamos en Github Pages, el cual no nos cobra, da igual por ahora :D -->
+<script src="//instant.page/5.2.0" type="module" 
+integrity="sha384-jnZyxPjiipYXnSU0ygqeac2q7CVYMbh84q0uHVRRxEtvFPiQYbXWUorga2aqZJ0z"></script>
 </body>
 </html>
