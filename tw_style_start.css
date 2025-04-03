@@ -1,16 +1,9 @@
 @import "tailwindcss";
 
-
-
-
-/* 
-Para cocinar la version dev con comando watch que detecta los cambios mientras desarrollas
-npx tailwindcss -i tw_style_start.css -o tw_style_dev.css --watch
-Para cocinar la version min final para disminuir el tamaño hacia producción al mínimo
-npx tailwindcss -i tw_style_start.css -o tw_style_dev.css --minify 
-*/ 
+/* Importar un archivo CSS personalizado y fusionarlo con Tailwind*/
+/* @import "./style.css"; */
 
 /*
-VERSION 4 DE TAILWIND
+COMANDO CONSOLA PARA VERSION 4 DE TAILWIND
 npx @tailwindcss/cli --watch -i tw_style_start.css -o tw_style_dev.css
 */
