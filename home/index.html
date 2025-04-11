@@ -126,7 +126,7 @@ navbar y titulo
       mobileContainer : desktopContainer;
       const isMobile = activeContainer === mobileContainer;
       
-      // Crea el iframe con altura adecuada según dispositivo
+      // Crea el iframe segun altura de dispositivo
       activeContainer.innerHTML = `<iframe 
         src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/krakenav10/sets/personal-webpage-soundtrack&amp;color=%23ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=false&amp;sharing=false&amp;visual=true" 
         frameborder="0" 
@@ -267,7 +267,7 @@ main body
 ---------------------------------------------------------------- -->
 
   <div class="lg:w-1/3 h-full">
-    <div class="bg-gray-800 px-2 container mx-auto mt-0 pt-0 text-gray-100 min-h-[600px] h-full relative rounded-lg overflow-hidden">
+    <div class="bg-gray-800 px-2 container mx-auto mt-0 pt-0 pb-4 text-gray-100 h-full relative rounded-lg overflow-hidden">
       <div class="h-full bg-gray-800 rounded-lg px-2 ">
       <!-- Encabezado con foto de perfil -->
       <div class="flex flex-col items-center pt-0 bg-gray-800 rounded-lg p-6 mb-2">
@@ -281,7 +281,7 @@ main body
         </div>
       </div>
         <h2 class="text-2xl font-bold orbitron mb-2 pt-4">DEVCHILENO.COM</h2>
-        <p class="text-gray-300 text-lg ">Desarrollador FullStack</p> 
+        <p class="text-gray-300 text-lg text-center">Desarrollador FullStack</p> 
       </div>
   
       <!-- Descripción y estado actual -->
@@ -300,12 +300,11 @@ main body
         <h4 class="font-bold mb-2">Tocata Con Los Cabros</h4>
         <p class="text-gray-300 text-sm">
           Plataforma para bandas de música chilena.
-          La idea es conectar artistas y facilitar la junta con los cabros en eventos gratuitos como de pago.
+          El salvavidas de los fanáticos más pegados al TikTok que calcetín a estufa. Publicamos eventos musicales tan tentadores que hasta el más vicioso del celular va a despegar la rajuela del sillón.".
         </p>
         <div class="flex flex-wrap justify-center gap-2 mt-3">
           <span class="bg-blue-600 text-xs px-2 py-1 rounded">React</span>
           <span class="bg-blue-600 text-xs px-2 py-1 rounded">TypeScript</span>
-          <span class="bg-blue-600 text-xs px-2 py-1 rounded">TailwindCSS</span>
         </div>
       </div>
     </div>
@@ -325,7 +324,7 @@ main body
   <div class="bg-gray-800 px-2 container mx-auto mt-0 pt-0 text-gray-100 min-h-fit pb-12 lg:min-h-[600px] h-full relative rounded-lg overflow-hidden">
     <div class="h-full bg-gray-800 rounded-lg overflow-y-auto"> 
       <!--Soundcloud Mobile Player-->
-      <div id="soundCloudPlayerContainerMobile" class=" mb-8  block  lg:block  transform  w-full h-20" style="box-shadow: 0 8px 8px -4px black, 0 -8px 8px -4px black;" >
+      <div id="soundCloudPlayerContainerMobile" class=" mb-16 md:mb-8   block  lg:block  transform  w-full h-20" style="box-shadow: 0 8px 8px -4px black, 0 -8px 8px -4px black;" >
       </div>
       <!---->
       <div class="flex px-4 flex-wrap   justify-between">
@@ -373,7 +372,7 @@ main body
   function showPopup() {
     // Si el popup ya se mostró anteriormente, redirigir a la página del proyecto
     if (popupShown) {
-      window.location.href = '../proyectos/portfoliopersonal/index.html';
+      window.location.href = '../proyectos/portfoliopersonal/';
       return;
     }
     
@@ -427,7 +426,7 @@ main body
   <div class="bg-gray-800 px-2 container mx-auto mt-0 pt-0 text-gray-100 min-h-fit pb-2 lg:min-h-[600px] h-full relative rounded-lg overflow-hidden">
     <div class="h-full bg-gray-800 rounded-lg overflow-y-auto">
       
-      <div class="sm:block  lg:block pb-8">
+      <div class="sm:block  lg:block mb-16 md:mb-8">
         <div class="bg-gray-100 w-full h-20" style="box-shadow: 0 8px 8px -4px black, 0 -8px 8px -4px black;">
           <img src="../images/matrix_big.gif" class="object-cover w-full h-full"/>
         </div>

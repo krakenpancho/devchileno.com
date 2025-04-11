@@ -240,14 +240,94 @@ PROYECTO DESTACADO (PORTAFOLIO PERSONAL)
             <img src="../../images/sitiowebpersonal.png" alt="Portfolio Personal" class="w-full h-full object-cover"/>
           </div>
           <div class="aspect-video overflow-hidden rounded-lg shadow-lg">
-            <img src="../../images/wordpress-version.jpg" alt="Versión WordPress" class="w-full h-full object-cover"/>
+            <img src="../../images/1mokup.png" alt="Versión WordPress" class="w-full h-full object-cover"/>
           </div>
           <div class="aspect-video overflow-hidden rounded-lg shadow-lg">
-            <img src="../../images/aws-version.jpg" alt="Versión AWS" class="w-full h-full object-cover"/>
+            <img src="../../images/3mokup.png" alt="Versión AWS" class="w-full h-full object-cover"/>
           </div>
           <div class="aspect-video overflow-hidden rounded-lg shadow-lg">
-            <img src="../../images/github-version.jpg" alt="Versión GitHub Pages" class="w-full h-full object-cover"/>
+            <img src="../../images/migracion.png" alt="Versión GitHub Pages" class="w-full h-full object-cover"/>
           </div>
+
+<!-- Lightbox para visualizar imágenes a pantalla completa (añadir antes del cierre del body) -->
+<div id="lightbox" class="fixed inset-0 bg-black/90 z-50 flex items-center justify-center hidden transition-opacity duration-300">
+  <!-- Botón X para cerrar -->
+  <button id="close-lightbox" class="absolute top-4 right-4 text-white hover:text-gray-300 z-10">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+    </svg>
+  </button>
+  
+  <!-- Contenedor de la imagen ampliada -->
+  <div class="w-full h-full p-4 sm:p-8 md:p-12 flex items-center justify-center">
+    <img id="lightbox-img" src="" alt="Imagen ampliada" class="max-w-full max-h-full object-contain rounded-lg cursor-pointer shadow-2xl transform transition-transform duration-300" />
+  </div>
+</div>
+
+<script>
+  // Función para manejar el lightbox de imágenes
+  document.addEventListener('DOMContentLoaded', function() {
+    // Seleccionar todos los contenedores de imágenes de la galería
+    const galleryImages = document.querySelectorAll('.aspect-video img');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const closeLightboxBtn = document.getElementById('close-lightbox');
+    
+    // Función para abrir el lightbox
+    function openLightbox(imgSrc, imgAlt) {
+      lightboxImg.src = imgSrc;
+      lightboxImg.alt = imgAlt;
+      lightbox.classList.remove('hidden');
+      lightbox.classList.add('opacity-100');
+      document.body.style.overflow = 'hidden'; // Prevenir scroll
+    }
+    
+    // Función para cerrar el lightbox
+    function closeLightbox() {
+      lightbox.classList.add('opacity-0');
+      setTimeout(() => {
+        lightbox.classList.add('hidden');
+        document.body.style.overflow = ''; // Restaurar scroll
+      }, 300);
+    }
+    
+    // Añadir evento clic a cada imagen de la galería
+    galleryImages.forEach(img => {
+      img.classList.add('cursor-pointer'); // Añadir cursor pointer para indicar que es clicable
+      img.addEventListener('click', function() {
+        openLightbox(this.src, this.alt);
+      });
+    });
+    
+    // Cerrar lightbox al hacer clic en la X
+    closeLightboxBtn.addEventListener('click', closeLightbox);
+    
+    // Cerrar lightbox al hacer clic en la imagen
+    lightboxImg.addEventListener('click', function(e) {
+      e.stopPropagation(); // Evitar que se propague al contenedor
+      closeLightbox();
+    });
+    
+    // Cerrar lightbox al hacer clic en el fondo
+    lightbox.addEventListener('click', closeLightbox);
+    
+    // Evitar que se cierre cuando se hace clic en la imagen
+    lightboxImg.addEventListener('click', function(e) {
+      e.stopPropagation();
+      closeLightbox();
+    });
+    
+    // Manejar tecla Escape para cerrar
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && !lightbox.classList.contains('hidden')) {
+        closeLightbox();
+      }
+    });
+  });
+</script>
+
+
+
         </div>
         
         <!-- Botón Ver Evolución -->
@@ -337,7 +417,7 @@ PROYECTO DESTACADO (PORTAFOLIO PERSONAL)
             <div class="h-3 w-3 rounded-full bg-amber-500 mr-2"></div>
             <h4 class="text-xs font-semibold">La idea inicial</h4>
           </div>
-          <span class="text-[10px] text-gray-500 block mb-1">Dic 2024</span>
+          <span class="text-[10px] text-gray-500 block mb-1">Dic 2023</span>
           <p class="text-[10px] text-gray-400">Si soy informático y no tengo página web, estoy más perdido que Wally en una convención de camisetas a rayas.</p>
         </div>
         
@@ -347,8 +427,8 @@ PROYECTO DESTACADO (PORTAFOLIO PERSONAL)
             <div class="h-3 w-3 rounded-full bg-orange-500 mr-2"></div>
             <h4 class="text-xs font-semibold">WordPress</h4>
           </div>
-          <span class="text-[10px] text-gray-500 block mb-1">Ene 2025</span>
-          <p class="text-[10px] text-gray-400">Primera versión implementada en WordPress utilizando un tema personalizado.</p>
+          <span class="text-[10px] text-gray-500 block mb-1">Dic 2023</span>
+          <p class="text-[10px] text-gray-400">Primera versión implementada en WordPress utilizando un tema personalizado. El tema personalizado me quedó gustando y de ahí nos inspiramos.</p>
         </div>
         
         <!-- Etapa 3 -->
@@ -357,18 +437,18 @@ PROYECTO DESTACADO (PORTAFOLIO PERSONAL)
             <div class="h-3 w-3 rounded-full bg-rose-500 mr-2"></div>
             <h4 class="text-xs font-semibold">Migración a AWS</h4>
           </div>
-          <span class="text-[10px] text-gray-500 block mb-1">Mar 2025</span>
-          <p class="text-[10px] text-gray-400">Reconstrucción completa con HTML/CSS/JS y despliegue en Amazon S3.</p>
+          <span class="text-[10px] text-gray-500 block mb-1">Mar 2024</span>
+          <p class="text-[10px] text-gray-400">Wordpress era poco personalizable en los planes más baratos. Así que aplicamos scraping y la portamos a HTML/CSS/JS y para desplegarla en Amazon S3.</p>
         </div>
         
         <!-- Etapa 4 -->
         <div class="w-1/4 p-2 bg-gray-900/40 rounded-lg border border-gray-800">
           <div class="flex items-center mb-1">
             <div class="h-3 w-3 rounded-full bg-green-500 mr-2"></div>
-            <h4 class="text-xs font-semibold">GitHub Pages</h4>
+            <h4 class="text-xs font-semibold">Migración a GitHub Pages</h4>
           </div>
-          <span class="text-[10px] text-gray-500 block mb-1">Abr 2025</span>
-          <p class="text-[10px] text-gray-400">Rediseño con TailwindCSS e implementación de CI/CD con GitHub Actions.</p>
+          <span class="text-[10px] text-gray-500 block mb-1">Mar 2025</span>
+          <p class="text-[10px] text-gray-400">Después de un año AWS deja de ser gratuito cabros así que movimos el sitio web a Github Pages. También aprendimos la lección de no comprar dominios web por GoDaddy jeje (porque son baratos pero renovarlos es terrible caro).</p>
         </div>
       </div>
     </div>
@@ -394,8 +474,8 @@ PROYECTO DESTACADO (PORTAFOLIO PERSONAL)
               <span class="text-xs text-gray-400 block mb-3">PROYECTO PERSONAL • 2025</span>
               
               <p class="text-gray-300 text-sm mb-4">
-                Mi portafolio profesional, diseñado y desarrollado desde cero usando tecnologías web modernas. Implementé un diseño responsivo con animaciones sutiles.
-              </p>
+                Mi primera creación digital pueh, armada con la santa trinidad de la programación: HTML, CSS y JavaScript. Como todo principiante con aspiraciones, me lancé a hacer mi portafolio más pulento que asado dominguero.
+                Le puse un diseño que se adapta a cualquier pantalla (¡hasta en el celular la abuelita!), con animaciones sutiles que no marean pero impresionan, y una navegación más intuitiva.              </p>
               
               <div class="space-y-4 mb-4">
                 <div>
@@ -418,7 +498,7 @@ PROYECTO DESTACADO (PORTAFOLIO PERSONAL)
                   <div class="h-full bg-gradient-to-r from-green-500 to-emerald-400" style="width: 100%;"></div>
                 </div>
                 
-                <button onclick="toggleAccordion('mobile-timeline')" class="block w-full bg-gradient-to-r from-amber-500 to-orange-600 text-white font-bold py-2.5 px-4 rounded-lg text-center hover:from-amber-600 hover:to-orange-700 transition-colors duration-300">
+                <button onclick="toggleAccordion('mobile-timeline')" class="block w-full bg-gradient-to-r from-purple-600 to-fuchsia-500 text-white font-bold py-2.5 px-4 rounded-lg text-center hover:from-red-600 hover:to-gray-700 transition-colors duration-300">
                     Ver Evolución
                   </button>
               </div>
@@ -434,19 +514,19 @@ PROYECTO DESTACADO (PORTAFOLIO PERSONAL)
                     <div class="absolute -left-4 mt-1 h-3 w-3 rounded-full bg-amber-500"></div>
                     <div class="mb-1">
                       <h4 class="text-xs font-semibold">La idea inicial</h4>
-                      <span class="text-[10px] text-gray-500">Ene 2025</span>
+                      <span class="text-[10px] text-gray-500">Dic 2023</span>
                     </div>
-                    <p class="text-[10px] text-gray-400">El concepto inicial surgió de la necesidad de tener una presencia online profesional.</p>
+                    <p class="text-[10px] text-gray-400">Si soy informático y no tengo página web, estoy más perdido que Wally en una convención de camisetas a rayas.</p>
                   </div>
                   
                   <!-- Etapa 2 -->
                   <div class="mb-4 relative">
                     <div class="absolute -left-4 mt-1 h-3 w-3 rounded-full bg-orange-500"></div>
                     <div class="mb-1">
-                      <h4 class="text-xs font-semibold">Prototipo en WordPress</h4>
-                      <span class="text-[10px] text-gray-500">Feb 2025</span>
+                      <h4 class="text-xs font-semibold">Iniciamos con WordPress</h4>
+                      <span class="text-[10px] text-gray-500">Dic 2023</span>
                     </div>
-                    <p class="text-[10px] text-gray-400">Primera versión implementada en WordPress utilizando un tema personalizado.</p>
+                    <p class="text-[10px] text-gray-400">Primera versión implementada en WordPress utilizando un tema personalizado. El tema personalizado me quedó gustando y de ahí nos inspiramos.</p>
                   </div>
                   
                   <!-- Etapa 3 -->
@@ -454,19 +534,19 @@ PROYECTO DESTACADO (PORTAFOLIO PERSONAL)
                     <div class="absolute -left-4 mt-1 h-3 w-3 rounded-full bg-rose-500"></div>
                     <div class="mb-1">
                       <h4 class="text-xs font-semibold">Migración a AWS</h4>
-                      <span class="text-[10px] text-gray-500">Mar 2025</span>
+                      <span class="text-[10px] text-gray-500">Mar 2024</span>
                     </div>
-                    <p class="text-[10px] text-gray-400">Reconstrucción completa y despliegue en Amazon S3 con CloudFront.</p>
+                    <p class="text-[10px] text-gray-400">Wordpress era poco personalizable en los planes más baratos. Así que aplicamos scraping y la portamos a HTML/CSS/JS y para desplegarla en Amazon S3.</p>
                   </div>
                   
                   <!-- Etapa 4 -->
                   <div class="relative">
                     <div class="absolute -left-4 mt-1 h-3 w-3 rounded-full bg-green-500"></div>
                     <div class="mb-1">
-                      <h4 class="text-xs font-semibold">Versión final en GitHub Pages</h4>
-                      <span class="text-[10px] text-gray-500">Abr 2025</span>
+                      <h4 class="text-xs font-semibold">Migración a GitHub Pages</h4>
+                      <span class="text-[10px] text-gray-500">Mar 2025</span>
                     </div>
-                    <p class="text-[10px] text-gray-400">Rediseño con TailwindCSS e implementación de CI/CD con GitHub Actions.</p>
+                    <p class="text-[10px] text-gray-400">Después de un año AWS deja de ser gratuito cabros así que movimos el sitio web a Github Pages. También aprendimos la lección de no comprar dominios web por GoDaddy jeje (porque son baratos pero renovarlos es terrible caro).</p>
                   </div>
                 </div>
               </div>
