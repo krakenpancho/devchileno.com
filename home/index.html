@@ -123,17 +123,23 @@ navbar y titulo
       
       // Determina qué contenedor está visible
       const activeContainer = window.getComputedStyle(mobileContainer).display !== 'none' ? 
-      mobileContainer : desktopContainer;
+        mobileContainer : desktopContainer;
       const isMobile = activeContainer === mobileContainer;
       
-      // Crea el iframe segun altura de dispositivo
-      activeContainer.innerHTML = `<iframe 
-        src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/krakenav10/sets/personal-webpage-soundtrack&amp;color=%23ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=false&amp;sharing=false&amp;visual=true" 
-        frameborder="0" 
-        allow="autoplay; encrypted-media" 
-        allowfullscreen 
-        class="w-full ${isMobile ? 'h-20' : 'h-80'}">
-      </iframe>`;
+      // Primero coloca la imagen de fondo en el contenedor activo
+      activeContainer.innerHTML = `
+        <div style="position: relative; width: 100%; height: 100%;">
+          <img src="../images/shiba dark3.png" alt="Cargando..." style="position: absolute; width: 100%; height: 100%; object-fit: cover; z-index: 1;">
+          <iframe 
+            src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/krakenav10/sets/personal-webpage-soundtrack&amp;color=%23ff5500&amp;auto_play=false&amp;hide_related=true&amp;show_comments=false&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=false&amp;sharing=false&amp;visual=true" 
+            frameborder="0" 
+            allow="autoplay; encrypted-media" 
+            allowfullscreen 
+            class="w-full ${isMobile ? 'h-20' : 'h-80'}"
+            style="position: absolute; z-index: 2;">
+          </iframe>
+        </div>
+      `;
       
       // Para el contenedor inactivo, simplemente muestra la imagen de fondo
       const inactiveContainer = isMobile ? desktopContainer : mobileContainer;
@@ -300,7 +306,7 @@ main body
         <h4 class="font-bold mb-2">Tocata Con Los Cabros</h4>
         <p class="text-gray-300 text-sm">
           Plataforma para bandas de música chilena.
-          El salvavidas de los fanáticos más pegados al TikTok que calcetín a estufa. Publicamos eventos musicales tan tentadores que hasta el más vicioso del celular va a despegar la rajuela del sillón.".
+          El salvavidas de los fanáticos más pegados al TikTok que calcetín a estufa. Publicamos eventos musicales tan tentadores que hasta el más vicioso del celular va a despegar la rajuela del sillón.
         </p>
         <div class="flex flex-wrap justify-center gap-2 mt-3">
           <span class="bg-blue-600 text-xs px-2 py-1 rounded">React</span>
