@@ -1,9 +1,9 @@
 @import "tailwindcss";
 
 /* Importar un archivo CSS personalizado y fusionarlo con Tailwind*/
-/* @import "./style.css"; */
+@import "./style.css";
 
 /*
 COMANDO CONSOLA PARA VERSION 4 DE TAILWIND
-npx @tailwindcss/cli --watch -i tw_style_start.css -o tw_style_dev.css
+npx @tailwindcss/cli --watch -i tw_style_start.css -o tw_style.css
 */

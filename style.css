@@ -1,0 +1,152 @@
+/* ESTILOS BARRA DARK MODE SIEMPRE ACTIVA */
+/* Desplazamiento suave */
+html {
+    scroll-behavior: smooth;
+    overflow-y: scroll;
+    }
+
+  /* Media Query para aplicar estilos solo en desktop */
+    @media (hover: hover) {
+    /* Estilo global para personalizar la barra de desplazamiento en desktop */
+    ::-webkit-scrollbar {
+        width: 12px; /* Ancho de la barra de desplazamiento */
+    }
+    
+    ::-webkit-scrollbar-track {
+        background: #2D2D2D; /* Color de fondo de la pista */
+    }
+    
+    ::-webkit-scrollbar-thumb {
+        background: #444; /* Color de la barra de desplazamiento */
+        border-radius: 6px; /* Bordes redondeados para el thumb */
+    }
+    
+    /* Hover sobre la barra de desplazamiento */
+    ::-webkit-scrollbar-thumb:hover {
+        background: #555; /* Color al pasar el mouse */
+    }
+    
+    /* Estilo para Firefox */
+    * {
+        scrollbar-width: thin; /* Aspecto más delgado para la barra de desplazamiento */
+        scrollbar-color: #444 #2D2D2D; /* Colores para la barra y la pista */
+    }
+    }
+    /* Clase para desplazamiento suave de About Me */
+    #mobileAbout, #desktopAbout {
+        transition: opacity 0.5s, max-height 0.5s ease;
+        overflow: hidden;
+        max-height: 40px; /* Empieza en 0 para asegurarse de que esté oculto inicialmente. */
+        opacity: 0;
+        display: none;
+    }
+    
+    #mobileAbout.show, #desktopAbout.show {
+        opacity: 1;
+        max-height: 500px; /* Ajusta según el contenido. Podrías necesitar un valor más alto. */
+        display: flex; /* Se necesita para que el elemento sea visible antes de iniciar la transición. */
+    }
+
+/* ESTILOS PERSONALIZADOS PAGINA HOME */
+    /* Animación de pulso horizontal para la flecha izquierda en móvil*/
+        @keyframes pulseLeft {
+            0%, 100% {
+            transform: translateX(0);
+            opacity: 1;
+            }
+            50% {
+            transform: translateX(5px);
+            opacity: 0.7;
+            }
+        }
+        
+        .pulse-left {
+            animation: pulseLeft 1s ease-in-out infinite;
+        }
+
+/* ESTILOS PERSONALIZADOS PÁGINAS */
+    @font-face {
+        font-family: 'Orbitron';
+        src: url('../fonts/Fira_Code/FiraCode-Bold.ttf') format('truetype');
+    }
+
+    @font-face {
+        font-family: 'Roboto';
+        src: url('../fonts/Fira_Code/FiraCode-Light.ttf') format('truetype');
+    }
+
+    
+    body {
+
+        margin: 0 !important;
+        padding: 0 !important;
+
+        font-family: 'Roboto', sans-serif;
+        letter-spacing: 0.05em;
+    }
+
+    .orbitron {
+        font-family: 'Orbitron', sans-serif;
+    }
+
+    .roboto {
+    font-family: 'Roboto', sans-serif;
+    }
+
+    /* clases para el color de los iconos, tailwind css no afecta a propiedades fill de un svg, funciona mejor con texto */
+    .svg-icon svg {
+        fill: white;
+        /* Color inicial */
+    }
+
+    .svg-icon:hover svg {
+        fill: #bec1c4;
+        /* Color al hacer hover, usando el color 'gray-500' de Tailwind como ejemplo */
+    }
+
+    .border-transparent {
+    border-color: transparent !important;
+    }
+    
+    /* Nuevo modo oscuro  */
+    body {
+    background-color: #000000 !important; /* bg-gray-900 */
+    color: #F3F4F6 !important; /* text-gray-100 */
+    }
+
+    .bg-gray-100 {
+    background-color: #1F2937 !important; /* bg-gray-100 */
+    }
+
+    .bg-gray-800 {
+    background-color: #000000 !important; /* bg-gray-800 */
+    }
+
+    .bg-black {
+    background-color: #000000 !important; /* bg-gray-900 */
+    }
+
+    .text-black {
+    color: #F3F4F6 !important; /* text-gray-100 */
+    }
+
+    .hover\:text-black:hover {
+    color: #111827 !important;
+    }
+
+    .hover\:bg-yellow-100:hover {
+    background-color: #FCD34D !important; /* bg-yellow-300 */
+    }
+
+    /* Ajuste de sombras */
+    .shadow-sm, .shadow-2xl {
+    box-shadow: 0 1px 3px 0 rgba(255, 255, 255, 0.1), 
+                0 1px 2px 0 rgba(255, 255, 255, 0.06) !important;
+    }
+
+    /* Ajuste para los reproductores */
+    #playerMobile, #playerDesktop, #soundCloudPlayerContainerMobile, #soundCloudPlayerContainerDesktop {
+    box-shadow: 0 8px 8px -4px rgba(255, 255, 255, 0.1), 
+                0 -8px 8px -4px rgba(255, 255, 255, 0.1) !important;
+    }
+

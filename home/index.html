@@ -9,143 +9,15 @@
   <title>
     Blog de un developer chileno
   </title>
-  <!-- Favicon retrocompatible con navegadores antiguos -->
   <link rel="shortcut icon" href="../images/shibagod.ico" type="image/x-icon">
-  <link href="../tw_style_dev.css" rel="stylesheet" />
-  <!-- Tailwind CSS con comando watch que detecta los cambios 
-  npx tailwindcss -i tw_style_start.css -o tw_style_dev.css --watch
-  Para version min final 
-  npx tailwindcss -i tw_style_start.css -o tw_style_min.css --minify -->
-  <!-- Instalar CSS clásico para la barra de desplazamiento -->
-  <link href="../estilo_barra.css" rel="stylesheet" />
-  
-  <!-- Archivo CSS -->
-  <style>
-    @font-face {
-      font-family: 'Orbitron';
-      src: url('../fonts/Fira_Code/FiraCode-Bold.ttf') format('truetype');
-    }
-
-    @font-face {
-      font-family: 'Roboto';
-      src: url('../fonts/Fira_Code/FiraCode-Light.ttf') format('truetype');
-    }
-
-    body {
-
-      margin: 0 !important;
-      padding: 0 !important;
-
-      font-family: 'Roboto', sans-serif;
-      letter-spacing: 0.05em;
-    }
-
-    .orbitron {
-      font-family: 'Orbitron', sans-serif;
-    }
-
-    .roboto {
-    font-family: 'Roboto', sans-serif;
-}
-
-    /* clases para el color de los iconos, tailwind css no afecta a propiedades fill de un svg, funciona mejor con texto */
-    .svg-icon svg {
-      fill: white;
-      /* Color inicial */
-    }
-
-    .svg-icon:hover svg {
-      fill: #bec1c4;
-      /* Color al hacer hover, usando el color 'gray-500' de Tailwind como ejemplo */
-    }
-
-    .border-transparent {
-    border-color: transparent !important;
-}
-    
-/* Nuevo modo oscuro  */
-    body {
-    background-color: #000000 !important; /* bg-gray-900 */
-    color: #F3F4F6 !important; /* text-gray-100 */
-  }
-
-  .bg-gray-100 {
-    background-color: #1F2937 !important; /* bg-gray-100 */
-  }
-
-  .bg-gray-800 {
-    background-color: #000000 !important; /* bg-gray-800 */
-  }
-
-  .bg-black {
-    background-color: #000000 !important; /* bg-gray-900 */
-  }
-
-  .text-black {
-    color: #F3F4F6 !important; /* text-gray-100 */
-  }
-
-  .hover\:text-black:hover {
-    color: #111827 !important;
-  }
-
-  .hover\:bg-yellow-100:hover {
-    background-color: #FCD34D !important; /* bg-yellow-300 */
-  }
-
-  /* Ajuste de sombras */
-  .shadow-sm, .shadow-2xl {
-    box-shadow: 0 1px 3px 0 rgba(255, 255, 255, 0.1), 
-                0 1px 2px 0 rgba(255, 255, 255, 0.06) !important;
-  }
-
-  /* Ajuste para los reproductores */
-  #playerMobile, #playerDesktop, #soundCloudPlayerContainerMobile, #soundCloudPlayerContainerDesktop {
-    box-shadow: 0 8px 8px -4px rgba(255, 255, 255, 0.1), 
-                0 -8px 8px -4px rgba(255, 255, 255, 0.1) !important;
-  }
-
-  </style>
+  <link href="../tw_style.css" rel="stylesheet" />
 </head>
 
 
-<!-- ----------------------------------------------------------------
-navbar y titulo
----------------------------------------------------------------- -->
-
-
+<!-- 
+-- NAVBAR -->
 <body data-instant-intensity="viewport" class="bg-gray-900 text-gray-100 min-h-screen">
-  <!-- Reproductor de SoundCloud Script-->
-  <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      const mobileContainer = document.getElementById('soundCloudPlayerContainerMobile');
-      const desktopContainer = document.getElementById('soundCloudPlayerContainerDesktop');
-      
-      // Determina qué contenedor está visible
-      const activeContainer = window.getComputedStyle(mobileContainer).display !== 'none' ? 
-        mobileContainer : desktopContainer;
-      const isMobile = activeContainer === mobileContainer;
-      
-      // Primero coloca la imagen de fondo en el contenedor activo
-      activeContainer.innerHTML = `
-        <div style="position: relative; width: 100%; height: 100%;">
-          <img src="../images/shiba dark3.png" alt="Cargando..." style="position: absolute; width: 100%; height: 100%; object-fit: cover; z-index: 1;">
-          <iframe 
-            src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/krakenav10/sets/personal-webpage-soundtrack&amp;color=%23ff5500&amp;auto_play=false&amp;hide_related=true&amp;show_comments=false&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=false&amp;sharing=false&amp;visual=true" 
-            frameborder="0" 
-            allow="autoplay; encrypted-media" 
-            allowfullscreen 
-            class="w-full ${isMobile ? 'h-20' : 'h-80'}"
-            style="position: absolute; z-index: 2;">
-          </iframe>
-        </div>
-      `;
-      
-      // Para el contenedor inactivo, simplemente muestra la imagen de fondo
-      const inactiveContainer = isMobile ? desktopContainer : mobileContainer;
-      inactiveContainer.innerHTML = `<img src="../images/loadersoundcloud.jpg" alt="Fondo" class="w-full h-full object-cover">`;
-    });
-  </script>
+  
   
   
   <header class="bg-black text-white  border-gray-800">
@@ -191,7 +63,6 @@ navbar y titulo
     <!-- Menu Links -->
     <!-- Version Escritorio y Movil-->
     <nav class="w-full mx-auto max-w-full flex-wrap justify-between items-center pt-4  border-white">
-      <!-- Botón visible solo en móvil -->
 <!-- Botón visible solo en móvil con flecha animada -->
 <div class="relative w-full md:hidden">
   <div class="flex items-center justify-center w-full">
@@ -215,24 +86,6 @@ navbar y titulo
     </button>
   </div>
 </div>
-
-<style>
-  /* Animación de pulso horizontal para la flecha */
-  @keyframes pulseLeft {
-    0%, 100% {
-      transform: translateX(0);
-      opacity: 1;
-    }
-    50% {
-      transform: translateX(5px);
-      opacity: 0.7;
-    }
-  }
-  
-  .pulse-left {
-    animation: pulseLeft 1s ease-in-out infinite;
-  }
-</style>
 
       <!-- Enlaces del menú -->
       <!-- En móviles se oculta, y en escritorio se muestra -->
@@ -258,9 +111,8 @@ navbar y titulo
   </header>
 
 
-<!-- ----------------------------------------------------------------
-main body
----------------------------------------------------------------- -->
+<!-- 
+-- MAIN -->
   <main class="shadow-sm pt-4  pb-8 sm:px-16  xl:px-48 2xl:px-52 3xl:px-64 flex-grow">
     
     <!-- Contenedor principal de los tres flex -->
@@ -268,9 +120,8 @@ main body
       <!-- Secciones irán aquí -->
     
     
-<!-- ----------------------------------------------------------------
-1/3         ---       FLEX 1/3         ---        1/3
----------------------------------------------------------------- -->
+<!-- 
+-- FLEX 1 DE 3 ("Creando páginas webs chistosas")-->
 
   <div class="lg:w-1/3 h-full">
     <div class="bg-gray-800 px-2 container mx-auto mt-0 pt-0 pb-4 text-gray-100 h-full relative rounded-lg overflow-hidden">
@@ -321,9 +172,9 @@ main body
     </div>
   </div>
 
-    <!-- ----------------------------------------------------------------
-2/3         ---       FLEX 2/3         ---        2/3
----------------------------------------------------------------- -->
+<!-- 
+-- FLEX 2 DE 3 (Vista rápida de Proyectos)-->
+
 <div class="lg:w-1/3">
   <!-- Contenido de Proyectos -->
 
@@ -420,13 +271,12 @@ main body
       </div>
     </div>
     </div>
-
-    <!-- Reproductor de SoundCloud Script movido a comienzo de body para mejorar teóricamente la precarga, aunque no se debería hacer según la vieja escuela-->
     
   </div>
-<!-- ----------------------------------------------------------------
-3/3         ---       FLEX 3/3         ---        3/3
----------------------------------------------------------------- -->
+
+<!-- 
+-- FLEX 3 DE 3 (Vista rápida de Blog) -->
+
 <div class="lg:w-1/3">
   <!-- Contenido de Blog -->
   <div class="bg-gray-800 px-2 container mx-auto mt-0 pt-0 text-gray-100 min-h-fit pb-2 lg:min-h-[600px] h-full relative rounded-lg overflow-hidden">
@@ -467,18 +317,51 @@ main body
 
 </div>  
 </main>
-<!-- ----------------------------------------------------------------
-footer
----------------------------------------------------------------- -->
-<footer class="block  py-8 text-center flex flex-col items-center justify-center">
-  <div class="flex items-center justify-center text-center">
-    <div class="inline-flex items-center">
-      <span class="pl-2">Blog de un developer chileno - 2025</span>
-    </div>
-  </div>
-</footer>
+
+<!-- 
+-- FOOTER -->
+    <footer class="block  py-8 text-center flex flex-col items-center justify-center">
+      <div class="flex items-center justify-center text-center">
+        <div class="inline-flex items-center">
+          <span class="pl-2">Blog de un developer chileno - 2025</span>
+        </div>
+      </div>
+    </footer>
+
+<!-- Reproductor de SoundCloud Script -->
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const mobileContainer = document.getElementById('soundCloudPlayerContainerMobile');
+    const desktopContainer = document.getElementById('soundCloudPlayerContainerDesktop');
+    
+    // Determina qué contenedor está visible
+    const activeContainer = window.getComputedStyle(mobileContainer).display !== 'none' ? 
+      mobileContainer : desktopContainer;
+    const isMobile = activeContainer === mobileContainer;
+    
+    // Primero coloca la imagen de fondo en el contenedor activo
+    activeContainer.innerHTML = `
+      <div style="position: relative; width: 100%; height: 100%;">
+        <img src="../images/shiba dark3.png" alt="Cargando..." style="position: absolute; width: 100%; height: 100%; object-fit: cover; z-index: 1;">
+        <iframe 
+          src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/krakenav10/sets/personal-webpage-soundtrack&amp;color=%23ff5500&amp;auto_play=false&amp;hide_related=true&amp;show_comments=false&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=false&amp;sharing=false&amp;visual=true" 
+          frameborder="0" 
+          allow="autoplay; encrypted-media" 
+          allowfullscreen 
+          class="w-full ${isMobile ? 'h-20' : 'h-80'}"
+          style="position: absolute; z-index: 2;">
+        </iframe>
+      </div>
+    `;
+    
+    // Para el contenedor inactivo, simplemente muestra la imagen de fondo
+    const inactiveContainer = isMobile ? desktopContainer : mobileContainer;
+    inactiveContainer.innerHTML = `<img src="../images/loadersoundcloud.jpg" alt="Fondo" class="w-full h-full object-cover">`;
+  });
+</script>
 <!-- Aplicamos instant.page, el cual no se te olvide hermano que aumenta las peticiones al servidor, y ya que estamos en Github Pages, no nos cobra nada de nada, da igual por ahora :D -->
 <script src="//instant.page/5.2.0" type="module" 
 integrity="sha384-jnZyxPjiipYXnSU0ygqeac2q7CVYMbh84q0uHVRRxEtvFPiQYbXWUorga2aqZJ0z"></script>
+
 </body>
 </html>
