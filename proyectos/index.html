@@ -146,6 +146,7 @@ PROYECTOS (3 COLUMNAS)
       </div>
 
       <!-- Proyecto 2 -->
+      <a href="../proyectos/tocataconloscabros/" class="block hover:no-underline space-y-4">
       <div class="flex items-start space-x-4 p-4 rounded-lg hover:bg-gray-700/50 transition-all duration-300 cursor-pointer">
         <div class="w-16 h-16 flex-shrink-0 relative">
           <!-- Icono de completado -->
@@ -165,7 +166,7 @@ PROYECTOS (3 COLUMNAS)
           <p class="text-gray-300 text-xs">Plataforma para eventos musicales</p>
         </div>
       </div>
-    
+      </a>
 
 
 
@@ -232,25 +233,52 @@ PROYECTOS (3 COLUMNAS)
      
      
      
-      <!-- Proyecto 2 -->
-      <div class="flex flex-col items-center p-2 rounded-lg hover:bg-gray-700/70 cursor-pointer transform transition-all duration-200 hover:scale-[1.05]">
-        <div class="w-16 h-16 bg-green-600/20 rounded-xl flex items-center justify-center mb-2 relative">
-          <div class="flex items-center justify-center w-full h-full">
-            <img src="../images/GymApp3.png" alt="App de Ejercicio" class="w-16 h-16 object-contain"/>
-          </div>
-          
-          <!-- Porcentaje en esquina superior derecha -->
-          <div class="absolute -top-2 -right-2 bg-white rounded-full p-1 shadow-lg">
-            <span class="text-slate-900 text-[8px] font-bold px-1">6%</span>
-          </div>
-          
-          <!-- Barra de progreso -->
-          <div class="absolute bottom-0 left-0 right-0 h-2 bg-gray-800/80 rounded-b-xl overflow-hidden">
-            <div class="h-full bg-green-500" style="width: 5%;"></div>
-          </div>
+     <!-- Proyecto 2 -->
+     <div id="gymAppTrigger" onclick="showGamePopup()" class="flex flex-col items-center p-2 rounded-lg hover:bg-gray-700/70 cursor-pointer transform transition-all duration-200 hover:scale-[1.05]">
+      <div class="w-16 h-16 bg-green-600/20 rounded-xl flex items-center justify-center mb-2 relative">
+        <div class="flex items-center justify-center w-full h-full">
+          <img src="../images/GymApp3.png" alt="App de Ejercicio" class="w-16 h-16 object-contain"/>
         </div>
-        <p class="font-medium text-xs text-center text-gray-100">App de Ejercicio</p>
+        
+        <!-- Porcentaje en esquina superior derecha -->
+        <div class="absolute -top-2 -right-2 bg-white rounded-full p-1 shadow-lg">
+          <span class="text-slate-900 text-[8px] font-bold px-1">6%</span>
+        </div>
+        
+        <!-- Barra de progreso -->
+        <div class="absolute bottom-0 left-0 right-0 h-2 bg-gray-800/80 rounded-b-xl overflow-hidden">
+          <div class="h-full bg-green-500" style="width: 5%;"></div>
+        </div>
       </div>
+      <p class="font-medium text-xs text-center text-gray-100">App de Ejercicio</p>
+    </div>
+
+    <!-- Popup para App de Ejercicio -->
+    <div id="gamePopup" class="hidden fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-50 cursor-pointer" onclick="closeGamePopup()">
+      <div class="bg-gray-800 p-4 md:p-6 rounded-lg shadow-xl transform transition-all duration-300 scale-95 hover:scale-100 whitespace-nowrap">
+        <p id="gym-popup-text" class="text-white text-base md:text-lg">Intentalo a futuro jeje 😅</p>
+      </div>
+    </div>
+
+    <script>
+      // Variable para rastrear si ya se mostró el popup
+      let gymPopupShown = false;
+
+      function showGamePopup() {
+        // Primera vez: mostrar el popup
+        gymPopupShown = true;
+        document.getElementById('gamePopup').classList.remove('hidden');
+        
+        // Timer para cerrar el popup después de 3 segundos
+        setTimeout(() => {
+          closeGamePopup();
+        }, 3000);
+      }
+
+      function closeGamePopup() {
+        document.getElementById('gamePopup').classList.add('hidden');
+      }
+    </script>
       
       <!-- Proyecto 3 -->
 <!--       <div class="flex flex-col items-center p-2 rounded-lg hover:bg-gray-700/70 cursor-pointer transform transition-all duration-200 hover:scale-[1.05]">
