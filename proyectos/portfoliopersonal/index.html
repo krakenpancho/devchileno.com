@@ -95,15 +95,42 @@ navbar y titulo
 <!-- ----------------------------------------------------------------
 PROYECTO DESTACADO (PORTAFOLIO PERSONAL) 
 ---------------------------------------------------------------- -->
-<main class="container mx-auto px-4 sm:px-6 lg:px-8 mt-8 mb-16">
+<main class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8 mb-16">
     <!-- Encabezado de la sección -->
-    <div class="text-center mb-12">
-      <h1 class="text-3xl md:text-4xl font-bold mb-4 orbitron">PORTAFOLIO PERSONAL</h1>
-<!--       <div class="w-24 h-1 bg-gradient-to-r from-purple-600 via-fuchsia-500 to-rose-400 mx-auto"></div>
- -->    </div>
+
+    <!-- Título con fondo gif animado para móviles y normal para escritorio jeje -->
+    <div class="text-center mb-12 relative">
+      <!-- Versión escritorio (normal) -->
+      <h1 class="text-3xl md:text-4xl font-bold mb-4 orbitron hidden md:block">PORTAFOLIO PERSONAL</h1>
+      
+      <!-- Versión móvil con gif de fondo mejorado -->
+      <div class="relative md:hidden">
+        <!-- Fondo gif con overlay para destacar -->
+        <div class="absolute inset-0 overflow-hidden">
+          <!-- Aumentamos opacidad y añadimos filtros para más brillo -->
+          <img src="../../images/matrix_big.gif" alt="Matrix code" 
+               class="w-full h-full object-cover opacity-60 filter saturate-150 contrast-125">
+               
+          <!-- Overlay con gradiente en lugar de negro sólido -->
+          <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/30 to-black/60 mix-blend-multiply"></div>
+          
+          <!-- Capa de brillo adicional -->
+          <div class="absolute inset-0 bg-fuchsia-900/10 mix-blend-overlay"></div>
+        </div>
+        
+        <!-- Texto sobre el gif con efecto de resplandor -->
+        <h1 class="text-3xl font-bold py-6 orbitron relative z-10 drop-shadow-[0_0_8px_rgba(255,255,255,0.7)]">
+          <span class="relative">
+            <!-- Efecto de neón para el texto -->
+            <span class="absolute inset-0 blur-[1px] text-fuchsia-300 opacity-80">_[ PORTAFOLIO PERSONAL</span>
+            <span class="relative text-white">_[ PORTAFOLIO PERSONAL</span>
+          </span>
+        </h1>
+      </div>
+    </div>
   
     <!-- Contenedor del proyecto con efecto de cristal -->
-    <div class="max-w-5xl mx-auto relative">
+    <div class="max-w-7xl mx-auto relative">
       <!-- Borde con gradiente animado -->
 <!--       <div class="absolute inset-0 rounded-2xl bg-gradient-to-br from-purple-600 via-fuchsia-500 to-rose-400 opacity-70 blur-[2px] transition-all duration-500 group-hover:opacity-100 pointer-events-none"></div>      
  -->      <!-- Contenido principal -->
@@ -114,7 +141,7 @@ PROYECTO DESTACADO (PORTAFOLIO PERSONAL)
 <div class="hidden md:block">
     <div class="flex">
       <!-- Columna izquierda: Galería de imágenes -->
-      <div class="w-1/2 p-4">
+      <div class="w-1/3 p-4">
         <div class="grid grid-cols-2 gap-3 bg-gray-900/50 rounded-xl p-4">
           <div class="aspect-video overflow-hidden rounded-lg shadow-lg">
             <img src="../../images/sitiowebpersonal.png" alt="Portfolio Personal" class="w-full h-full object-cover"/>
@@ -129,7 +156,7 @@ PROYECTO DESTACADO (PORTAFOLIO PERSONAL)
             <img src="../../images/migracion.png" alt="Versión GitHub Pages" class="w-full h-full object-cover"/>
           </div>
 
-<!-- Lightbox para visualizar imágenes a pantalla completa (añadir antes del cierre del body) -->
+<!-- Lightbox para visualizar imágenes a pantalla completa -->
 <div id="lightbox" class="fixed inset-0 bg-black/90 z-50 flex items-center justify-center hidden transition-opacity duration-300">
   <!-- Botón X para cerrar -->
   <button id="close-lightbox" class="absolute top-4 right-4 text-white hover:text-gray-300 z-10">
@@ -211,67 +238,52 @@ PROYECTO DESTACADO (PORTAFOLIO PERSONAL)
         </div>
         
         <!-- Botón Ver Evolución -->
-        <div class="mt-3 flex justify-center">
+        <div class="mt-3">
           <button onclick="toggleAccordion('desktop-timeline')" 
-                  class="flex items-center gap-2 bg-gradient-to-r from-purple-600 to-fuchsia-500 text-white font-bold py-2 px-5 rounded-md transform hover:scale-105 transition-all duration-300 shadow-lg">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 5l7 7-7 7M5 5l7 7-7 7" />
-            </svg>
-            Ver Evolución
+                  class="w-full relative group overflow-hidden
+                         cursor-pointer
+                         backdrop-blur bg-gradient-to-r from-violet-800/30 to-fuchsia-800/30 
+                         border border-fuchsia-500/40 shadow-lg shadow-fuchsia-900/20
+                         py-3 px-5 rounded-lg 
+                         transition-all duration-300
+                         hover:shadow-fuchsia-500/30 hover:border-fuchsia-400/70">
+                         
+            <!-- Efecto de glow en hover -->
+            <div class="absolute inset-0 bg-gradient-to-r from-violet-600 via-fuchsia-500 to-pink-500 opacity-0 group-hover:opacity-20 group-hover:blur-xl transition-all duration-500"></div>
+            
+            <!-- Borde inferior brillante -->
+            <div class="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-fuchsia-400/70 to-transparent"></div>
+            
+            <!-- Contenido del botón -->
+            <div class="relative flex items-center justify-center gap-2 text-white font-bold transform group-hover:scale-105 transition-transform duration-300">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-fuchsia-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 5l7 7-7 7M5 5l7 7-7 7" />
+              </svg>
+              <span class="tracking-wide">VER EVOLUCIÓN</span>
+            </div>
           </button>
         </div>
+      
       </div>
       
       <!-- Columna derecha: Información del proyecto -->
-      <div class="w-1/2 p-6">
-        <div class="flex items-center justify-between mb-4">
+      <div class="w-1/3 p-6">
+        <div class="flex justify-start justify-between mb-4">
           <span class="text-sm text-gray-400">PROYECTO PERSONAL • 2025</span>
-          <div class="bg-white rounded-full p-1 shadow-lg">
-            <span class="text-slate-900 text-xs font-bold px-2">100% COMPLETADO</span>
-          </div>
+
         </div>
         
         <h2 class="text-2xl font-bold mb-4">Portfolio Personal</h2>
         
         <p class="text-gray-300 mb-6 text-sm">
-          Mi primera creación digital pueh, armada con la santa trinidad de la programación: HTML, CSS y JavaScript. Como todo principiante con aspiraciones, me lancé a hacer mi portafolio más pulento que asado dominguero.
-          Le puse un diseño que se adapta a cualquier pantalla (¡hasta en el celular la abuelita!), con animaciones sutiles que no marean pero impresionan, y una navegación más intuitiva.
+          Mi primera creación digital pueh, armada con la santa trinidad de la programación: HTML, CSS y JavaScript.
+          <br>
+          Sin CI/CD porque este humilde proyecto no lo necesita.
+          <br>
+          La regla es simple: no poner porno.
         </p>
         
-        <div class="space-y-3">
-          <div>
-            <h3 class="text-sm font-bold mb-2 text-gray-400">TECNOLOGÍAS UTILIZADAS</h3>
-            <div class="flex flex-wrap gap-2">
-              <span class="bg-blue-600/20 text-blue-400 text-xs px-3 py-1 rounded-full border border-blue-600/30">HTML5</span>
-              <span class="bg-blue-600/20 text-blue-400 text-xs px-3 py-1 rounded-full border border-blue-600/30">TailwindCSS</span>
-              <span class="bg-blue-600/20 text-blue-400 text-xs px-3 py-1 rounded-full border border-blue-600/30">JavaScript</span>
-            </div>
-          </div>
-          
-          <div>
-            <h3 class="text-sm font-bold mb-2 text-gray-400">CARACTERÍSTICAS DESTACADAS</h3>
-            <ul class="text-gray-300 space-y-1 text-sm">
-              <li class="flex items-start">
-                <svg class="h-5 w-5 text-green-500 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                </svg>
-                Diseño totalmente responsive
-              </li>
-              <li class="flex items-start">
-                <svg class="h-5 w-5 text-green-500 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                </svg>
-                Optimizado para SEO
-              </li>
-              <li class="flex items-start">
-                <svg class="h-5 w-5 text-green-500 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                </svg>
-                Animaciones fluidas y transiciones
-              </li>
-            </ul>
-          </div>
-        </div>
+        
         
         <!-- Barra de progreso compacta -->
         <div class="mt-4">
@@ -284,10 +296,65 @@ PROYECTO DESTACADO (PORTAFOLIO PERSONAL)
           </div>
         </div>
       </div>
+
+            <!-- Columna ultra derecha jaja: Tecnologias Ocupadas  -->
+            <div class="w-1/3 p-6">
+              <div class="flex justify-end mb-4"> 
+                <div class="bg-white rounded-full p-1 shadow-lg">
+                  <span class="text-slate-900 text-xs font-bold px-2">100% COMPLETADO</span>
+                </div>
+              </div>
+              
+              
+                
+                <div>
+                  <h3 class="text-sm font-bold mb-2 text-gray-400">CARACTERÍSTICAS DESTACADAS</h3>
+                  <ul class="text-gray-300 space-y-1 text-sm">
+                    <li class="flex items-start">
+                      <svg class="h-5 w-5 text-green-500 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                      </svg>
+                      Diseño totalmente responsive
+                    </li>
+                    <li class="flex items-start">
+                      <svg class="h-5 w-5 text-green-500 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                      </svg>
+                      Optimizado para SEO
+                    </li>
+                    <li class="flex items-start">
+                      <svg class="h-5 w-5 text-green-500 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                      </svg>
+                      Deploy hecho en GitHub Pages (somos humildes)
+                    </li>
+                  </ul>
+                </div>
+
+
+                <div class="pt-8 space-y-3">
+                  <div>
+                    <h3 class="text-sm font-bold mb-2 text-gray-400">TECNOLOGÍAS UTILIZADAS</h3>
+                    <div class="flex flex-wrap gap-2">
+                      <span class="bg-blue-600/20 text-blue-400 text-xs px-3 py-1 rounded-full border border-blue-600/30">HTML5</span>
+                      <span class="bg-blue-600/20 text-blue-400 text-xs px-3 py-1 rounded-full border border-blue-600/30">TailwindCSS</span>
+                      <span class="bg-blue-600/20 text-blue-400 text-xs px-3 py-1 rounded-full border border-blue-600/30">JavaScript</span>
+                    </div>
+                  </div>
+                  
+        
+                </div>
+
+
+
+
+              </div>
+              
+            </div>
     </div>
     
     <!-- Timeline compacto que aparece/desaparece debajo -->
-    <div id="desktop-timeline" class="px-4 py-4 mt-2 mb-4 hidden overflow-hidden transition-all duration-500 ease-in-out bg-gray-900/30 rounded-b-xl">
+    <div id="desktop-timeline" class="max-sm:hidden max-md:hidden px-4 py-4 mt-2 mb-4 overflow-hidden transition-all duration-500 ease-in-out bg-gray-900/30 rounded-b-xl" style="max-height: 0px; opacity: 0;">
       <h3 class="text-sm font-bold mb-3 text-gray-400">HISTORIA DEL PROYECTO</h3>
       
       <div class="flex space-x-4">
@@ -318,7 +385,7 @@ PROYECTO DESTACADO (PORTAFOLIO PERSONAL)
             <h4 class="text-xs font-semibold">Migración a AWS</h4>
           </div>
           <span class="text-[10px] text-gray-500 block mb-1">Mar 2024</span>
-          <p class="text-[10px] text-gray-400">Wordpress era poco personalizable en los planes más baratos. Así que aplicamos scraping y la portamos a HTML/CSS/JS y para desplegarla en Amazon S3.</p>
+          <p class="text-[10px] text-gray-400">Wordpress era poco personalizable en los planes más baratos. Así que aplicamos scraping, lo portamos a HTML/CSS/JS y la desplegamos en Amazon S3.</p>
         </div>
         
         <!-- Etapa 4 -->
@@ -354,9 +421,11 @@ PROYECTO DESTACADO (PORTAFOLIO PERSONAL)
               <span class="text-xs text-gray-400 block mb-3">PROYECTO PERSONAL • 2025</span>
               
               <p class="text-gray-300 text-sm mb-4">
-                Mi primera creación digital pueh, armada con la santa trinidad de la programación: HTML, CSS y JavaScript. Como todo principiante con aspiraciones, me lancé a hacer mi portafolio más pulento que asado dominguero.
-                Le puse un diseño que se adapta a cualquier pantalla (¡hasta en el celular la abuelita!), con animaciones sutiles que no marean pero impresionan, y una navegación más intuitiva.              </p>
-              
+                Mi primera creación digital pueh, armada con la santa trinidad de la programación: HTML, CSS y JavaScript.
+                <br>
+                Sin CI/CD porque este humilde proyecto no lo necesita.
+                <br>
+                La regla es simple: no poner porno.
               <div class="space-y-4 mb-4">
                 <div>
                   <h3 class="text-xs font-bold mb-2 text-gray-400">TECNOLOGÍAS</h3>
@@ -378,58 +447,98 @@ PROYECTO DESTACADO (PORTAFOLIO PERSONAL)
                   <div class="h-full bg-gradient-to-r from-green-500 to-emerald-400" style="width: 100%;"></div>
                 </div>
                 
-                <button onclick="toggleAccordion('mobile-timeline')" class="block w-full bg-gradient-to-r from-purple-600 to-fuchsia-500 text-white font-bold py-2.5 px-4 rounded-lg text-center hover:from-red-600 hover:to-gray-700 transition-colors duration-300">
+                <button onclick="toggleAccordion('mobile-timeline')" class="block w-full relative bg-gradient-to-r from-violet-800 to-fuchsia-700 border border-fuchsia-500/40 text-white font-bold py-2.5 px-4 rounded-lg text-center shadow-lg hover:shadow-fuchsia-500/30 hover:border-fuchsia-400/70 transition-all duration-300">
                     Ver Evolución
                   </button>
               </div>
 
 
 
-              <div id="mobile-timeline" class="mt-4 hidden overflow-hidden transition-all duration-500 ease-in-out">
-                <h3 class="text-xs font-bold mb-3 text-gray-400">HISTORIA DEL PROYECTO</h3>
+              <div id="mobile-timeline" class="mt-5 hidden overflow-hidden transition-all duration-500 ease-in-out">
+                <h3 class="text-sm font-bold mb-4 relative inline-block">
+                  <!-- Efecto de texto neón para el título -->
+                  <span class="absolute inset-0 blur-[1px] text-fuchsia-400 opacity-70">HISTORIA DEL PROYECTO</span>
+                  <span class="relative text-white">HISTORIA DEL PROYECTO</span>
+                </h3>
                 
-                <div class="relative border-l-2 border-gray-700 pl-3">
-                  <!-- Etapa 1 -->
-                  <div class="mb-4 relative">
-                    <div class="absolute -left-4 mt-1 h-3 w-3 rounded-full bg-amber-500"></div>
-                    <div class="mb-1">
-                      <h4 class="text-xs font-semibold">La idea inicial</h4>
-                      <span class="text-[10px] text-gray-500">Dic 2023</span>
+                <!-- Timeline con tarjetas estilo Discord Nitro (paleta fuchsia/púrpura) -->
+                <div class="space-y-4">
+                  <!-- Etapa 1 --> 
+                  <div class="bg-gradient-to-r from-violet-900/30 to-purple-800/20 rounded-lg p-3.5 border border-purple-500/40 shadow-lg relative group">
+                    <!-- Brillo del borde al hacer hover -->
+                    <div class="absolute inset-0 rounded-lg bg-gradient-to-r from-fuchsia-400/0 via-fuchsia-400/30 to-fuchsia-400/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+                    
+                    <div class="flex items-center mb-2">
+                      <!-- Ícono con brillo -->
+                      <div class="h-4 w-4 rounded-full bg-gradient-to-r from-fuchsia-300 to-purple-500 mr-2 shadow-md shadow-fuchsia-500/50"></div>
+                      <h4 class="text-sm font-semibold text-fuchsia-200 mr-auto">La idea inicial</h4>
+                      <span class="text-xs bg-black/30 text-fuchsia-300 px-2 py-0.5 rounded-full">Dic 2023</span>
                     </div>
-                    <p class="text-[10px] text-gray-400">Si soy informático y no tengo página web, estoy más perdido que Wally en una convención de camisetas a rayas.</p>
+                    
+                    <p class="text-xs text-gray-100">Si soy informático y no tengo página web, estoy más perdido que Wally en una convención de camisetas a rayas.</p>
                   </div>
                   
                   <!-- Etapa 2 -->
-                  <div class="mb-4 relative">
-                    <div class="absolute -left-4 mt-1 h-3 w-3 rounded-full bg-orange-500"></div>
-                    <div class="mb-1">
-                      <h4 class="text-xs font-semibold">Iniciamos con WordPress</h4>
-                      <span class="text-[10px] text-gray-500">Dic 2023</span>
+                  <div class="bg-gradient-to-r from-purple-900/30 to-fuchsia-900/20 rounded-lg p-3.5 border border-fuchsia-500/40 shadow-lg relative group">
+                    <!-- Brillo del borde al hacer hover -->
+                    <div class="absolute inset-0 rounded-lg bg-gradient-to-r from-violet-400/0 via-violet-400/30 to-violet-400/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+                    
+                    <div class="flex items-center mb-2">
+                      <div class="h-4 w-4 rounded-full bg-gradient-to-r from-violet-300 to-fuchsia-500 mr-2 shadow-md shadow-violet-500/50"></div>
+                      <h4 class="text-sm font-semibold text-violet-200 mr-auto">WordPress</h4>
+                      <span class="text-xs bg-black/30 text-violet-300 px-2 py-0.5 rounded-full">Dic 2023</span>
                     </div>
-                    <p class="text-[10px] text-gray-400">Primera versión implementada en WordPress utilizando un tema personalizado. El tema personalizado me quedó gustando y de ahí nos inspiramos.</p>
+                    
+                    <p class="text-xs text-gray-100">Primera versión implementada en WordPress utilizando un tema personalizado. El tema personalizado me quedó gustando y de ahí nos inspiramos.</p>
                   </div>
                   
                   <!-- Etapa 3 -->
-                  <div class="mb-4 relative">
-                    <div class="absolute -left-4 mt-1 h-3 w-3 rounded-full bg-rose-500"></div>
-                    <div class="mb-1">
-                      <h4 class="text-xs font-semibold">Migración a AWS</h4>
-                      <span class="text-[10px] text-gray-500">Mar 2024</span>
+                  <div class="bg-gradient-to-r from-fuchsia-900/30 to-purple-800/20 rounded-lg p-3.5 border border-violet-500/40 shadow-lg relative group">
+                    <!-- Brillo del borde al hacer hover -->
+                    <div class="absolute inset-0 rounded-lg bg-gradient-to-r from-pink-400/0 via-pink-400/30 to-pink-400/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+                    
+                    <div class="flex items-center mb-2">
+                      <div class="h-4 w-4 rounded-full bg-gradient-to-r from-pink-300 to-pink-500 mr-2 shadow-md shadow-pink-500/50"></div>
+                      <h4 class="text-sm font-semibold text-pink-200 mr-auto">Migración a AWS</h4>
+                      <span class="text-xs bg-black/30 text-pink-300 px-2 py-0.5 rounded-full">Mar 2024</span>
                     </div>
-                    <p class="text-[10px] text-gray-400">Wordpress era poco personalizable en los planes más baratos. Así que aplicamos scraping y la portamos a HTML/CSS/JS y para desplegarla en Amazon S3.</p>
+                    
+                    <p class="text-xs text-gray-100">Wordpress era poco personalizable en los planes más baratos. Así que aplicamos scraping, lo portamos a HTML/CSS/JS y la desplegamos en Amazon S3.</p>
                   </div>
                   
                   <!-- Etapa 4 -->
-                  <div class="relative">
-                    <div class="absolute -left-4 mt-1 h-3 w-3 rounded-full bg-green-500"></div>
-                    <div class="mb-1">
-                      <h4 class="text-xs font-semibold">Migración a GitHub Pages</h4>
-                      <span class="text-[10px] text-gray-500">Mar 2025</span>
+                  <div class="bg-gradient-to-r from-pink-900/30 to-fuchsia-800/20 rounded-lg p-3.5 border border-pink-500/40 shadow-lg relative group">
+                    <!-- Brillo del borde al hacer hover -->
+                    <div class="absolute inset-0 rounded-lg bg-gradient-to-r from-purple-400/0 via-purple-400/30 to-purple-400/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+                    
+                    <div class="flex items-center mb-2">
+                      <div class="h-4 w-4 rounded-full bg-gradient-to-r from-purple-300 to-purple-500 mr-2 shadow-md shadow-purple-500/50"></div>
+                      <h4 class="text-sm font-semibold text-purple-200 mr-auto">Migración a GitHub Pages</h4>
+                      <span class="text-xs bg-black/30 text-purple-300 px-2 py-0.5 rounded-full">Mar 2025</span>
                     </div>
-                    <p class="text-[10px] text-gray-400">Después de un año AWS deja de ser gratuito cabros así que movimos el sitio web a Github Pages. También aprendimos la lección de no comprar dominios web por GoDaddy jeje (porque son baratos pero renovarlos es terrible caro).</p>
+                    
+                    <p class="text-xs text-gray-100">Después de un año AWS deja de ser gratuito cabros así que movimos el sitio web a Github Pages. También aprendimos la lección de no comprar dominios web por GoDaddy jeje (porque son baratos pero renovarlos es terrible caro).</p>
                   </div>
                 </div>
+              
+                <!-- Línea de conexión estilo discord nitro cosa mas bella -->
+                <div class="pt-4 mt-3 flex justify-center">
+                  <div class="w-24 h-1 bg-gradient-to-r from-transparent via-fuchsia-500 to-transparent rounded-full opacity-60"></div>
+                </div>
               </div>
+              
+              <!-- Estilos mejorados para la animación de brillos púrpura/fuchsia -->
+              <style>
+                /* Animación de brillo púrpura para los elementos del timeline */
+                @keyframes discord-glow {
+                  0%, 100% { filter: drop-shadow(0 0 2px rgba(232, 121, 249, 0.3)); } /* Color fuchsia */
+                  50% { filter: drop-shadow(0 0 4px rgba(192, 132, 252, 0.5)); } /* Color púrpura */
+                }
+                
+                #mobile-timeline .rounded-full {
+                  animation: discord-glow 2s ease-in-out infinite;
+                }
+              </style>
 
             </div>
           </div>
@@ -454,28 +563,81 @@ footer nuevo
 -
 ---------------------------------------------------------------- -->
 
-
+<!-- Estos estilos inline solo son para que la función JS de abajo funcione bro-->
+<style>
+  #desktop-timeline, #mobile-timeline {
+    transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out;
+    opacity: 0; 
+    max-height: 0; 
+    overflow: hidden; /* Añadir overflow hidden por defecto */
+  }
+</style>
 
 <script>
-    function toggleAccordion(id) {
-      const element = document.getElementById(id);
-      
-      if (element.classList.contains('hidden')) {
-        // Mostrar el acordeón
-        element.classList.remove('hidden');
-        element.style.maxHeight = element.scrollHeight + 'px';
-        setTimeout(() => {
+  function toggleAccordion(id) {
+    const element = document.getElementById(id);
+    if (!element) return; // Salir si el elemento no existe
+  
+    // Comprobar si está cerrado basándose en el estilo max-height
+    // Usamos parseFloat para comparar numéricamente, ignorando 'px'
+    const isClosed = !element.style.maxHeight || parseFloat(element.style.maxHeight) === 0;
+  
+    if (isClosed) {
+      // --- Abriendo ---
+      // 1. Calcular altura ANTES de aplicar estilos de apertura
+      //    Para obtener scrollHeight correcto, quitamos max-height temporalmente
+      //    y usamos visibility para evitar parpadeo.
+      element.style.visibility = 'hidden'; // Ocultar sin afectar layout
+      element.style.maxHeight = '';       // Quitar restricción para medir
+  
+      const scrollHeight = element.scrollHeight; // Medir altura completa
+  
+      // 2. Aplicar estilos para la animación de apertura
+      element.style.visibility = 'visible'; // Hacer visible de nuevo
+      element.style.maxHeight = scrollHeight + 'px';
+      element.style.opacity = '1';
+      // Mantenemos overflow hidden durante la transición para evitar saltos
+      element.style.overflow = 'hidden'; 
+  
+      // 3. Scroll suave (opcional, pero bueno tenerlo)
+      //    Usamos 'nearest' para un scroll menos brusco
+      setTimeout(() => {
+        element.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }, 150); // Pequeño delay para que empiece la animación
+  
+      // 4. Permitir overflow visible DESPUÉS de que termine la transición
+      //    Usamos la duración de la transición CSS (500ms)
+      setTimeout(() => {
+        // Solo cambiar si sigue abierto (el usuario no hizo clic de nuevo)
+        if (parseFloat(element.style.maxHeight) > 0) {
           element.style.overflow = 'visible';
-        }, 500);
-      } else {
-        // Ocultar el acordeón
-        element.style.overflow = 'hidden';
-        element.style.maxHeight = '0px';
-        setTimeout(() => {
-          element.classList.add('hidden');
-        }, 500);
-      }
+        }
+      }, 500); // Debe coincidir con tu transition-duration
+  
+    } else {
+      // --- Cerrando ---
+      // 1. Ocultar overflow ANTES de empezar a cerrar
+      element.style.overflow = 'hidden';
+      // 2. Aplicar estilos para la animación de cierre
+      element.style.maxHeight = '0px';
+      element.style.opacity = '0';
+      // Ya no necesitamos manipular la clase 'hidden' aquí
     }
+  }
+  
+  // (Recomendado) Asegurar estado inicial al cargar la página
+  document.addEventListener('DOMContentLoaded', () => {
+    ['desktop-timeline', 'mobile-timeline'].forEach(id => {
+      const el = document.getElementById(id);
+      if (el) {
+        // Aplicar estilos iniciales de 'cerrado' si no están en el HTML inline
+        // Esto asegura que el JS sepa que empiezan cerrados
+        if (!el.style.maxHeight) el.style.maxHeight = '0px';
+        if (!el.style.opacity) el.style.opacity = '0';
+        if (!el.style.overflow) el.style.overflow = 'hidden';
+      }
+    });
+  });
   </script>
 <script src="//instant.page/5.2.0" type="module" 
 integrity="sha384-jnZyxPjiipYXnSU0ygqeac2q7CVYMbh84q0uHVRRxEtvFPiQYbXWUorga2aqZJ0z"></script>

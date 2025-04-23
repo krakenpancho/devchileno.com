@@ -93,289 +93,196 @@ navbar y titulo
   </header>
 
 
-    <!-- ----------------------------------------------------------------
-PROYECTOS (3 COLUMNAS) 
+<!-- ----------------------------------------------------------------
+PROYECTOS (3 COLUMNAS ESTILO TARJETA)
 ---------------------------------------------------------------- -->
-<main class="sm:px-16 md:px-24 xl:px-56">
-  <div class="bg-black container mx-auto mt-8 bg-white text-black">
-    <div class="bg-black flex justify-between">
-      <div class="w-full">
-        <div class="flex flex-wrap mt-4">
+<main class="px-4 sm:px-8 md:px-12 lg:px-24 xl:px-32 py-12">
+  <div class="container mx-auto">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+      <!-- ==================== COLUMNA 1: DESARROLLO WEB ==================== -->
+      <div class="bg-gray-800/40 backdrop-blur-md rounded-xl border border-gray-700 shadow-lg overflow-hidden group relative p-6 flex flex-col transition-all duration-300 hover:border-fuchsia-500/50 hover:shadow-fuchsia-500/20 ">
+        <!-- Borde sutil animado (opcional, puedes quitarlo si prefieres solo el hover) -->
+        <div class="absolute -inset-px rounded-xl bg-gradient-to-br from-violet-900 via-fuchsia-500 to-rose-600 opacity-0 group-hover:opacity-50 transition-opacity duration-300 pointer-events-none blur-sm"></div>
+        
+        <div class="relative z-10 flex-grow ">
+          <h2 class="text-2xl font-bold mb-6 text-center text-white orbitron">Desarrollo Web</h2>
           
+          <!-- Lista de Proyectos Web -->
+          <div class="space-y-5 max-h-[40vh] overflow-y-auto pr-2 scrollbar-thin scrollbar-thumb-gray-600 scrollbar-track-gray-800/50">
+            
+            
+            <!-- Proyecto 2: Tocata -->
+            <a href="../proyectos/tocataconloscabros/" class="block bg-gray-900/60 p-4 rounded-lg hover:bg-gray-700/80 transition-colors duration-200">
+              <div class="flex items-center space-x-4">
+                <div class="w-14 h-14 flex-shrink-0 relative">
+                  <img src="../images/landing_page_TCLC.png" alt="Tocata Con Los Cabros" class="w-full h-full object-cover rounded-md border border-gray-600"/>
+                  <div class="absolute -top-1 -right-1 bg-yellow-500 text-black text-[9px] font-bold px-1.5 py-0.5 rounded-full shadow-md">15%</div>
+                </div>
+                <div class="flex-1">
+                  <h3 class="text-sm font-semibold mb-1">Tocata Con Los Cabros</h3>
+                  <p class="text-gray-400 text-xs">Plataforma eventos musicales</p>
+                  <div class="mt-2 h-1.5 w-full bg-gray-700 rounded-full overflow-hidden">
+                    <div class="h-full bg-gradient-to-r from-yellow-400 to-amber-500" style="width: 15%;"></div>
+                  </div>
+                </div>
+              </div>
+            </a>
+            
+            
+            <!-- Proyecto 1: Portfolio -->
+            <a href="../proyectos/portfoliopersonal/" class="block bg-gray-900/60 p-4 rounded-lg hover:bg-gray-700/80 transition-colors duration-200">
+              <div class="flex items-center space-x-4">
+                <div class="w-14 h-14 flex-shrink-0 relative">
+                  <img src="../images/sitiowebpersonal.png" alt="Portfolio Personal" class="w-full h-full object-cover rounded-md border border-gray-600"/>
+                  <div class="absolute -top-1 -right-1 bg-green-500 text-white text-[9px] font-bold px-1.5 py-0.5 rounded-full shadow-md">100%</div>
+                </div>
+                <div class="flex-1">
+                  <h3 class="text-sm font-semibold mb-1">Portfolio Personal</h3>
+                  <p class="text-gray-400 text-xs">HTML - TailwindCSS - JS</p>
+                  <div class="mt-2 h-1.5 w-full bg-gray-700 rounded-full overflow-hidden">
+                    <div class="h-full bg-gradient-to-r from-green-400 to-emerald-500" style="width: 100%;"></div>
+                  </div>
+                </div>
+              </div>
+            </a>
 
 
-<!-- ----------------------------------------COLUMNA 1 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ -->          
-          <!-- Columna 1: Desarrollo Web -->
-          <div class="w-full md:w-1/3 px-4 mb-8">
-            <div class="flex flex-col items-center">
+            
+            <!-- Puedes añadir más proyectos web aquí -->
 
-              <h1 class="pt-0 pb-2 text-2xl font-bold mb-4 text-center block md:hidden">
-                Desarrollo Web
-              </h1>              
-
-<!-- Contenedor de lista con scroll con estilo premium -->
-<div class="relative rounded-lg w-full h-[30vh] mb-2 bg-black border border-transparent p-[1px] shadow-xl group">
-  <!-- Borde con gradiente animado -->
-<!-- Borde con gradiente animado -->
-<div class="absolute inset-0 rounded-lg bg-gradient-to-br from-violet-900 via-fuchsia-300 to-rose-600 opacity-70 blur-[1px] transition-all duration-500 group-hover:opacity-100 pointer-events-none"></div>  
-  <!-- Contenido interior con scroll -->
-  <div class="relative h-full w-full rounded-lg bg-black p-2  overflow-y-auto scrollbar-hide">
-    <div class="space-y-2 p-2">
-      
-      <!-- Proyecto 1 -->
-      <div class="flex items-start space-x-4 p-4 rounded-lg hover:bg-gray-700/50 transition-all duration-300">
-        <div class="w-16 h-16 flex-shrink-0 relative">
-        <!-- Icono de completado a "100%" -->
-          <div class="absolute -top-2 -right-2 bg-white rounded-full p-1 shadow-lg">
-            <span class="text-slate-900 text-[8px] font-bold px-1">100%</span>
           </div>
-          <img src="../images/sitiowebpersonal.png" alt="Portfolio Personal" class="w-full h-full object-cover rounded-lg"/>
-
-          <!-- Barra de progreso -->
-    <div class="absolute bottom-0 left-0 right-0 h-2 bg-gray-800/80 rounded-b-lg overflow-hidden">
-      <div class="h-full bg-green-500" style="width: 100%;"></div>
-    </div>
         </div>
-        <a href="../proyectos/portfoliopersonal/">
-        <div class="flex-1">
-          <span class="text-xs text-gray-400">2025</span>
-          <h3 class="text-sm font-bold mb-2">Portfolio Personal</h3>
-          <p class="text-gray-300 text-xs">HTML - TailwindCSS - JavaScript</p>
-        </div>
-      </a>
-      </div>
-
-      <!-- Proyecto 2 -->
-      <a href="../proyectos/tocataconloscabros/" class="block hover:no-underline space-y-4">
-      <div class="flex items-start space-x-4 p-4 rounded-lg hover:bg-gray-700/50 transition-all duration-300 cursor-pointer">
-        <div class="w-16 h-16 flex-shrink-0 relative">
-          <!-- Icono de completado -->
-         <!-- Icono de completado a "100%" -->
-         <div class="absolute -top-2 -right-2 bg-white rounded-full p-1 shadow-lg">
-          <span class="text-slate-900 text-[8px] font-bold px-1">15%</span>
-        </div>
-          <img src="../images/landing_page_TCLC.png" alt="Tocata Con Los Cabros" class="w-full h-full object-cover rounded-lg"/>
-                   <!-- Barra de progreso -->
-    <div class="absolute bottom-0 left-0 right-0 h-2 bg-gray-800/80 rounded-b-lg overflow-hidden">
-      <div class="h-full bg-green-500" style="width: 15%;"></div>
-    </div>
-        </div>
-        <div class="flex-1">
-          <span class="text-xs text-gray-400">2025</span>
-          <h3 class="text-sm font-bold mb-2">Tocata Con Los Cabros</h3>
-          <p class="text-gray-300 text-xs">Plataforma para eventos musicales</p>
+        <!-- Tecnologías Web -->
+        <div class="relative z-10 mt-6 pt-4 border-t border-gray-700/50">
+          <div class="flex flex-wrap justify-center gap-2">
+            <span class="bg-gray-700 text-pink-300 text-xs px-2 py-1 rounded font-medium">HTML</span>
+            <span class="bg-gray-700 text-pink-300 text-xs px-2 py-1 rounded font-medium">CSS</span>
+            <span class="bg-gray-700 text-pink-300 text-xs px-2 py-1 rounded font-medium">JavaScript</span>
+            <span class="bg-gray-700 text-pink-300 text-xs px-2 py-1 rounded font-medium">React</span>
+          </div>
         </div>
       </div>
-      </a>
 
-
-
-
-      
-    </div>
-  </div>
-</div>
-              
-             
-              <h1 class="pt-4 text-2xl font-bold mb-4 text-center hidden md:block">
-                Desarrollo Web
-              </h1>
-              <div class="flex flex-wrap justify-center gap-2 mt-3">
-                <span class="bg-blue-600 text-xs px-2 py-1 rounded">HTML</span>
-                <span class="bg-blue-600 text-xs px-2 py-1 rounded">CSS</span>
-                <span class="bg-blue-600 text-xs px-2 py-1 rounded">JavaScript</span>
-                <span class="bg-blue-600 text-xs px-2 py-1 rounded">React</span>
+      <!-- ==================== COLUMNA 2: DESARROLLO MOBILE ==================== -->
+      <div class="bg-gray-800/40 backdrop-blur-md rounded-xl border border-gray-700 shadow-lg overflow-hidden group relative p-6 flex flex-col transition-all duration-300 hover:border-pink-500/50 hover:shadow-pink-500/20">
+        <!-- Borde sutil animado -->
+        <div class="absolute -inset-px rounded-xl bg-gradient-to-br from-rose-500 via-pink-600 to-fuchsia-600 opacity-0 group-hover:opacity-50 transition-opacity duration-300 pointer-events-none blur-sm"></div>
+        
+        <div class="relative z-10 flex-grow">
+          <h2 class="text-2xl font-bold mb-6 text-center text-white orbitron">Desarrollo Mobile</h2>
+          
+          <!-- Grid de Proyectos Mobile -->
+          <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 max-h-[40vh] overflow-y-auto pr-2 scrollbar-thin scrollbar-thumb-gray-600 scrollbar-track-gray-800/50">
+            
+            <!-- Proyecto App Ejercicio -->
+            <div id="gymAppTrigger" onclick="showGamePopup()" class="bg-gray-900/60 p-3 rounded-lg text-center cursor-pointer hover:bg-gray-700/80 transition-colors duration-200 flex flex-col items-center justify-between">
+              <div class="w-16 h-16 mb-2 relative">
+                <img src="../images/GymApp3.png" alt="App de Ejercicio" class="w-full h-full object-contain"/>
+                <div class="absolute -top-1 -right-1 bg-orange-500 text-black text-[9px] font-bold px-1.5 py-0.5 rounded-full shadow-md">6%</div>
+              </div>
+              <p class="font-medium text-xs text-gray-200 mb-1">App Ejercicio</p>
+              <div class="mt-1 h-1.5 w-full bg-gray-700 rounded-full overflow-hidden">
+                 <div class="h-full bg-gradient-to-r from-orange-400 to-red-500" style="width: 6%;"></div>
               </div>
             </div>
-          </div>
-          
-          <!-- Columna 2: Desarrollo Mobile -->
-<!-- ----------------------------------------COLUMNA 2 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ -->          
-          <div class="w-full md:w-1/3 px-4 mb-8">
-            <div class="flex flex-col items-center">
-              
-              <h1 class="pt-4 pb-2 text-2xl font-bold mb-4 text-center block md:hidden">
-                Desarrollo Mobile
-              </h1>              
-<!-- Contenedor de lista con scroll con estilo premium -->
-<div class="relative rounded-lg w-full h-[30vh] overflow-y-auto mb-2 bg-black border border-transparent p-[1px] shadow-xl group">
-  
-  
-  
-  <!-- Borde con gradiente animado -->
-  <div class="absolute inset-0 rounded-lg bg-gradient-to-br from-rose-500 via-pink-600 to-fuchsia-600 opacity-70 blur-[1px] transition-all duration-500 group-hover:opacity-100"></div>
-  
 
-
-
-  
-  <!-- Contenido interior -->
-  <div class="relative h-full w-full rounded-lg bg-black p-2">
-    <div class="p-2 grid grid-cols-3 gap-2">
-     
-     
-      <!-- Proyecto 1 -->
-<!--       <div class="flex flex-col items-center p-2 rounded-lg hover:bg-gray-700/70 cursor-pointer transform transition-all duration-200 hover:scale-[1.05]">
-        <div class="w-14 h-14 bg-blue-600/20 rounded-xl flex items-center justify-center mb-2 relative">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
-          </svg>
-          
-          <div class="absolute -top-1 -right-1 bg-black/80 text-white text-[8px] px-1 rounded-full">2%</div>
-      
-          <div class="absolute bottom-0 left-0 right-0 h-2 bg-gray-800/80 rounded-b-xl overflow-hidden">
-            <div class="h-full bg-green-500" style="width: 2%;"></div>
+            <!-- Placeholder para más apps -->
+            <div class="bg-gray-900/40 p-3 rounded-lg text-center flex flex-col items-center justify-center border border-dashed border-gray-600">
+               <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-gray-500 mb-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                 <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" />
+               </svg>
+              <p class="font-medium text-xs text-gray-500">Próximamente</p>
+            </div>
+             <div class="bg-gray-900/40 p-3 rounded-lg text-center flex flex-col items-center justify-center border border-dashed border-gray-600">
+               <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-gray-500 mb-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                 <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" />
+               </svg>
+              <p class="font-medium text-xs text-gray-500">Próximamente</p>
+            </div>
+            
           </div>
         </div>
-        <p class="font-medium text-xs text-center text-gray-100">Calculadora Sueldo</p>
-      </div> -->
-      
-     
-     
-     
-     <!-- Proyecto 2 -->
-     <div id="gymAppTrigger" onclick="showGamePopup()" class="flex flex-col items-center p-2 rounded-lg hover:bg-gray-700/70 cursor-pointer transform transition-all duration-200 hover:scale-[1.05]">
-      <div class="w-16 h-16 bg-green-600/20 rounded-xl flex items-center justify-center mb-2 relative">
-        <div class="flex items-center justify-center w-full h-full">
-          <img src="../images/GymApp3.png" alt="App de Ejercicio" class="w-16 h-16 object-contain"/>
-        </div>
-        
-        <!-- Porcentaje en esquina superior derecha -->
-        <div class="absolute -top-2 -right-2 bg-white rounded-full p-1 shadow-lg">
-          <span class="text-slate-900 text-[8px] font-bold px-1">6%</span>
-        </div>
-        
-        <!-- Barra de progreso -->
-        <div class="absolute bottom-0 left-0 right-0 h-2 bg-gray-800/80 rounded-b-xl overflow-hidden">
-          <div class="h-full bg-green-500" style="width: 5%;"></div>
+         <!-- Tecnologías Mobile -->
+        <div class="relative z-10 mt-6 pt-4 border-t border-gray-700/50">
+          <div class="flex flex-wrap justify-center gap-2">
+            <span class="bg-gray-700 text-pink-300 text-xs px-2 py-1 rounded font-medium">Kotlin</span>
+            <!-- <span class="bg-gray-700 text-pink-300 text-xs px-2 py-1 rounded font-medium">Swift</span> -->
+          </div>
         </div>
       </div>
-      <p class="font-medium text-xs text-center text-gray-100">App de Ejercicio</p>
-    </div>
 
-    <!-- Popup para App de Ejercicio -->
-    <div id="gamePopup" class="hidden fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-50 cursor-pointer" onclick="closeGamePopup()">
-      <div class="bg-gray-800 p-4 md:p-6 rounded-lg shadow-xl transform transition-all duration-300 scale-95 hover:scale-100 whitespace-nowrap">
-        <p id="gym-popup-text" class="text-white text-base md:text-lg">Intentalo a futuro jeje 😅</p>
-      </div>
-    </div>
-
-    <script>
-      // Variable para rastrear si ya se mostró el popup
-      let gymPopupShown = false;
-
-      function showGamePopup() {
-        // Primera vez: mostrar el popup
-        gymPopupShown = true;
-        document.getElementById('gamePopup').classList.remove('hidden');
+      <!-- ==================== COLUMNA 3: VIDEOJUEGOS ==================== -->
+      <div class="bg-gray-900 rounded-xl border border-gray-700 shadow-lg overflow-hidden group relative flex flex-col transition-all duration-300 hover:border-purple-500/50 hover:shadow-purple-500/20">
         
+        <!-- Imagen de fondo que llena toda la tarjeta -->
+        <img src="../images/7pecadoscapitales.jpg" alt="Fondo Videojuegos" class="absolute inset-0 w-full h-full object-cover opacity-30 group-hover:opacity-40 transition-opacity duration-300"/>
+        
+        <!-- Overlay oscuro para legibilidad -->
+        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/70 to-transparent"></div>
+
+        <!-- Borde sutil animado (se mantiene) -->
+        <div class="absolute -inset-px rounded-xl bg-gradient-to-br from-pink-600 via-purple-500 to-indigo-600 opacity-0 group-hover:opacity-50 transition-opacity duration-300 pointer-events-none blur-sm"></div>
+        
+        <!-- Contenedor del contenido (encima de la imagen y overlay) -->
+        <div class="relative z-10 flex flex-col flex-grow p-6"> 
+          
+          <!-- Título -->
+          <h2 class="text-2xl font-bold mb-6 text-center text-purple-300 orbitron">Videojuegos</h2>
+          
+          <!-- Contenido Principal (espacio flexible para empujar texto hacia abajo) -->
+          <div class="flex-grow flex flex-col items-center justify-end text-center"> 
+             <p class="text-3xl font-bold text-white mb-2 orbitron">2027 <span class="text-purple-300">?</span></p>
+             <p class="text-gray-300 text-sm mb-4">Sección en desarrollo...</p>
+             <p class="text-gray-400 text-xs">¡Para nada pronto lanzaremos nuestros videojuegos!</p>
+          </div>
+
+          <!-- Tecnologías Juegos (al final) -->
+          <div class="mt-6 pt-4 border-t border-gray-700/50">
+            <div class="flex flex-wrap justify-center gap-2">
+              <span class="bg-gray-700/80 text-purple-300 text-xs px-2 py-1 rounded font-medium">Unreal Engine</span>
+              <!-- <span class="bg-gray-700/80 text-purple-300 text-xs px-2 py-1 rounded font-medium">Unity</span> -->
+            </div>
+          </div>
+        </div> 
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Popup para App de Ejercicio -->
+  <div id="gamePopup" class="hidden fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-[100] cursor-pointer" onclick="closeGamePopup()">
+    <div class="bg-gray-900 border border-white-500/50 p-4 md:p-6 rounded-lg shadow-xl transform transition-all duration-300 scale-95 hover:scale-100 whitespace-nowrap">
+      <p id="gym-popup-text" class="text-white text-base md:text-lg">Intentalo a futuro jeje 😅</p>
+    </div>
+  </div>
+
+  <script>
+    // Variable para rastrear si ya se mostró el popup
+    let gymPopupShown = false; // Asegúrate que esta variable no esté definida en otro lado globalmente
+
+    function showGamePopup() {
+      const popup = document.getElementById('gamePopup');
+      if (popup) {
+        popup.classList.remove('hidden');
         // Timer para cerrar el popup después de 3 segundos
         setTimeout(() => {
           closeGamePopup();
-        }, 3000);
+        }, 3000); // 3000 milisegundos = 3 segundos
       }
+    }
 
-      function closeGamePopup() {
-        document.getElementById('gamePopup').classList.add('hidden');
+    function closeGamePopup() {
+      const popup = document.getElementById('gamePopup');
+      if (popup) {
+        popup.classList.add('hidden');
       }
-    </script>
-      
-      <!-- Proyecto 3 -->
-<!--       <div class="flex flex-col items-center p-2 rounded-lg hover:bg-gray-700/70 cursor-pointer transform transition-all duration-200 hover:scale-[1.05]">
-        <div class="w-14 h-14 bg-purple-600/20 rounded-xl flex items-center justify-center mb-2 relative">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-          </svg>
-          
-          
-          <div class="absolute -top-1 -right-1 bg-black/80 text-white text-[8px] px-1 rounded-full">0%</div>
-          
-          
-          <div class="absolute bottom-0 left-0 right-0 h-2 bg-gray-800/80 rounded-b-xl overflow-hidden">
-            <div class="h-full bg-green-500" style="width: 0%;"></div>
-          </div>
-        </div>
-        <p class="font-medium text-xs text-center text-gray-100">Red Social</p>
-      </div> -->
+    }
+  </script>
 
-
-
-
-    </div>
-  </div>
-</div>
-              
-              
-              <h1 class="pt-4 text-2xl font-bold mb-4 text-center hidden md:block">
-                Desarrollo Mobile
-              </h1>
-              <div class="flex flex-wrap justify-center gap-2 mt-3">
-                <span class="bg-blue-600 text-xs px-2 py-1 rounded">Kotlin</span>
-              </div>
-            </div>
-          </div>
-          
-
-
-
-
-<!-- ----------------------------------------COLUMNA 3 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ -->          
-<!-- Columna 3: Videojuegos con borde premium -->
-<div class="w-full md:w-1/3 px-4 mb-8">
-  <div class="flex flex-col items-center">
-
-
-    <h1 class="pt-0 pb-2 text-2xl font-bold mb-4 text-center block md:hidden">
-      Videojuegos
-    </h1>
-    <!-- Contenedor con estilo premium -->
-    <div class="relative rounded-lg w-full h-[30vh] overflow-hidden mb-2 bg-black border border-transparent p-[1px] shadow-xl group">
-      
-      
-      
-      
-      <!-- Borde con gradiente animado -->
-      <div class="absolute inset-0 rounded-lg bg-gradient-to-br from-pink-600 via-fuchsia-500 to-violet-900 opacity-70 blur-[1px] transition-all duration-500 group-hover:opacity-100"></div>      
-
-
-
-
-
-
-      <!-- Contenido interior -->
-      <div class="relative h-full w-full rounded-lg bg-black p-2">
-        <!-- Contenedor de imagen con texto superpuesto -->
-        <div class="relative w-full h-full rounded-lg overflow-hidden">
-          <!-- Texto "2027" en esquina superior derecha -->
-          <div class="absolute top-2 right-2  text-white font-bold text-3xl pl-2 py-1 rounded-md z-20" style="right: 8px !important; left: auto !important;">
-            2027😅
-          </div>
-          
-          <img src="../images/7pecadoscapitales.jpg" alt="7 Pecados Capitales" 
-              class="w-full h-full object-cover opacity-70">
-              
-          <div class="absolute inset-0 flex flex-col items-center justify-center bg-black/40">
-            <p class="text-white font-bold text-lg text-center w-full">Sección en desarrollo</p>
-            <p class="text-gray-200 text-sm text-center w-full">¡Para nada pronto lanzaremos nuestros videojuegos!</p>
-          </div>
-        </div>
-      </div>
-    </div>
-     
-    <h1 class="pt-4 text-2xl font-bold mb-4 text-center hidden md:block">
-      Videojuegos
-    </h1>
-    <div class="flex flex-wrap justify-center gap-2 mt-3">
-      <span class="bg-blue-600 text-xs px-2 py-1 rounded">Unreal Engine</span>
-    </div>
-  </div>
-</div>
-          
-        </div>
-      </div>
-    </div>
-  </div>
 </main>
+
+
   <!-- ----------------------------------------------------------------
 footer nuevo
 ---------------------------------------------------------------- -->

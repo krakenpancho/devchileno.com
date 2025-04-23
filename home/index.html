@@ -147,6 +147,7 @@
 
     <div class="text-center">
       <h3 class="text-yellow-400 text-lg font-bold mb-2">Proyecto Actual</h3>
+      <a href="../proyectos/tocataconloscabros/" class="hover:bg-gray-700/80 transition-colors duration-200">
       <div class="bg-gray-800 rounded-lg pt-2 transform transition-all duration-300 hover:scale-105">
         <h4 class="font-bold mb-2">Tocata Con Los Cabros</h4>
         <p class="text-gray-300 text-sm">
@@ -154,10 +155,11 @@
           El salvavidas de los fanáticos más pegados al TikTok que calcetín a estufa. Publicamos eventos musicales tan tentadores que hasta el más vicioso del celular va a despegar la rajuela del sillón.
         </p>
         <div class="flex flex-wrap justify-center gap-2 mt-3">
-          <span class="bg-blue-600 text-xs px-2 py-1 rounded">React</span>
-          <span class="bg-blue-600 text-xs px-2 py-1 rounded">TypeScript</span>
+          <span class="bg-gray-700 text-pink-300 text-xs px-2 py-1 rounded font-medium">React</span>
+          <span class="bg-gray-700 text-pink-300 text-xs px-2 py-1 rounded font-medium">TypeScript</span>
         </div>
       </div>
+    </a>
     </div>
   </div>
 </div>
@@ -186,17 +188,37 @@
             </h2>
           </a>
           <div class="space-y-4">
+            
+        <!-- Card 2 -->
+        <a href="../proyectos/tocataconloscabros/" class="block hover:no-underline space-y-4">
+          <div class="flex items-start space-x-4 p-4 rounded-lg hover:bg-gray-700/50 transition-all duration-300">
+            <div class="w-16 h-16 flex-shrink-0 relative">
+              <!-- Icono de en progreso -->
+              <div class="absolute -top-2 -right-2 bg-white rounded-full p-1 shadow-lg">
+                <svg class="h-4 w-4 animate-spin" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <circle class="opacity-25" cx="12" cy="12" r="10" stroke="black" stroke-width="4" fill="none"/>
+                  <path class="opacity-75" fill="black" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"/>
+                </svg>
+              </div>
+              <img src="../images/landing_page_TCLC.png" alt="TCLC" class="w-full h-full object-cover rounded-lg"/>
+            </div>
+          <div class="flex-1">
+            <span class="text-sm text-gray-400">Desarrollo</span>
+            <h3 class="text-xl font-bold mb-2">Proyecto Tocata Con Los Cabros</h3>
+            <p class="text-gray-300 text-sm">REACT (Portando de Outsystems)</p>
+          </div>
+          </div>
+          </a>
+            
+            
             <!-- Card 1 -->
 
-<!-- div para el popup -->
-<div id="popup" class="hidden fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-50 cursor-pointer" onclick="closePopup()">
-  <div class="bg-gray-800 p-4 md:p-6 rounded-lg shadow-xl transform transition-all duration-300 scale-95 hover:scale-100 whitespace-nowrap">
-    <p id="popup-text" class="text-white text-base md:text-lg">Es esta misma web 😎</p>
-  </div>
-</div>
-
-
-
+            <!-- div para el popup -->
+            <div id="popup" class="hidden fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-[100] cursor-pointer" onclick="closeGamePopup()">
+              <div class="bg-gray-900 border border-white-500/50 p-4 md:p-6 rounded-lg shadow-xl transform transition-all duration-300 scale-95 hover:scale-100 whitespace-nowrap">
+                <p id="gym-popup-text" class="text-white text-base md:text-lg">Es esta misma web 😎</p>
+              </div>
+            </div>
 
             <div class="flex items-start space-x-4 p-4 rounded-lg hover:bg-gray-700/50 transition-all duration-300 cursor-pointer" onclick="showPopup()">
               <div class="w-16 h-16 flex-shrink-0 relative">
@@ -208,12 +230,12 @@
                 </div>
                 <img src="../images/sitiowebpersonal.png" alt="Sitio Web Personal" class="w-full h-full object-cover rounded-lg"/>
               </div>
-        <div class="flex-1">
-          <span class="text-sm text-gray-400">2024</span>
-          <h3 class="text-xl font-bold mb-2">Sitio Web Personal</h3>
-          <p class="text-gray-300 text-sm">HTML - TailwindCSS - CSS - JS</p>
-        </div>
-        </div>
+            <div class="flex-1">
+              <span class="text-sm text-gray-400">2024</span>
+              <h3 class="text-xl font-bold mb-2">Sitio Web Personal</h3>
+              <p class="text-gray-300 text-sm">HTML - TailwindCSS - CSS - JS</p>
+            </div>
+            </div>
 
 <!-- JavaScript para el popup para la card 1 que dice "Esta misma web bro"-->
 <script>
@@ -242,26 +264,7 @@
   }
 </script>
 
-        <!-- Card 2 -->
-        <a href="../proyectos/tocataconloscabros/" class="block hover:no-underline space-y-4">
-        <div class="flex items-start space-x-4 p-4 rounded-lg hover:bg-gray-700/50 transition-all duration-300">
-          <div class="w-16 h-16 flex-shrink-0 relative">
-            <!-- Icono de en progreso -->
-            <div class="absolute -top-2 -right-2 bg-white rounded-full p-1 shadow-lg">
-              <svg class="h-4 w-4 animate-spin" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="black" stroke-width="4" fill="none"/>
-                <path class="opacity-75" fill="black" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"/>
-              </svg>
-            </div>
-            <img src="../images/landing_page_TCLC.png" alt="TCLC" class="w-full h-full object-cover rounded-lg"/>
-          </div>
-        <div class="flex-1">
-          <span class="text-sm text-gray-400">Desarrollo</span>
-          <h3 class="text-xl font-bold mb-2">Proyecto Tocata Con Los Cabros</h3>
-          <p class="text-gray-300 text-sm">REACT (Portando de Outsystems)</p>
-        </div>
-        </div>
-        </a>
+
       </div>
         </div>
       </div>
