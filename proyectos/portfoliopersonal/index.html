@@ -454,10 +454,9 @@ PROYECTO DESTACADO (PORTAFOLIO PERSONAL)
 
 
 
-              <div id="mobile-timeline" class="mt-5 hidden overflow-hidden transition-all duration-500 ease-in-out">
-                <h3 class="text-sm font-bold mb-4 relative inline-block">
-                  <!-- Efecto de texto neón para el título -->
-                  <span class="absolute inset-0 blur-[1px] text-fuchsia-400 opacity-70">HISTORIA DEL PROYECTO</span>
+              <div id="mobile-timeline" class="mt-5  overflow-hidden transition-all duration-500 ease-in-out">
+                <h3 class="py-4 text-sm font-bold mb-4 relative inline-block">
+
                   <span class="relative text-white">HISTORIA DEL PROYECTO</span>
                 </h3>
                 
@@ -479,7 +478,7 @@ PROYECTO DESTACADO (PORTAFOLIO PERSONAL)
                   </div>
                   
                   <!-- Etapa 2 -->
-                  <div class="bg-gradient-to-r from-purple-900/30 to-fuchsia-900/20 rounded-lg p-3.5 border border-fuchsia-500/40 shadow-lg relative group">
+                  <div class="mt-8 bg-gradient-to-r from-purple-900/30 to-fuchsia-900/20 rounded-lg p-3.5 border border-fuchsia-500/40 shadow-lg relative group">
                     <!-- Brillo del borde al hacer hover -->
                     <div class="absolute inset-0 rounded-lg bg-gradient-to-r from-violet-400/0 via-violet-400/30 to-violet-400/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
                     
@@ -493,7 +492,7 @@ PROYECTO DESTACADO (PORTAFOLIO PERSONAL)
                   </div>
                   
                   <!-- Etapa 3 -->
-                  <div class="bg-gradient-to-r from-fuchsia-900/30 to-purple-800/20 rounded-lg p-3.5 border border-violet-500/40 shadow-lg relative group">
+                  <div class="mt-8 bg-gradient-to-r from-fuchsia-900/30 to-purple-800/20 rounded-lg p-3.5 border border-violet-500/40 shadow-lg relative group">
                     <!-- Brillo del borde al hacer hover -->
                     <div class="absolute inset-0 rounded-lg bg-gradient-to-r from-pink-400/0 via-pink-400/30 to-pink-400/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
                     
@@ -507,7 +506,7 @@ PROYECTO DESTACADO (PORTAFOLIO PERSONAL)
                   </div>
                   
                   <!-- Etapa 4 -->
-                  <div class="bg-gradient-to-r from-pink-900/30 to-fuchsia-800/20 rounded-lg p-3.5 border border-pink-500/40 shadow-lg relative group">
+                  <div class="mt-8 bg-gradient-to-r from-pink-900/30 to-fuchsia-800/20 rounded-lg p-3.5 border border-pink-500/40 shadow-lg relative group">
                     <!-- Brillo del borde al hacer hover -->
                     <div class="absolute inset-0 rounded-lg bg-gradient-to-r from-purple-400/0 via-purple-400/30 to-purple-400/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
                     
@@ -521,10 +520,7 @@ PROYECTO DESTACADO (PORTAFOLIO PERSONAL)
                   </div>
                 </div>
               
-                <!-- Línea de conexión estilo discord nitro cosa mas bella -->
-                <div class="pt-4 mt-3 flex justify-center">
-                  <div class="w-24 h-1 bg-gradient-to-r from-transparent via-fuchsia-500 to-transparent rounded-full opacity-60"></div>
-                </div>
+
               </div>
               
               <!-- Estilos mejorados para la animación de brillos púrpura/fuchsia -->
@@ -564,81 +560,59 @@ footer nuevo
 ---------------------------------------------------------------- -->
 
 <!-- Estos estilos inline solo son para que la función JS de abajo funcione bro-->
+
 <style>
   #desktop-timeline, #mobile-timeline {
     transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out;
     opacity: 0; 
     max-height: 0; 
-    overflow: hidden; /* Añadir overflow hidden por defecto */
+    overflow: hidden; /* Importante: overflow hidden por defecto */
   }
 </style>
 
 <script>
   function toggleAccordion(id) {
     const element = document.getElementById(id);
-    if (!element) return; // Salir si el elemento no existe
-  
-    // Comprobar si está cerrado basándose en el estilo max-height
-    // Usamos parseFloat para comparar numéricamente, ignorando 'px'
-    const isClosed = !element.style.maxHeight || parseFloat(element.style.maxHeight) === 0;
-  
+    if (!element) return; 
+
+    // Comprueba si está cerrado (maxHeight es 0px o no está definido)
+    const isClosed = !element.style.maxHeight || element.style.maxHeight === '0px';
+
     if (isClosed) {
       // --- Abriendo ---
-      // 1. Calcular altura ANTES de aplicar estilos de apertura
-      //    Para obtener scrollHeight correcto, quitamos max-height temporalmente
-      //    y usamos visibility para evitar parpadeo.
-      element.style.visibility = 'hidden'; // Ocultar sin afectar layout
-      element.style.maxHeight = '';       // Quitar restricción para medir
-  
-      const scrollHeight = element.scrollHeight; // Medir altura completa
-  
-      // 2. Aplicar estilos para la animación de apertura
-      element.style.visibility = 'visible'; // Hacer visible de nuevo
-      element.style.maxHeight = scrollHeight + 'px';
+      // Calcula la altura necesaria y aplica los estilos para abrir
+      element.style.maxHeight = element.scrollHeight + 'px';
       element.style.opacity = '1';
-      // Mantenemos overflow hidden durante la transición para evitar saltos
-      element.style.overflow = 'hidden'; 
-  
-      // 3. Scroll suave (opcional, pero bueno tenerlo)
-      //    Usamos 'nearest' para un scroll menos brusco
+      
+      // Scroll suave hacia el inicio del elemento DESPUÉS de que empiece la animación
       setTimeout(() => {
-        element.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-      }, 150); // Pequeño delay para que empiece la animación
-  
-      // 4. Permitir overflow visible DESPUÉS de que termine la transición
-      //    Usamos la duración de la transición CSS (500ms)
-      setTimeout(() => {
-        // Solo cambiar si sigue abierto (el usuario no hizo clic de nuevo)
-        if (parseFloat(element.style.maxHeight) > 0) {
-          element.style.overflow = 'visible';
-        }
-      }, 500); // Debe coincidir con tu transition-duration
-  
+        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 150); // Pequeño delay
+
     } else {
       // --- Cerrando ---
-      // 1. Ocultar overflow ANTES de empezar a cerrar
-      element.style.overflow = 'hidden';
-      // 2. Aplicar estilos para la animación de cierre
+      // Simplemente revierte los estilos para cerrar
       element.style.maxHeight = '0px';
       element.style.opacity = '0';
-      // Ya no necesitamos manipular la clase 'hidden' aquí
     }
   }
-  
-  // (Recomendado) Asegurar estado inicial al cargar la página
+
+  // (Opcional pero bueno) Asegurar estado inicial al cargar
+  // Si ya tienes los estilos en el <style> o inline en el HTML, esto es redundante
+  // Pero no hace daño tenerlo como respaldo.
   document.addEventListener('DOMContentLoaded', () => {
     ['desktop-timeline', 'mobile-timeline'].forEach(id => {
       const el = document.getElementById(id);
-      if (el) {
-        // Aplicar estilos iniciales de 'cerrado' si no están en el HTML inline
-        // Esto asegura que el JS sepa que empiezan cerrados
-        if (!el.style.maxHeight) el.style.maxHeight = '0px';
-        if (!el.style.opacity) el.style.opacity = '0';
-        if (!el.style.overflow) el.style.overflow = 'hidden';
+      // Asegura que los estilos iniciales estén aplicados si no lo estaban
+      if (el && !el.style.maxHeight) { 
+        el.style.maxHeight = '0px';
+        el.style.opacity = '0';
+        // el.style.overflow = 'hidden'; // Ya está en el CSS
       }
     });
   });
-  </script>
+</script>
+
 <script src="//instant.page/5.2.0" type="module" 
 integrity="sha384-jnZyxPjiipYXnSU0ygqeac2q7CVYMbh84q0uHVRRxEtvFPiQYbXWUorga2aqZJ0z"></script>
 </body>
