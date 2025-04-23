@@ -7,16 +7,17 @@
   <title>
     Página no encontrada - Navarro Development Blog
   </title>
-  <link rel="icon" href="./images/shibagod.ico" type="image/x-icon">
-  <link rel="shortcut icon" href="./images/shibagod.ico" type="image/x-icon">
-  <link href="./tw_style.css" rel="stylesheet" />
+  <base href="/" />
+  <link rel="icon" href="/images/shibagod.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="/images/shibagod.ico" type="image/x-icon">
+  <link href="/tw_style.css" rel="stylesheet" />  
 </head>
 
 <body data-instant-intensity="viewport" class="bg-gray-900 text-gray-100 min-h-screen flex flex-col">
   <header class="bg-black text-white border-gray-800">
     <div class="flex justify-center items-center w-full py-2">
       <div class="text-4xl font-bold orbitron text-center px-4">
-        <a class="hover:text-gray-300" href="./home/index.html">BLOG DE UN DEVELOPER CHILENO</a>
+        <a class="hover:text-gray-300" href="/home/index.html">BLOG DE UN DEVELOPER CHILENO</a>
         <p class="text-xl text-gray-400 roboto" style="font-weight: 400;">Narrando el camino más difícil que encontrar pega sin pituto: el crear una empresa de videojuegos chilena</p>
       </div>
     </div>
@@ -43,10 +44,10 @@
         </svg>
       </button>
       <div class="hidden md:flex w-full justify-center pb-2" id="menu-links">
-          <a class="block text-center text-white hover:text-black px-6 py-4 font-bold hover:bg-yellow-100 border-b-4 border-transparent" href="./home/">Inicio</a>
-          <a class="block text-center text-white hover:text-black px-6 py-4 font-bold hover:bg-yellow-100 border-b-4 border-transparent" href="./proyectos/">Proyectos</a>
-          <a class="block text-center text-white hover:text-black px-6 py-4 font-bold hover:bg-yellow-100 border-b-4 border-transparent" href="./posts/all/">Blog</a>
-          <a class="block text-center text-white hover:text-black px-6 py-4 font-bold hover:bg-yellow-100 border-b-4 border-transparent" href="./inspiracion/">Inspiración</a>
+          <a class="block text-center text-white hover:text-black px-6 py-4 font-bold hover:bg-yellow-100 border-b-4 border-transparent" href="/home/">Inicio</a>
+          <a class="block text-center text-white hover:text-black px-6 py-4 font-bold hover:bg-yellow-100 border-b-4 border-transparent" href="/proyectos/">Proyectos</a>
+          <a class="block text-center text-white hover:text-black px-6 py-4 font-bold hover:bg-yellow-100 border-b-4 border-transparent" href="/posts/all/">Blog</a>
+          <a class="block text-center text-white hover:text-black px-6 py-4 font-bold hover:bg-yellow-100 border-b-4 border-transparent" href="/inspiracion/">Inspiración</a>
       </div>
     </nav>
     <script>
@@ -59,41 +60,38 @@
 
   <!-- Contenido Principal -->
   <main class="flex-grow w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-8 mb-16 flex flex-col items-center justify-center">
-    <!-- Título con estilo Matrix -->
-    <div class="text-center mb-12 relative w-full"> <!-- Añadido w-full -->
-      <!-- Versión escritorio (normal) -->
-      <h1 class="text-4xl md:text-5xl font-bold mb-4 orbitron hidden md:block text-red-500">ERROR 404</h1>
-
-      <!-- Versión móvil con gif de fondo mejorado -->
-      <div class="relative md:hidden">
-        <!-- Fondo gif con overlay para destacar -->
-        <div class="absolute inset-0 overflow-hidden">
-          <img src="./images/matrix_big.gif" alt="Matrix code"
-               class="w-full h-full object-cover opacity-60 filter saturate-150 contrast-125">
-
-          <!-- Overlay con gradiente -->
-          <div class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/40 to-black/70 mix-blend-multiply"></div>
-
-          <!-- Capa de brillo adicional -->
-          <div class="absolute inset-0 bg-red-900/20 mix-blend-overlay"></div>
+    
+    <!-- Título con estilo Matrix para todas las pantallas -->
+    <div class="text-center mb-12 relative w-full">
+        <!-- Contenedor del GIF y texto  -->
+        <div class="relative"> 
+          <!-- Fondo gif con overlay -->
+          <div class="absolute inset-0 overflow-hidden">
+            <img src="/images/matrix_big.gif" alt="Matrix code"
+                 class="w-full h-full object-cover opacity-60 filter saturate-150 contrast-125">
+            <!-- Overlay con gradiente -->
+            <div class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/40 to-black/70 mix-blend-multiply"></div>
+            <!-- Capa de brillo adicional -->
+            <div class="absolute inset-0 bg-red-900/20 mix-blend-overlay"></div>
+          </div>
+  
+          <!-- Texto sobre el gif con efecto de resplandor ROJO -->
+          <!-- Ajustamos tamaño y padding para desktop con md: -->
+          <h1 class="text-4xl md:text-5xl font-bold py-8 md:py-12 orbitron relative z-10 drop-shadow-[0_0_10px_rgba(255,50,50,0.8)]">
+            <span class="relative">
+              <!-- Efecto de neón para el texto -->
+              <span class="absolute inset-0 blur-[1.5px] text-red-400 opacity-90">_[ ERROR 404</span>
+              <span class="relative text-white">_[ ERROR 404</span>
+            </span>
+          </h1>
         </div>
-
-        <!-- Texto sobre el gif con efecto de resplandor ROJO -->
-        <h1 class="text-4xl font-bold py-8 orbitron relative z-10 drop-shadow-[0_0_10px_rgba(255,50,50,0.8)]">
-          <span class="relative">
-            <!-- Efecto de neón para el texto -->
-            <span class="absolute inset-0 blur-[1.5px] text-red-400 opacity-90">_[ ERROR 404</span>
-            <span class="relative text-white">_[ ERROR 404</span>
-          </span>
-        </h1>
       </div>
-    </div>
 
     <!-- Mensaje de error -->
     <div class="text-center">
       <p class="text-xl md:text-2xl text-gray-300 mb-6">Parece que te perdiste en la Matrix...</p>
       <p class="text-gray-400 mb-8">La página que buscas no existe o fue movida.</p>
-      <a href="./home/index.html"
+      <a href="/home/index.html"
          class="inline-block bg-gradient-to-r from-fuchsia-600 to-purple-600 hover:from-fuchsia-700 hover:to-purple-700 text-white font-bold py-3 px-6 rounded-lg shadow-lg transition duration-300 transform hover:scale-105">
         Volver al Inicio
       </a>

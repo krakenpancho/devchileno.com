@@ -119,12 +119,14 @@ PROYECTO DESTACADO (PORTAFOLIO PERSONAL)
         </div>
         
         <!-- Texto sobre el gif con efecto de resplandor -->
-        <h1 class="text-3xl font-bold py-6 orbitron relative z-10 drop-shadow-[0_0_8px_rgba(255,255,255,0.7)]">
-          <span class="relative">
-            <!-- Efecto de neón para el texto -->
-            <span class="absolute inset-0 blur-[1px] text-fuchsia-300 opacity-80">_[ PORTAFOLIO PERSONAL</span>
-            <span class="relative text-white">_[ PORTAFOLIO PERSONAL</span>
-          </span>
+        <h1 class="text-3xl font-bold py-6 orbitron relative z-10" 
+            style="text-shadow: 
+                  0 0 5px rgba(255, 255, 255, 0.6),  /* Brillo blanco cercano */
+                  0 0 10px rgba(232, 121, 249, 0.7), /* Brillo fuchsia medio */
+                  0 0 15px rgba(192, 132, 252, 0.5); /* Brillo púrpura lejano */
+                  ">
+          <span class="relative text-white">_[ PORTAFOLIO PERSONAL</span> 
+          <!-- Ya no necesitamos el span absoluto ni el span relativo interior -->
         </h1>
       </div>
     </div>
