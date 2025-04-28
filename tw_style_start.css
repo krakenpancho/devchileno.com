@@ -7,3 +7,8 @@
 COMANDO CONSOLA PARA VERSION 4 DE TAILWIND
 npx @tailwindcss/cli --watch -i tw_style_start.css -o tw_style.css
 */
+
+/*
+COMANDO CONSOLA PARA VERSION 4 DE TAILWIND CON PURGA
+npx @tailwindcss/cli --watch -i tw_style_start.css -o tw_style.css --minify
+*/
