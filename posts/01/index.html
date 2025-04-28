@@ -5,7 +5,7 @@
   <meta charset="utf-8" />
   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
   <title>
-    Página no encontrada - Blog de un developer chileno
+    Posts - Blog de un developer chileno
   </title>
   <base href="/" />
   <link rel="icon" href="/images/shibagod.ico" type="image/x-icon">
@@ -46,8 +46,8 @@
       <div class="hidden md:flex w-full justify-center pb-2" id="menu-links">
           <a class="block text-center text-white hover:text-black px-6 py-4 font-bold hover:bg-yellow-100 border-b-4 border-transparent" href="/">Inicio</a>
           <a class="block text-center text-white hover:text-black px-6 py-4 font-bold hover:bg-yellow-100 border-b-4 border-transparent" href="/proyectos/">Proyectos</a>
-          <a class="block text-center text-white hover:text-black px-6 py-4 font-bold hover:bg-yellow-100 border-b-4 border-transparent" href="/posts/all/">Blog</a>
-          <a class="block text-center text-white hover:text-black px-6 py-4 font-bold hover:bg-yellow-100 border-b-4 border-transparent" href="/inspiracion/">Inspiración</a>
+          <a class="block text-center text-white hover:text-black px-6 py-4 font-bold hover:bg-yellow-100 border-b-4 border-yellow-100" href="/posts/">Blog</a>
+          <a class="block text-center text-white hover:text-black px-6 py-4 font-bold hover:bg-yellow-100 border-b-4 border-transparent" href="/feed/">Feed</a>
       </div>
     </nav>
     <script>
@@ -58,54 +58,66 @@
     </script>
   </header>
 
-  <!-- Contenido Principal -->
-  <main class="flex-grow w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-8 mb-16 flex flex-col items-center justify-center">
-    
-    <!-- Título con estilo Matrix para todas las pantallas -->
-    <div class="text-center mb-12 relative w-full">
-        <!-- Contenedor del GIF y texto  -->
-        <div class="relative"> 
-          <!-- Fondo gif con overlay -->
-          <div class="absolute inset-0 overflow-hidden">
-            <img src="/images/matrix_big.gif" alt="Matrix code"
-                 class="w-full h-full object-cover opacity-60 filter saturate-150 contrast-125">
-            <!-- Overlay con gradiente -->
-            <div class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/40 to-black/70 mix-blend-multiply"></div>
-            <!-- Capa de brillo adicional -->
-            <div class="absolute inset-0 bg-red-900/20 mix-blend-overlay"></div>
+
+
+  <!-- Contenido principal del artículo -->
+  <main class="container mx-auto px-4 sm:px-6 md:px-8 lg:max-w-3xl xl:max-w-4xl">
+    <article>
+      <div class="flex flex-wrap">
+        <div class="w-full lg:w-2/3 mx-auto">
+          <h1 class="font-bold mt-4 text-3xl">Piloto</h1>
+          <p class="text-gray-400 text-xl">Porque toda buena serie parte con un buen capítulo piloto
+          </p>
+          <!-- <img class="w-full my-4" src="assets/images/img8.png" alt="Progressive Web Apps"> -->
+          <div class="prose prose-invert max-w-none space-y-6 pt-2">
+            <p class="text-gray-300 leading-relaxed text-lg italic">
+              Cabros,
+            </p>
+            
+            <p class="text-gray-300 leading-relaxed">
+              Les habla un estudiante de informática que sobrevive ganando el sueldo mínimo, y mi <span class="text-yellow-400 font-semibold">camino ninja</span> es hacer un empresa de videojuegos chilena.
+            </p>
+            
+            <p class="text-gray-300 leading-relaxed">
+              La verdad es que esta página partió como el típico currículum online pa' hacerse el bacán y conseguir pega. Pero con toda esta cosa de <span class="text-red-400">"vuelve a la oficina"</span> (la nueva moda para rebajar personal), caché altiro que la única forma de vivir la vida loca en el sur es mandándose la misión de crear una empresa propia. <a href="#" class="text-blue-400 hover:underline">Hacer negocios es la mano</a> para sobrevivir en Latinoamérica.
+            </p>
+            
+            <p class="text-gray-300 leading-relaxed">
+              ¿Y el amor? Buta, el amor es entero lindo, pero con plata baila el mono y con los verdes nos permitimos armar tremendo búnker con canchas de fútbol, gimnasios y piscinas para sus buenos carretes con los panas.
+            </p>
+            
+            <p class="text-gray-300 leading-relaxed">
+              Esta es la web de un hombre-rata que vive a puro Maruchan y café de máquina. Aquí encontrarán las crónicas de un informático que sueña con ser el próximo <a href="#" class="text-blue-400 hover:underline">Elon Musk</a>, pero con chalas, short, sin gestos controvertidos con el brazo, y cero presupuesto para cohetes. Todo esto desde un hosting más barato que completo de luca, porque hay que hacer rendir las moneas.
+            </p>
+            
+            <p class="text-gray-300 leading-relaxed">
+              Para que sepan altiro: aquí no hay censura ni palabras bonitas. Si te ofende el humor negro o eri muy sensible, dale color no más y cierra la pestaña. Aqui seguiremos tirando la talla como se hacía antes, cuando la gente todavía se reía en vez de andar funando por <span class="line-through">Twitter</span> <span class="text-blue-400">X</span>.
+            </p>
+            
+            <p class="text-gray-300 leading-relaxed">
+              Bienvenidos a esta volá, cabros. Prepárense pa' reírse de las desgracias ajenas, y las mías también.
+            </p>
+            
+            <p class="text-center text-4xl">
+              🛐
+            </p>
           </div>
-  
-          <!-- Texto sobre el gif con efecto de resplandor ROJO -->
-          <!-- Ajustamos tamaño y padding para desktop con md: -->
-          <h1 class="text-4xl md:text-5xl font-bold py-8 md:py-12 orbitron relative z-10 drop-shadow-[0_0_10px_rgba(255,50,50,0.8)]">
-            <span class="relative">
-              <!-- Efecto de neón para el texto -->
-              <span class="absolute inset-0 blur-[1.5px] text-red-400 opacity-90">_[ ERROR 404</span>
-              <span class="relative text-white">_[ ERROR 404</span>
-            </span>
-          </h1>
         </div>
       </div>
 
-    <!-- Mensaje de error -->
-    <div class="text-center">
-      <p class="text-xl md:text-2xl text-gray-300 mb-6">Parece que te perdiste en la Matrix...</p>
-      <p class="text-gray-400 mb-8">La página que buscas no existe o fue movida.</p>
-      <a href="/"
-         class="inline-block bg-gradient-to-r from-fuchsia-600 to-purple-600 hover:from-fuchsia-700 hover:to-purple-700 text-white font-bold py-3 px-6 rounded-lg shadow-lg transition duration-300 transform hover:scale-105">
-        Volver al Inicio
-      </a>
-    </div>
+      
+    </article>
   </main>
-
-  <!-- Footer -->
-  <footer class="py-8 text-center text-gray-500">
-    Blog de un developer chileno - 2025
-  </footer>
-
-  <!-- Script Instant.page -->
-  <script src="//instant.page/5.2.0" type="module"
-          integrity="sha384-jnZyxPjiipYXnSU0ygqeac2q7CVYMbh84q0uHVRRxEtvFPiQYbXWUorga2aqZJ0z"></script>
+  
+  <footer class="py-8 text-center"
+  style="display: flex; align-items: center; justify-content: center; flex-direction: column;">
+  <div style="display: flex; align-items: center; justify-content: center; text-align: center;">
+    <div style="display: inline-flex; align-items: center;">
+      <span style="padding-left: 8px;">Blog de un developer chileno - 2025</span>
+    </div>
+  </div>
+</footer>
+<script src="//instant.page/5.2.0" type="module" 
+integrity="sha384-jnZyxPjiipYXnSU0ygqeac2q7CVYMbh84q0uHVRRxEtvFPiQYbXWUorga2aqZJ0z"></script>
 </body>
-
 </html>
