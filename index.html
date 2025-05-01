@@ -140,7 +140,7 @@
   <div class="bg-gray-800 px-2 container mx-auto mt-0 pt-0 text-gray-100 min-h-fit pb-12 lg:min-h-[600px] h-full relative rounded-lg overflow-hidden">
     <div class="h-full bg-gray-800 rounded-lg overflow-y-auto"> 
       <!--Soundcloud Mobile Player-->
-      <div id="soundCloudPlayerContainerMobile" class=" mb-10 md:mb-8   block  lg:block  transform  w-full h-20" style="box-shadow: 0 8px 8px -4px black, 0 -8px 8px -4px black;" >
+      <div id="soundCloudPlayerContainerMobile" class=" mb-10 md:mb-8   block   transform  w-full h-20" style="box-shadow: 0 8px 8px -4px black, 0 -8px 8px -4px black;" >
       </div>
       <!---->
       
@@ -303,35 +303,29 @@
 <!-- Reproductor de SoundCloud Script -->
 <script>
   document.addEventListener("DOMContentLoaded", function() {
-    const mobileContainer = document.getElementById('soundCloudPlayerContainerMobile');
-    const desktopContainer = document.getElementById('soundCloudPlayerContainerDesktop');
-    
-    // Determina qué contenedor está visible
-    const activeContainer = window.getComputedStyle(mobileContainer).display !== 'none' ? 
-      mobileContainer : desktopContainer;
-    const isMobile = activeContainer === mobileContainer;
-    
-    // Primero coloca la imagen de fondo en el contenedor activo
-    activeContainer.innerHTML = `
-      <div style="position: relative; width: 100%; height: 100%;">
-        <img src="/images/shiba_dark3.webp" alt="Cargando..." style="position: absolute; width: 100%; height: 100%; object-fit: cover; z-index: 1;">
-        <iframe 
-          src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/krakenav10/sets/personal-webpage-soundtrack&amp;color=%23ff5500&amp;auto_play=false&amp;hide_related=true&amp;show_comments=false&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=false&amp;sharing=false&amp;visual=true" 
-          frameborder="0" 
-          allow="autoplay; encrypted-media" 
-          allowfullscreen 
-          class="w-full ${isMobile ? 'h-20' : 'h-80'}"
-          style="position: absolute; z-index: 2;">
-        </iframe>
-      </div>
-    `;
-    
-    // Para el contenedor inactivo, simplemente muestra la imagen de fondo
-    const inactiveContainer = isMobile ? desktopContainer : mobileContainer;
-    inactiveContainer.innerHTML = `<img src="../images/loadersoundcloud.jpg" alt="Fondo" class="w-full h-full object-cover">`;
+    const soundCloudContainer = document.getElementById('soundCloudPlayerContainerMobile');
+    if (soundCloudContainer) {
+      soundCloudContainer.innerHTML = `
+        <div style="position: relative; width: 100%; height: 100%;">
+          <img src="/images/shiba_dark3.webp" alt="Cargando..." style="position: absolute; width: 100%; height: 100%; object-fit: cover; z-index: 1;">
+          <iframe
+            src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1752995907&color=%23ff5500&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false&sharing=false&visual=true"
+            frameborder="0"
+            allow="autoplay; encrypted-media"
+            allowfullscreen
+            class="w-full h-20"  
+            style="position: absolute; z-index: 2;"
+            loading="lazy">
+          </iframe>
+        </div>
+      `;
+    } else {
+      console.error("Error: El contenedor para SoundCloud (soundCloudPlayerContainerMobile) no fue encontrado.");
+    }
   });
 </script>
-<!-- Aplicamos instant.page, el cual no se te olvide hermano que aumenta las peticiones al servidor, y ya que estamos en Github Pages, no nos cobra nada de nada, da igual por ahora :D -->
+
+<!-- Instant.page, el cual no se te olvide hermano que aumenta las peticiones al servidor, y ya que estamos en Github Pages, no nos cobra nada de nada, da igual por ahora :D -->
 <script src="//instant.page/5.2.0" type="module" 
 integrity="sha384-jnZyxPjiipYXnSU0ygqeac2q7CVYMbh84q0uHVRRxEtvFPiQYbXWUorga2aqZJ0z"></script>
 
