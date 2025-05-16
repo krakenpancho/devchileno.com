@@ -1,50 +1,80 @@
-/* ESTILOS BARRA DARK MODE SIEMPRE ACTIVA */
-/* Desplazamiento suave */
 html {
     scroll-behavior: smooth;
     overflow-y: scroll;
     }
 
-  /* Media Query para aplicar estilos solo en desktop */
+    .video-background-container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1; 
+        overflow: hidden; 
+        /* filter: brightness(1) contrast(1.5) grayscale(0.2);  */
+      }
+      
+      #background-video-cafe {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; 
+      }
+      
+      .video-overlay-dim {
+        position: absolute; 
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.8); 
+          
+      }
+      
+      header, main, footer {
+        position: relative; 
+        z-index: 1; 
+      }
+
+
     @media (hover: hover) {
-    /* Estilo global para personalizar la barra de desplazamiento en desktop */
+
     ::-webkit-scrollbar {
-        width: 12px; /* Ancho de la barra de desplazamiento */
+        width: 12px;
     }
     
     ::-webkit-scrollbar-track {
-        background: #2D2D2D; /* Color de fondo de la pista */
+        background: #2D2D2D; 
     }
     
     ::-webkit-scrollbar-thumb {
-        background: #444; /* Color de la barra de desplazamiento */
-        border-radius: 6px; /* Bordes redondeados para el thumb */
+        background: #444; 
+        border-radius: 6px; 
     }
     
-    /* Hover sobre la barra de desplazamiento */
+
     ::-webkit-scrollbar-thumb:hover {
-        background: #555; /* Color al pasar el mouse */
+        background: #555; 
     }
     
     /* Estilo para Firefox */
     * {
-        scrollbar-width: thin; /* Aspecto más delgado para la barra de desplazamiento */
-        scrollbar-color: #444 #2D2D2D; /* Colores para la barra y la pista */
+        scrollbar-width: thin; 
+        scrollbar-color: #444 #2D2D2D; 
     }
     }
     /* Clase para desplazamiento suave de About Me */
     #mobileAbout, #desktopAbout {
         transition: opacity 0.5s, max-height 0.5s ease;
         overflow: hidden;
-        max-height: 40px; /* Empieza en 0 para asegurarse de que esté oculto inicialmente. */
+        max-height: 40px; 
         opacity: 0;
         display: none;
     }
     
     #mobileAbout.show, #desktopAbout.show {
         opacity: 1;
-        max-height: 500px; /* Ajusta según el contenido. Podrías necesitar un valor más alto. */
-        display: flex; /* Se necesita para que el elemento sea visible antes de iniciar la transición. */
+        max-height: 500px; 
+        display: flex; 
     }
 
 /* ESTILOS PERSONALIZADOS PAGINA HOME */
@@ -65,18 +95,73 @@ html {
         }
 
 /* ESTILOS PERSONALIZADOS PÁGINAS */
-    @font-face {
+/*     @font-face {
         font-family: 'Orbitron';
         src: url('../fonts/Fira_Code/FiraCode-Bold.ttf') format('truetype');
-    }
+    } */
 
     @font-face {
         font-family: 'Roboto';
         src: url('../fonts/Fira_Code/FiraCode-Light.ttf') format('truetype');
     }
 
-    
-    body {
+
+/* cyrillic-ext */
+@font-face {
+    font-family: 'Press Start 2P';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(./fonts/Press_Start_2P/e3t4euO8T-267oIAQAu6jDQyK3nYivN04w.woff2) format('woff2');
+    unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+  }
+  /* cyrillic */
+  @font-face {
+    font-family: 'Press Start 2P';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(./fonts/Press_Start_2P/e3t4euO8T-267oIAQAu6jDQyK3nRivN04w.woff2) format('woff2');
+    unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+  }
+  /* greek */
+  @font-face {
+    font-family: 'Press Start 2P';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(./fonts/Press_Start_2P/e3t4euO8T-267oIAQAu6jDQyK3nWivN04w.woff2) format('woff2');
+    unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+  }
+  /* latin-ext */
+  @font-face {
+    font-family: 'Press Start 2P';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(./fonts/Press_Start_2P/e3t4euO8T-267oIAQAu6jDQyK3nbivN04w.woff2) format('woff2');
+    unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  }
+  /* latin */
+  @font-face {
+    font-family: 'Press Start 2P';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(./fonts/Press_Start_2P/e3t4euO8T-267oIAQAu6jDQyK3nVivM.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+
+      @font-face {
+        font-family: 'Orbitron';
+        src: 
+             url('/fonts/Press_Start_2P.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap; 
+      }
+
+      body {
 
         margin: 0 !important;
         padding: 0 !important;
@@ -85,8 +170,19 @@ html {
         letter-spacing: 0.05em;
     }
 
+      .press-start-2p-regular2, .press-start-2p-regular2 * {
+        font-family: "Press Start 2P", system-ui !important;
+        font-weight: 400;
+        font-style: normal;
+
+      }
+
     .orbitron {
-        font-family: 'Orbitron', sans-serif;
+        font-family: "Press Start 2P", system-ui;
+        font-weight: 400;
+        font-style: normal;
+
+       
     }
 
     .roboto {
@@ -96,12 +192,12 @@ html {
     /* clases para el color de los iconos, tailwind css no afecta a propiedades fill de un svg, funciona mejor con texto */
     .svg-icon svg {
         fill: white;
-        /* Color inicial */
+        
     }
 
     .svg-icon:hover svg {
         fill: #bec1c4;
-        /* Color al hacer hover, usando el color 'gray-500' de Tailwind como ejemplo */
+       
     }
 
     .border-transparent {
