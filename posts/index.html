@@ -79,7 +79,7 @@
 </script>
   </header>
 
-<main class="flex-grow w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-2 mb-8">
+<main class="flex-grow w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-2 mb-0">
 <!-- Banner Informativo LOCO -->
 <div class="mb-8 md:mb-10 flex justify-center">
   <div class="relative bg-gray-800 p-4 md:p-7 rounded-lg shadow-2xl border-l-[10px] border-yellow-500 w-full max-w-2xl flex items-center space-x-4">
@@ -94,7 +94,7 @@
   <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 auto-rows-fr">
     <!-- Card Blog 2 -->
     <a href="../posts/02/" class="block hover:no-underline h-full group">
-      <div class="bg-gray-700/50 flex items-start space-x-4 p-4 rounded-xl  border border-gray-700 shadow-md h-full transition-all duration-300 group-hover:scale-105 group-hover:shadow-2xl group-hover:border-yellow-400 cursor-pointer">
+      <div class="bg-gray-700/50 flex items-start space-x-4 p-4 rounded-xl  border border-white shadow-md h-full transition-all duration-300 group-hover:scale-105 group-hover:shadow-2xl group-hover:border-yellow-400 cursor-pointer">
         <div class="w-16 h-16 flex-shrink-0">
           <img src="/images/weplayico.webp" alt="Blog post" class="w-full h-full object-cover rounded-lg"/>
         </div>
@@ -108,7 +108,7 @@
 
     <!-- Card Blog 1 -->
     <a href="../posts/01/" class="block hover:no-underline h-full group">
-      <div class="bg-gray-700/50 flex items-start space-x-4 p-4 rounded-xl border border-gray-700 shadow-md h-full transition-all duration-300 group-hover:scale-105 group-hover:shadow-2xl group-hover:border-yellow-400 cursor-pointer">
+      <div class="bg-gray-700/50 flex items-start space-x-4 p-4 rounded-xl border border-white shadow-md h-full transition-all duration-300 group-hover:scale-105 group-hover:shadow-2xl group-hover:border-yellow-400 cursor-pointer">
         <div class="w-16 h-16 flex-shrink-0">
           <img src="/images/shiba_dark3.webp" alt="Blog post" class="w-full h-full object-cover rounded-lg"/>
         </div>
@@ -123,14 +123,17 @@
   </div>
 </main>
 
-  <!-- Footer -->
-  <footer class="py-8 text-center text-gray-500">
-    Blog de un developer chileno - 2025
-  </footer>
-
-  <!-- Script Instant.page -->
-  <script src="//instant.page/5.2.0" type="module"
-          integrity="sha384-jnZyxPjiipYXnSU0ygqeac2q7CVYMbh84q0uHVRRxEtvFPiQYbXWUorga2aqZJ0z"></script>
+    <footer class="py-8 text-center"
+    style="display: flex; align-items: center; justify-content: center; flex-direction: column;">
+    <div style="display: flex; align-items: center; justify-content: center; text-align: center;">
+      <div style="display: inline-flex; align-items: center;">
+        <span style="padding-left: 8px;">Blog de un developer chileno - 2025</span>
+      </div>
+    </div>
+    </footer>
+    <script src="//instant.page/5.2.0" type="module" 
+    integrity="sha384-jnZyxPjiipYXnSU0ygqeac2q7CVYMbh84q0uHVRRxEtvFPiQYbXWUorga2aqZJ0z">
+    </script>
 </body>
 
 </html>
