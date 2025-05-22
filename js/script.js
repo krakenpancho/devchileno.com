@@ -1,5 +1,20 @@
 console.clear();
 
+let isMobile = false;  
+
+function detectMobile() {
+    const toMatch = [
+        /Android/i, /webOS/i, /iPhone/i, /iPad/i, /iPod/i, /BlackBerry/i, /Windows Phone/i
+    ];
+    isMobile = toMatch.some((toMatchItem) => {
+        return navigator.userAgent.match(toMatchItem);
+    }) || ('ontouchstart' in window || navigator.maxTouchPoints > 0);
+
+    console.log(`Es dispositivo móvil: ${isMobile}`);
+}
+
+detectMobile();
+
 const pixelRatio = 2;
 
 const scene = new THREE.Scene();
@@ -42,6 +57,11 @@ controls.noPan = true;
 controls.rotateSpeed = 1.5;
 controls.maxDistance = 3.5;
 controls.minDistance = 0.3;
+
+if (isMobile) {
+    // Si es móvil, deshabilita TODOS los controles Trackball para que no interfieran con la rotación automática
+    controls.enabled = false;
+}
 
 const group = new THREE.Group();
 scene.add(group);
@@ -224,6 +244,9 @@ starsGeometry.setAttribute(
   "color",
   new THREE.Float32BufferAttribute(galaxyGeometryColors, 3)
 );
+
+
+
 const galaxyPoints = new THREE.Points(starsGeometry, sparklesMaterial);
 scene.add(galaxyPoints);
 
@@ -276,11 +299,28 @@ function render(a) {
     new THREE.Float32BufferAttribute(tempStarsArray, 3)
   );
 
-  controls.update();
+ if (isMobile) {
+
+      group.rotation.y += 0.002; 
+      group.rotation.x += 0.0005; 
+  } else {
+     
+      controls.update();
+  }
+
+
   composer.render();
 }
 
-window.addEventListener("mousemove", onMouseMove);
+
+window.removeEventListener("mousemove", onMouseMove); 
+if (!isMobile) { 
+    window.addEventListener("mousemove", onMouseMove); 
+} else {
+   
+    window.removeEventListener("scroll", onScroll); 
+}
+
 function onMouseMove(e) {
   const x = THREE.MathUtils.mapLinear(
     e.clientY,
@@ -312,4 +352,16 @@ function onWindowResize() {
   composer.setSize(window.innerWidth, window.innerHeight);
   renderer.setSize(window.innerWidth, window.innerHeight);
   bloomPass.setSize(window.innerWidth, window.innerHeight);
+
+
+  detectMobile();
+
+  if (controls) {
+      
+      if (!isMobile) { 
+        controls.handleResize();
+      }
+      
+      controls.enabled = !isMobile; 
+  }
 }
