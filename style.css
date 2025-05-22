@@ -246,3 +246,29 @@ html {
                 0 -8px 8px -4px rgba(255, 255, 255, 0.1) !important;
     }
 
+
+
+
+
+    /* SKULL Asegúrate de que el canvas de Three.js dentro de tu contenedor ocupe todo el espacio */
+.video-background-container canvas {
+    display: block; /* Importante para eliminar el espacio extra que algunos navegadores agregan por defecto */
+    width: 100%;
+    height: 100%;
+}
+
+/* Contenedor de tu contenido principal */
+#main-content {
+    position: relative; /* Esencial para que z-index funcione correctamente */
+    z-index: 10; /* Asegura que tu contenido esté *por encima* de la calavera */
+    /* Tus clases de Tailwind como flex-grow, etc., se combinan aquí */
+}
+
+/* El body debería tener un background oscuro si la calavera no carga de inmediato */
+body {
+    margin: 0;
+    overflow: hidden; /* Evita barras de desplazamiento innecesarias */
+    background: #000; /* Fondo negro por defecto o mientras carga la calavera */
+}
+
+

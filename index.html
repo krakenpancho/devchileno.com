@@ -11,18 +11,34 @@
   <link rel="icon" href="/images/shibagod.ico" type="image/x-icon">
   <link rel="shortcut icon" href="/images/shibagod.ico" type="image/x-icon">
   <link href="/tw_style.css" rel="stylesheet" />  
+  <script type="x-shader/x-vertex" id="vertexshader">
+        attribute float size;
+        attribute vec3 color;
+        attribute float fade;
+
+        varying vec3 vColor;
+
+        void main() {
+            vColor = color;
+            vec4 mvPosition = modelViewMatrix * vec4(position, 1.0);
+            gl_PointSize = size;
+            gl_Position = projectionMatrix * mvPosition;
+        }
+    </script>
+    <script type="x-shader/x-fragment" id="fragmentshader">
+        uniform sampler2D pointTexture;
+        varying vec3 vColor;
+        void main() {
+            gl_FragColor = vec4(vColor, 1.0);
+            gl_FragColor = gl_FragColor * texture2D(pointTexture, gl_PointCoord);
+        }
+    </script>
 </head>
 
 <body data-instant-intensity="viewport" class="bg-gray-900 text-gray-100 min-h-screen flex flex-col">
   <!-- Contenedor para el video de fondo -->
-  <div class="video-background-container">
-    <video autoplay loop muted playsinline id="background-video-cafe">
-      <!-- Cambia 'tu-video-silueta.mp4' por la ruta a tu video -->
-      <source src="/video/720Pcoffedude.webm" type="video/mp4">
-      Tu navegador no soporta la etiqueta de video, perro.
-    </video>
-    <div class="video-overlay-dim"></div> <!-- Capa para oscurecer -->
-  </div>
+    <div id="skull-background" class="video-background-container absolute inset-0 z-0">
+        </div>
   
   
   
@@ -339,6 +355,20 @@
     }
   });
 </script>
+
+
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.js'></script>
+<script src='https://assets.codepen.io/127738/MeshSurfaceSampler_20210711.js'></script>
+<script src='https://assets.codepen.io/127738/OBJLoader_20210711.js'></script>
+<script src='https://cdn.jsdelivr.net/npm/three@0.131.3/examples/js/controls/TrackballControls.js'></script>
+<script src='https://cdn.jsdelivr.net/npm/three@0.131.3/examples/js/postprocessing/EffectComposer.js'></script>
+<script src='https://cdn.jsdelivr.net/npm/three@0.131.3/examples/js/postprocessing/RenderPass.js'></script>
+<script src='https://cdn.jsdelivr.net/npm/three@0.131.3/examples/js/postprocessing/UnrealBloomPass.js'></script>
+<script src='https://cdn.jsdelivr.net/npm/three@0.131.3/examples/js/shaders/LuminosityHighPassShader.js'></script>
+<script src='https://cdn.jsdelivr.net/npm/three@0.131.3/examples/js/shaders/CopyShader.js'></script>
+<script src='https://cdn.jsdelivr.net/npm/three@0.131.3/examples/js/postprocessing/ShaderPass.js'></script>
+<script src='https://unpkg.co/gsap@3/dist/gsap.min.js'></script>
+    <script src="/js/script.js"></script> 
 
 <!-- Instant.page script, el cual no se te olvide hermano que aumenta las peticiones al servidor, y ya que estamos en Github Pages, no nos cobra nada de nada, da igual por ahora :D -->
 <script src="//instant.page/5.2.0" type="module" 
