@@ -72,7 +72,7 @@ const sparklesMaterial = new THREE.ShaderMaterial({
   uniforms: {
     pointTexture: {
       value: new THREE.TextureLoader().load(
-        "https://assets.codepen.io/127738/dotTexture.png"
+        "/skull_assets/dotTexture.png"
       )
     }
   },
@@ -100,27 +100,28 @@ let galaxyColors = [
   new THREE.Color("#125D98").multiplyScalar(0.5)
 ];
 function dots() {
-  sampler = new THREE.MeshSurfaceSampler(skull).build();
+    sampler = new THREE.MeshSurfaceSampler(skull).build();
 
-  for (let i = 0; i < 8; i++) {
-    const linesMaterial = new THREE.LineBasicMaterial({
-      color: colors[i % 4],
-      transparent: true,
-      opacity: 1
-    });
-    const linesMesh = new THREE.Line(new THREE.BufferGeometry(), linesMaterial);
-    linesMesh.coordinates = [];
-    linesMesh.previous = null;
-    lines.push(linesMesh);
-    group.add(linesMesh);
-  }
-  requestAnimationFrame(render);
+    let numberOfLines = isMobile ? 4 : 8; // Crea 4 líneas en móvil, 8 en desktop
+    for (let i = 0; i < numberOfLines; i++) {
+        const linesMaterial = new THREE.LineBasicMaterial({
+            color: colors[i % 4],
+            transparent: true,
+            opacity: 1
+        });
+        const linesMesh = new THREE.Line(new THREE.BufferGeometry(), linesMaterial);
+        linesMesh.coordinates = [];
+        linesMesh.previous = null;
+        lines.push(linesMesh);
+        group.add(linesMesh);
+    }
+    requestAnimationFrame(render);
 }
 
 let skull = null;
 const loader = new THREE.OBJLoader();
 loader.load(
-  "https://assets.codepen.io/127738/skull_model.obj",
+  "/skull_assets/skull_model.obj",
   (obj) => {
     skull = obj.children[0];
     dots();
@@ -227,7 +228,10 @@ const galaxyGeometryVertices = [];
 const galaxyGeometryColors = [];
 const galaxyGeometrySizes = [];
 
-for (let i = 0; i < 1500; i++) {
+// número de estrellas según si es móvil o desktop
+let numberOfStars = isMobile ? 500 : 1500; // Por ejemplo, 500 estrellas en móvil, 1500 en desktop. 
+
+for (let i = 0; i < numberOfStars; i++) { // << Usar la variable numberOfStars aquí
   const star = new Star();
   star.setup(galaxyColors[Math.floor(Math.random() * galaxyColors.length)]);
   galaxyGeometryVertices.push(star.x, star.y, star.z);
@@ -244,11 +248,9 @@ starsGeometry.setAttribute(
   "color",
   new THREE.Float32BufferAttribute(galaxyGeometryColors, 3)
 );
-
-
-
 const galaxyPoints = new THREE.Points(starsGeometry, sparklesMaterial);
 scene.add(galaxyPoints);
+
 
 let _prev = 0;
 function render(a) {
@@ -258,14 +260,25 @@ function render(a) {
 
   if (a - _prev > 30) {
     lines.forEach((l) => {
-      if (sparkles.length < 35000) {
+      if (isMobile) {
+    if (sparkles.length < 15000) { // O incluso 10000, 5000, prueba diferentes valores
+        nextDot(l); // Llama menos veces a nextDot para generar menos partículas
+        nextDot(l);
+        // nextDot(l); // Elimina estas llamadas si quieres menos puntos
+        // nextDot(l);
+        // nextDot(l);
+        // nextDot(l);
+    }
+} else {
+    if (sparkles.length < 35000) {
         nextDot(l);
         nextDot(l);
         nextDot(l);
         nextDot(l);
         nextDot(l);
         nextDot(l);
-      }
+    }
+}
       const tempVertices = new Float32Array(l.coordinates);
       l.geometry.setAttribute(
         "position",
