@@ -2,13 +2,19 @@ console.clear();
 
 let isMobile = false;  
 
+
+
 function detectMobile() {
     const toMatch = [
         /Android/i, /webOS/i, /iPhone/i, /iPad/i, /iPod/i, /BlackBerry/i, /Windows Phone/i
     ];
-    isMobile = toMatch.some((toMatchItem) => {
+
+    const isMobileUserAgent = toMatch.some((toMatchItem) => {
         return navigator.userAgent.match(toMatchItem);
-    }) || ('ontouchstart' in window || navigator.maxTouchPoints > 0);
+    });
+
+
+    isMobile = isMobileUserAgent || (('ontouchstart' in window || navigator.maxTouchPoints > 0) && window.innerWidth < 768);
 
     console.log(`Es dispositivo móvil: ${isMobile}`);
 }
