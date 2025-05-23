@@ -271,4 +271,32 @@ body {
     background: #000; /* Fondo negro por defecto o mientras carga la calavera */
 }
 
+/* Estilos para el hud */
+.hud-hidden header,
+.hud-hidden main,
+.hud-hidden footer {
+  display: none;
+}
 
+.invisible {
+  display: none;
+}
+
+#clock {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2000;
+  color: white;
+  font-size: 6vw; 
+  font-family: "Press Start 2P", system-ui;
+  display: none;
+  pointer-events: none;
+}
+
+@media (min-width: 768px) { 
+  #clock {
+    font-size: 1.5rem; 
+  }
+}

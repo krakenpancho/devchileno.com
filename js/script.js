@@ -1,6 +1,7 @@
 console.clear();
 
-let isMobile = false;  
+let isMobile = false;
+let isMobileManualActivation = false;  
 
 
 
@@ -16,7 +17,7 @@ function detectMobile() {
 
     isMobile = isMobileUserAgent || (('ontouchstart' in window || navigator.maxTouchPoints > 0) && window.innerWidth < 768);
 
-    console.log(`Es dispositivo móvil: ${isMobile}`);
+    console.log(`Es dispositivo móvil (según detección automática): ${isMobile}`);
 }
 
 detectMobile();
@@ -64,8 +65,8 @@ controls.rotateSpeed = 1.5;
 controls.maxDistance = 3.5;
 controls.minDistance = 0.3;
 
-if (isMobile) {
-    // Si es móvil, deshabilita TODOS los controles Trackball para que no interfieran con la rotación automática
+if (isMobile || isMobileManualActivation) {
+    // Si es modo móvil, deshabilita TODOS los controles Trackball para que no interfieran con la rotación automática
     controls.enabled = false;
 }
 
@@ -108,7 +109,7 @@ let galaxyColors = [
 function dots() {
     sampler = new THREE.MeshSurfaceSampler(skull).build();
 
-    let numberOfLines = isMobile ? 4 : 8; // Crea 4 líneas en móvil, 8 en desktop
+    let numberOfLines = (isMobile || isMobileManualActivation) ? 4 : 8; // Crea 4 líneas en móvil, 8 en desktop
     for (let i = 0; i < numberOfLines; i++) {
         const linesMaterial = new THREE.LineBasicMaterial({
             color: colors[i % 4],
@@ -235,7 +236,7 @@ const galaxyGeometryColors = [];
 const galaxyGeometrySizes = [];
 
 // número de estrellas según si es móvil o desktop
-let numberOfStars = isMobile ? 500 : 1500; // Por ejemplo, 500 estrellas en móvil, 1500 en desktop. 
+let numberOfStars = (isMobile || isMobileManualActivation) ? 500 : 1500; // Por ejemplo, 500 estrellas en móvil, 1500 en desktop. 
 
 for (let i = 0; i < numberOfStars; i++) { // << Usar la variable numberOfStars aquí
   const star = new Star();
@@ -266,7 +267,7 @@ function render(a) {
 
   if (a - _prev > 30) {
     lines.forEach((l) => {
-      if (isMobile) {
+      if (isMobile || isMobileManualActivation) {
     if (sparkles.length < 15000) { // O incluso 10000, 5000, prueba diferentes valores
         nextDot(l); // Llama menos veces a nextDot para generar menos partículas
         nextDot(l);
@@ -318,7 +319,7 @@ function render(a) {
     new THREE.Float32BufferAttribute(tempStarsArray, 3)
   );
 
- if (isMobile) {
+ if (isMobile || isMobileManualActivation) {
 
       group.rotation.y += 0.002; 
       group.rotation.x += 0.0005; 
@@ -333,11 +334,8 @@ function render(a) {
 
 
 window.removeEventListener("mousemove", onMouseMove); 
-if (!isMobile) { 
+if (!(isMobile || isMobileManualActivation)) { 
     window.addEventListener("mousemove", onMouseMove); 
-} else {
-   
-    window.removeEventListener("scroll", onScroll); 
 }
 
 function onMouseMove(e) {
@@ -375,12 +373,25 @@ function onWindowResize() {
 
   detectMobile();
 
-  if (controls) {
-      
-      if (!isMobile) { 
-        controls.handleResize();
-      }
-      
-      controls.enabled = !isMobile; 
-  }
+if (controls) {
+    controls.handleResize(); // Llama siempre a handleResize
+    controls.enabled = !(isMobile || isMobileManualActivation); 
 }
+}
+
+//hacer accesible la variable isMobile desde afuera para llamarlo desdel el html
+// Función para cambiar el modo mobile de manera mobile (que activa la rotación)
+window.toggleRotationMode = function() {
+  isMobileManualActivation = !isMobileManualActivation; // Alterna la activación manual
+  
+  // Actualizar controles basados en el estado combinado
+  // Los controles se deshabilitan si isMobile (detectado) es true O si isMobileManualActivation es true
+  if (controls) {
+    controls.enabled = !(isMobile || isMobileManualActivation);
+  }
+  
+  // Devolver el estado de la activación manual para el texto del botón
+  // El botón reflejará el estado de la "rotación manual"
+  console.log(`Rotación Manual Activada: ${isMobileManualActivation}, Controles Habilitados: ${controls ? controls.enabled : 'N/A'}`);
+  return isMobileManualActivation; 
+};
