@@ -2,7 +2,7 @@ console.clear();
 
 let isMobile = false;
 let isMobileManualActivation = false;  
-
+let initialViewportHeight = null;
 
 
 function detectMobile() {
@@ -364,19 +364,29 @@ function onMouseMove(e) {
 window.addEventListener("resize", onWindowResize);
 
 function onWindowResize() {
-  camera.aspect = window.innerWidth / window.innerHeight;
+  // Guardar la altura inicial la primera vez
+  if (initialViewportHeight === null) {
+    initialViewportHeight = window.innerHeight;
+  }
+
+  if (isMobile || isMobileManualActivation) {
+    camera.aspect = window.innerWidth / initialViewportHeight;
+
+  } else {
+    camera.aspect = window.innerWidth / window.innerHeight;
+  }
+  
   camera.updateProjectionMatrix();
   composer.setSize(window.innerWidth, window.innerHeight);
   renderer.setSize(window.innerWidth, window.innerHeight);
   bloomPass.setSize(window.innerWidth, window.innerHeight);
 
-
   detectMobile();
 
-if (controls) {
-    controls.handleResize(); // Llama siempre a handleResize
+  if (controls) {
+    controls.handleResize(); 
     controls.enabled = !(isMobile || isMobileManualActivation); 
-}
+  }
 }
 
 //hacer accesible la variable isMobile desde afuera para llamarlo desdel el html
