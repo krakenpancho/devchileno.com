@@ -12,3 +12,15 @@ npx @tailwindcss/cli --watch -i tw_style_start.css -o tw_style.css
 COMANDO CONSOLA PARA VERSION 4 DE TAILWIND CON PURGA
 npx @tailwindcss/cli --watch -i tw_style_start.css -o tw_style.css --minify
 */
+
+/* 
+APUNTES de dev → master
+git checkout master
+git merge dev -m "Fusionada rama dev con master"
+git push origin master
+
+APUNTES de master → dev
+git checkout dev
+git merge master -m "Fusionada rama master con dev"
+git push origin dev 
+*/
