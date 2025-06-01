@@ -364,12 +364,12 @@ function onMouseMove(e) {
 window.addEventListener("resize", onWindowResize);
 
 function onWindowResize() {
-  // Guardar la altura inicial la primera vez
-  if (initialViewportHeight === null) {
+  // Guardar la altura inicial la primera vez solo si isMobile es true
+  if (isMobile && initialViewportHeight === null) {
     initialViewportHeight = window.innerHeight;
   }
 
-  if (isMobile || isMobileManualActivation) {
+  if (isMobile) {
     camera.aspect = window.innerWidth / initialViewportHeight;
 
   } else {
@@ -385,7 +385,7 @@ function onWindowResize() {
 
   if (controls) {
     controls.handleResize(); 
-    controls.enabled = !(isMobile || isMobileManualActivation); 
+    controls.enabled = !(isMobile); 
   }
 }
 

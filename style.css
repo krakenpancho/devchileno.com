@@ -310,7 +310,8 @@ body {
 NUEVO TEMA PARA LEER EL BLOG */
 
 .vscode {
-  background-color: #1E1E1E !important;
+  /* background-color: #1E1E1E !important; */
+  background-color: #101010 !important;
   color: #D4D4D4 !important;
 }
 
@@ -357,6 +358,6 @@ NUEVO TEMA PARA LEER EL BLOG */
   font-style: normal;
   font-weight: 500;
   font-display: swap;
-  src: url(https://fonts.gstatic.com/s/dmmono/v14/aFTR7PB1QTsUX8KYvumzEYOtbQ.woff2) format('woff2');
+  src: url(/fonts/Ubuntu_Mono/UbuntuMono.woff2) format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
