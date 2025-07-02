@@ -1,3 +1,5 @@
+<div align="center">
+
 # 🚀 Blog de un Developer Chileno 🚀
 
 ![Screenshot del Blog](./screenshot.png)
@@ -9,3 +11,5 @@ Este es el blog de un informático que vive a puro Maruchan y sueña con armar l
 ## 🛐 Disponible en 🛐
 
 **[devchileno.com](https://devchileno.com)**
+
+</div>
