@@ -1,6 +1,6 @@
 <div align="center">
 
-# BLOG DE UN DEVELOPER CHILENO
+# 🚀 Blog de un Developer Chileno 🚀
 
 ![Screenshot del Blog](./screenshot.png)
 
