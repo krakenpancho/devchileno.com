@@ -3,7 +3,12 @@
 /* Importar un archivo CSS personalizado y fusionarlo con Tailwind*/
 @import "./style.css";
 
+
+
+/* COMANDO PARA INSTALAR TAILWIND CSS 4
+npm install tailwindcss @tailwindcss/cli */
 /*
+
 COMANDO CONSOLA PARA VERSION 4 DE TAILWIND
 npx @tailwindcss/cli --watch -i tw_style_start.css -o tw_style.css
 */

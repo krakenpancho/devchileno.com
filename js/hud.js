@@ -5,8 +5,7 @@
     const headerElement = document.querySelector('header');
     const mainElement = document.querySelector('main');
     const footerElement = document.querySelector('footer');
-    const overlayGradient = document.getElementById('overlay-gradient');
-    const overlayGradientLg = document.getElementById('overlay-gradient-lg');
+
 
     // Botones de control
     const hideHudBtn = document.getElementById('hide-hud-btn');
@@ -41,8 +40,7 @@ if (hideHudBtn) {
         if (headerElement) headerElement.classList.add('invisible');
         if (mainElement) mainElement.classList.add('invisible');
         if (footerElement) footerElement.classList.add('invisible');
-        if (overlayGradient) overlayGradient.style.display = 'none';
-        if (overlayGradientLg) overlayGradientLg.style.display = 'none';
+
         
         if (controlButtonsDiv) {
             controlButtonsDiv.classList.remove('invisible');
@@ -58,8 +56,7 @@ if (showHudBtn) {
         if (headerElement) headerElement.classList.remove('invisible');
         if (mainElement) mainElement.classList.remove('invisible');
         if (footerElement) footerElement.classList.remove('invisible');
-        if (overlayGradient) overlayGradient.style.display = 'block';
-        if (overlayGradientLg) overlayGradientLg.style.display = 'block';
+
         
         clearTimeout(inactivityTimerId);
         inactivityTimerId = null;
