@@ -80,10 +80,14 @@
 
         </div>
       </div>
-      <div class="flex justify-center items-center gap-4 mb-6">
-        <a href="https://sourceforge.net/projects/pdf-extractor/files/latest/download" target="_blank" rel="noopener noreferrer"
-           class="inline-flex items-center bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-lg shadow-lg transition-colors duration-300 text-xl">
-          Descargar PDF Extractor
+      <div class="flex justify-center items-center gap-4 mb-6 flex-wrap">
+        <a href="https://pdf-extractor-by-chilionsoft.sourceforge.io" target="_blank" rel="noopener noreferrer"
+           class="inline-flex items-center justify-center bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-lg shadow-lg transition-colors duration-300 text-xl w-64">
+          Descargar SourceForge
+        </a>
+        <a href="/proyectos/pdfextractor/PDF Extractor 1.0.zip" download
+           class="inline-flex items-center justify-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg shadow-lg transition-colors duration-300 text-xl w-64">
+          Descarga directa (ZIP)
         </a>
       </div>
       <div class="bg-gray-800/80 rounded-lg p-6 mx-auto max-w-2xl text-left shadow-lg border border-gray-700">
@@ -91,7 +95,7 @@
         <div class="w-full flex justify-center mb-6">
           <div class="relative inline-block max-w-xs md:max-w-md w-full">
             <div class="group relative inline-block w-full">
-              <img src="/images/pdf_extractor.png" alt="Screenshot PDF Extractor" class="rounded-lg shadow-lg w-full h-auto object-contain" style="border: 2px solid #222; background: #111;" />
+              <img id="screenshot-img" src="/images/pdf_extractor.png" alt="Screenshot PDF Extractor" class="rounded-lg shadow-lg w-full h-auto object-contain cursor-pointer" style="border: 2px solid #222; background: #111;" />
               <div class="absolute bottom-2 right-2" style="z-index:2;">
                 <img src="/images/windows_logo.svg" alt="Windows 11/10" class="w-10 h-10 drop-shadow-lg transition-transform duration-300 ease-in-out group-hover:scale-125" style="border-radius:0.5rem; " />
                 <div class="absolute bottom-12 right-0 bg-black bg-opacity-80 text-white text-xs px-3 py-1 rounded shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none whitespace-nowrap">
@@ -101,34 +105,88 @@
             </div>
           </div>
         </div>
-        <h2 class="text-xl font-bold text-yellow-400 mb-2">📌 Descripción</h2>
-        <p class="mb-2 text-gray-200">PDF Extractor es la herramienta que te salva cuando la IA gratuita te dice "ya no podís subir más PDFs, subes más y te funo". Extrae el texto de tus PDFs en Windows en texto plano y haz copy-paste, rápido y bonito.</p>
-  <div class="my-8"></div>
-  <h2 class="text-lg font-bold text-yellow-400 mb-2">🔒 Análisis de virus</h2>
-  <ul class="list-disc pl-6 mb-2 text-gray-200">
-          <li>Analizado en <a href="https://www.virustotal.com/gui/file/673cff2cf5995d02b934ed1140cd4ded01c7af5b01538d7e49986cb9950df67a/detection" target="_blank" class="underline text-blue-400">VirusTotal</a>: solo 2 de 71 antivirus se pusieron pesados (falsos positivos por el PyInstaller que compila Python en un .exe).</li>
-          <li>El resto de los antivirus lo encontró más sano que un pan con palta.</li>
-  </ul>
 
-  <div class="my-6"></div>
-  <h2 class="text-lg font-bold text-yellow-400 mb-2">⚡ Descarga segura</h2>
-  <ul class="list-disc pl-6 mb-2 text-gray-200">
-          <li>Descarga solo desde <a href="https://sourceforge.net/projects/pdf-extractor/" class="underline text-green-400" target="_blank">SourceForge</a> que es el sitio oficial donde guardamos el .exe (aquí no, porque nos cobrarían más por alojar archivos pesados).</li>
-          <li>Si quieres revisar hash, aquí hay tips:</li>
-  </ul>
-  <div class="my-6"></div>
-  <div class="flex flex-col items-center justify-center text-center mt-6 mb-2">
-          <span class="font-bold text-gray-200">Hash SHA-256:</span>
-          <span class="font-mono text-xs text-gray-300 break-all">673cff2cf5995d02b934ed1140cd4ded01c7af5b01538d7e49986cb9950df67a</span>
-          <span class="text-xs text-gray-400 mt-2">Verifica el hash antes de correr el programa con:</span>
-          <span class="bg-gray-900 px-2 py-1 rounded font-mono text-xs text-green-300 mt-1">CertUtil -hashfile "PDF Extractor 1.0.exe" SHA256</span>
-  </div>
-  <div class="my-6"></div>
-  <h2 class="text-lg font-bold text-yellow-400 mb-2">📄 Licencia</h2>
-  <ul class="list-disc pl-6 mb-2 text-gray-200">
-          <li>Gratis, para la gente (Freeware / Closed Source).</li>
-          <li>El código fuente está guardado bajo siete llaves, pero el programa es tuyo para usarlo.</li>
-        </ul>
+        <!-- Modal de imagen ampliada -->
+        <div id="image-modal" class="hidden fixed inset-0 bg-black bg-opacity-75 z-50 flex items-center justify-center p-4" style="z-index: 9999;">
+          <div class="relative max-w-4xl max-h-full">
+            <img src="/images/pdf_extractor.png" alt="Screenshot PDF Extractor ampliado" class="w-full h-auto object-contain rounded-lg shadow-2xl" />
+            <button id="close-modal" class="absolute top-4 right-4 text-white bg-black bg-opacity-50 rounded-full w-10 h-10 flex items-center justify-center hover:bg-opacity-75 transition-all duration-300">
+              ✕
+            </button>
+          </div>
+        </div>
+        <h2 class="text-xl font-bold text-yellow-400 mb-2">📌 Descripción</h2>
+        <p class="mb-4 text-gray-200">PDF Extractor es la herramienta que te salva cuando la IA gratuita te dice "ya no podís subir más PDFs, subes más y te funo". Extrae el texto de tus PDFs en Windows en texto plano y haz copy-paste, rápido y bonito.</p>
+        
+        <!-- Botón para expandir más información -->
+        <div class="flex justify-center mb-4">
+          <button id="toggle-info" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg transition-colors duration-300">
+            Ver más información
+          </button>
+        </div>
+
+        <!-- Contenido expandible -->
+        <div id="expanded-info" class="hidden">
+          <div class="my-8"></div>
+          <h2 class="text-lg font-bold text-yellow-400 mb-2">🔒 Análisis de virus</h2>
+          <ul class="list-disc pl-6 mb-2 text-gray-200">
+            <li>Analizado en <a href="https://www.virustotal.com/gui/file/673cff2cf5995d02b934ed1140cd4ded01c7af5b01538d7e49986cb9950df67a/detection" target="_blank" class="underline text-blue-400">VirusTotal</a>: solo 2 de 71 antivirus se pusieron pesados (falsos positivos por el PyInstaller que compila Python en un .exe).</li>
+            
+          </ul>
+
+          <div class="my-6"></div>
+          <h2 class="text-lg font-bold text-yellow-400 mb-2">⚡ Descarga segura</h2>
+          <ul class="list-disc pl-6 mb-2 text-gray-200">
+            
+            <li>Si quieres revisar hash, aquí hay tips:</li>
+          </ul>
+          <div class="my-6"></div>
+          <div class="flex flex-col items-center justify-center text-center mt-6 mb-2">
+            <span class="font-bold text-gray-200">Hash SHA-256:</span>
+            <span class="font-mono text-xs text-gray-300 break-all">673cff2cf5995d02b934ed1140cd4ded01c7af5b01538d7e49986cb9950df67a</span>
+            <span class="text-xs text-gray-400 mt-2">Verifica el hash antes de correr el programa con:</span>
+            <span class="bg-gray-900 px-2 py-1 rounded font-mono text-xs text-green-300 mt-1">CertUtil -hashfile "PDF Extractor 1.0.exe" SHA256</span>
+          </div>
+          <div class="my-6"></div>
+          <h2 class="text-lg font-bold text-yellow-400 mb-2">📄 Licencia</h2>
+          <ul class="list-disc pl-6 mb-2 text-gray-200">
+            <li>Gratis.</li>
+            <li>El código fuente está guardado bajo siete llaves, pero el programa es tuyo para usarlo.</li>
+          </ul>
+        </div>
+
+        <!-- Script para el botón expandible -->
+        <script>
+          document.getElementById('toggle-info').addEventListener('click', function() {
+            const expandedInfo = document.getElementById('expanded-info');
+            const button = document.getElementById('toggle-info');
+            
+            if (expandedInfo.classList.contains('hidden')) {
+              expandedInfo.classList.remove('hidden');
+              button.textContent = 'Ocultar información';
+            } else {
+              expandedInfo.classList.add('hidden');
+              button.textContent = 'Ver más información';
+            }
+          });
+
+          // Script para el modal de imagen
+          document.getElementById('screenshot-img').addEventListener('click', function() {
+            document.getElementById('image-modal').classList.remove('hidden');
+            document.body.style.overflow = 'hidden'; // Evitar scroll
+          });
+
+          document.getElementById('close-modal').addEventListener('click', function() {
+            document.getElementById('image-modal').classList.add('hidden');
+            document.body.style.overflow = 'auto'; // Restaurar scroll
+          });
+
+          document.getElementById('image-modal').addEventListener('click', function(e) {
+            // Cerrar al hacer clic en cualquier parte del modal (imagen o fondo)
+            this.classList.add('hidden');
+            document.body.style.overflow = 'auto'; // Restaurar scroll
+          });
+        </script>
       </div>
     </div>
   </main>
