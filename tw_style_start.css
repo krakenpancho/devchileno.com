@@ -1,3 +1,20 @@
+/* Sombra más gruesa para textos grandes */
+.text-outline-black-lg {
+	text-shadow:
+		-2px -2px 0 #000,
+		 2px -2px 0 #000,
+		-2px  2px 0 #000,
+		 2px  2px 0 #000,
+		 0px  0px 6px #000;
+}
+/* Borde negro para texto blanco, ideal para visibilidad sobre fondos claros */
+.text-outline-black {
+	text-shadow:
+		-1px -1px 0 #000,
+		 1px -1px 0 #000,
+		-1px  1px 0 #000,
+		 1px  1px 0 #000;
+}
 @import "tailwindcss";
 
 /* Importar un archivo CSS personalizado y fusionarlo con Tailwind*/

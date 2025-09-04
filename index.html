@@ -108,19 +108,19 @@
       </span>
       </button>
       <div class="hidden md:flex w-full justify-center pb-2" id="menu-links">
-        <a class="block text-center text-white hover:text-black px-6 py-4 font-bold hover:bg-yellow-100 border-b-4 border-yellow-400 "
-          href="/">Inicio</a>
-        <a class="block text-center text-white hover:text-black px-6 py-4 font-bold hover:bg-yellow-100 border-b-4 border-transparent"
-          href="/posts/">Blog</a>
-        <a class="block text-center text-white hover:text-black px-6 py-4 font-bold hover:bg-yellow-100 border-b-4 border-transparent"
-          href="/feed/">Feed</a>
-        <a class="block text-center text-white hover:text-black px-6 py-4 font-bold hover:bg-yellow-100 border-b-4 border-transparent"
-          href="/proyectos/">Proyectos</a>
-        <div class="w-full md:w-auto flex justify-center">
-          <button id="hide-hud-btn"
-            class="block text-center text-white hover:text-black px-6 py-4 font-bold hover:bg-yellow-100 border-b-4 border-transparent md:ml-auto cursor-pointer">Ocultar
-            HUD</button>
-        </div>
+          <a class="block text-center text-white hover:text-black px-6 py-4 font-bold hover:bg-yellow-100 border-b-4 border-yellow-400 text-outline-black"
+            href="/">Inicio</a>
+          <a class="block text-center text-white hover:text-black px-6 py-4 font-bold hover:bg-yellow-100 border-b-4 border-transparent text-outline-black"
+            href="/posts/">Blog</a>
+          <a class="block text-center text-white hover:text-black px-6 py-4 font-bold hover:bg-yellow-100 border-b-4 border-transparent text-outline-black"
+            href="/feed/">Feed</a>
+          <a class="block text-center text-white hover:text-black px-6 py-4 font-bold hover:bg-yellow-100 border-b-4 border-transparent text-outline-black"
+            href="/proyectos/">Proyectos</a>
+          <div class="w-full md:w-auto flex justify-center">
+            <button id="hide-hud-btn"
+              class="block text-center text-white hover:text-black px-6 py-4 font-bold hover:bg-yellow-100 border-b-4 border-transparent md:ml-auto cursor-pointer text-outline-black">Ocultar
+              HUD</button>
+          </div>
       </div>
     </nav>
     <script>
@@ -152,7 +152,7 @@
                     class=" object-cover" />
                 </div>
               </div>
-              <h2 class="text-2xl font-bold orbitron mb-2 pt-4 text-center">DEVCHILENO.<br>COM</h2>
+              <h2 class="text-2xl font-bold orbitron mb-2 pt-4 text-center text-outline-black-lg">DEVCHILENO.<br>COM</h2>
               <p class="text-gray-300 text-lg text-center">Desarrollador FullStack</p>
             </div>
             <div class="flex flex-col items-center px-4 mb-8">
@@ -189,7 +189,7 @@
               <div class="mb-8 relative">
                 <a href="/posts/">
                   <h2 class="text-2xl font-bold orbitron">
-                    _[ BLOG
+                    <span class="text-outline-black-lg">_[ BLOG</span>
                   </h2>
                 </a>
                 <p
@@ -260,84 +260,23 @@
               <div class="sm:w-full  lg:w-full lg:px-0">
                 <a href="../proyectos/">
                   <h2 class="text-2xl font-bold orbitron mb-8 ">
-                    _[ PROYECTOS
+                    <span class="text-outline-black-lg">_[ DESCARGAS</span>
                   </h2>
                 </a>
                 <div class="space-y-4">
-                  <!-- Card 2 -->
-                  <a href="../proyectos/tocataconloscabros/" class="block hover:no-underline space-y-4">
-                    <div
-                      class="flex items-start space-x-4 p-4 rounded-lg bg-gray-800/70 backdrop-blur-sm border border-gray-700/50 hover:bg-gray-700/80 hover:border-gray-600/70 transition-all duration-300">
+                  <!-- Card PDF Extractor -->
+                  <a href="../proyectos/pdfextractor/index.html" class="block hover:no-underline space-y-4">
+                    <div class="flex items-start space-x-4 p-4 rounded-lg bg-gray-800/70 backdrop-blur-sm border border-gray-700/50 hover:bg-gray-700/80 hover:border-gray-600/70 transition-all duration-300 cursor-pointer">
                       <div class="w-16 h-16 flex-shrink-0 relative">
-                        <!-- Icono de en progreso -->
-                        <div class="absolute -top-2 -right-2 bg-white rounded-full p-1 shadow-lg">
-                          <svg class="h-4 w-4 animate-spin" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="black" stroke-width="4"
-                              fill="none" />
-                            <path class="opacity-75" fill="black"
-                              d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
-                          </svg>
-                        </div>
-                        <img src="/images/landing_page_TCLC_small.webp" alt="TCLC"
-                          class="w-full h-full object-cover rounded-lg" />
+                        <img src="/images/pdfextractorlogo.png" alt="PDF Extractor" class="w-full h-full object-cover rounded-lg" />
                       </div>
                       <div class="flex-1">
-                        <span class="text-sm text-gray-400">Desarrollo</span>
-                        <h3 class="text-xl font-bold mb-2 text-white">Proyecto Tocata Con Los Cabros</h3>
-                        <p class="text-gray-200 text-sm">REACT - Java</p>
+                        <span class="text-sm text-gray-400">Python</span>
+                        <h3 class="text-xl font-bold mb-2 text-white">PDF Extractor</h3>
+                        <p class="text-gray-200 text-sm">Extrae texto de tus PDFs para que, cuando la IA gratuita diga ‘límite alcanzado’, puedas seguir subiendo tu contenido en texto plano, muajaja.</p>
                       </div>
                     </div>
                   </a>
-                  <!-- Card 1 -->
-                  <!-- div para el popup -->
-                  <div id="popup"
-                    class="hidden fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-[100] cursor-pointer"
-                    onclick="closeGamePopup()">
-                    <div
-                      class="bg-gray-900 border border-white-500/50 p-4 md:p-6 rounded-lg shadow-xl transform transition-all duration-300 scale-95 hover:scale-100 whitespace-nowrap">
-                      <p id="gym-popup-text" class="text-white text-base md:text-lg">Es esta misma web 😎</p>
-                    </div>
-                  </div>
-
-                  <div
-                    class="flex items-start space-x-4 p-4 rounded-lg bg-gray-800/70 backdrop-blur-sm border border-gray-700/50 hover:bg-gray-700/80 hover:border-gray-600/70 transition-all duration-300 cursor-pointer"
-                    onclick="showPopup()">
-                    <div class="w-16 h-16 flex-shrink-0 relative">
-                      <!-- Icono de completado -->
-                      <div class="absolute -top-2 -right-2 bg-white rounded-full p-1 shadow-lg">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="black">
-                          <path fill-rule="evenodd"
-                            d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                            clip-rule="evenodd" />
-                        </svg>
-                      </div>
-                      <img src="/images/devchileno_small.webp" alt="Sitio Web Personal"
-                        class="w-full h-full object-cover rounded-lg" />
-                    </div>
-                    <div class="flex-1">
-                      <span class="text-sm text-gray-400">2024</span>
-                      <h3 class="text-xl font-bold mb-2 text-white">Blog de un developer chileno</h3>
-                      <p class="text-gray-200 text-sm">HTML - TailwindCSS - CSS - JS</p>
-                    </div>
-                  </div>
-                  <!-- JavaScript para el popup para la card 1 que dice "Esta misma web bro"-->
-                  <script>
-                    let popupShown = false;
-                    function showPopup() {
-                      if (popupShown) {
-                        window.location.href = '../proyectos/portfoliopersonal/';
-                        return;
-                      }
-                      popupShown = true;
-                      document.getElementById('popup').classList.remove('hidden');
-                      setTimeout(() => {
-                        closePopup();
-                      }, 3000);
-                    }
-                    function closePopup() {
-                      document.getElementById('popup').classList.add('hidden');
-                    }
-                  </script>
                 </div>
               </div>
             </div>

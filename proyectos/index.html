@@ -245,25 +245,47 @@ PROYECTOS (3 COLUMNAS ESTILO TARJETA)
               <h2
                 class="text-2xl font-bold mb-6 text-center text-white orbitron"
               >
-                Desarrollo Mobile
+                Desarrollo Apps
               </h2>
 
               <!-- Grid de Proyectos Mobile -->
               <div
                 class="grid grid-cols-2 sm:grid-cols-3 gap-4 max-h-[40vh] overflow-y-auto pr-2 scrollbar-thin scrollbar-thumb-gray-600 scrollbar-track-gray-800/50"
               >
-                <!-- Proyecto App Ejercicio -->
+                <!-- PDF Extractor para Windows -->
+                <a
+                  href="../proyectos/pdfextractor/"
+                  class="block bg-gray-900/60 p-3 rounded-lg text-center hover:bg-gray-700/80 transition-colors duration-200 flex flex-col items-center justify-between"
+                >
+                  <div class="w-16 h-16 mb-2 relative flex items-center justify-center">
+                    <img
+                      src="../images/pdfextractorlogo.png"
+                      alt="PDF Extractor"
+                      class="w-full h-full object-contain rounded-lg"
+                    />
+                    <img src="../images/windows_logo.svg" alt="Windows" class="absolute bottom-0 right-0 w-6 h-6 bg-white rounded-full border border-gray-400" style="box-shadow:0 0 4px #000;" />
+                  </div>
+                  <p class="font-medium text-xs text-gray-200 mb-1">
+                    PDF Extractor <span class="text-blue-400 font-bold">(Windows)</span>
+                  </p>
+                  <div class="mt-1 h-1.5 w-full bg-gray-700 rounded-full overflow-hidden">
+                    <div class="h-full bg-gradient-to-r from-blue-400 to-green-500" style="width: 100%"></div>
+                  </div>
+                </a>
+
+                <!-- App Ejercicio -->
                 <div
                   id="gymAppTrigger"
                   onclick="showGamePopup()"
                   class="bg-gray-900/60 p-3 rounded-lg text-center cursor-pointer hover:bg-gray-700/80 transition-colors duration-200 flex flex-col items-center justify-between"
                 >
-                  <div class="w-16 h-16 mb-2 relative">
+                  <div class="w-16 h-16 mb-2 relative flex items-center justify-center">
                     <img
                       src="../images/GymApp1.webp"
                       alt="App de Ejercicio"
                       class="w-full h-full object-contain rounded-lg"
                     />
+                    <img src="../images/android_logo.svg" alt="Android" class="absolute bottom-0 right-0 w-6 h-6 bg-white rounded-full border border-gray-400" style="box-shadow:0 0 4px #000;" />
                     <div
                       class="absolute -top-1 -right-1 bg-orange-500 text-black text-[9px] font-bold px-1.5 py-0.5 rounded-full shadow-md"
                     >
@@ -273,36 +295,12 @@ PROYECTOS (3 COLUMNAS ESTILO TARJETA)
                   <p class="font-medium text-xs text-gray-200 mb-1">
                     App Ejercicio
                   </p>
-                  <div
-                    class="mt-1 h-1.5 w-full bg-gray-700 rounded-full overflow-hidden"
-                  >
-                    <div
-                      class="h-full bg-gradient-to-r from-orange-400 to-red-500"
-                      style="width: 6%"
-                    ></div>
+                  <div class="mt-1 h-1.5 w-full bg-gray-700 rounded-full overflow-hidden">
+                    <div class="h-full bg-gradient-to-r from-orange-400 to-red-500" style="width: 6%"></div>
                   </div>
                 </div>
 
                 <!-- Placeholder para más apps -->
-                <div
-                  class="bg-gray-900/40 p-3 rounded-lg text-center flex flex-col items-center justify-center border border-dashed border-gray-600"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="h-8 w-8 text-gray-500 mb-1"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    stroke-width="1.5"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M12 4v16m8-8H4"
-                    />
-                  </svg>
-                  <p class="font-medium text-xs text-gray-500">Próximamente</p>
-                </div>
                 <div
                   class="bg-gray-900/40 p-3 rounded-lg text-center flex flex-col items-center justify-center border border-dashed border-gray-600"
                 >

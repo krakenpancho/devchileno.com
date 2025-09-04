@@ -109,7 +109,7 @@ let galaxyColors = [
 function dots() {
     sampler = new THREE.MeshSurfaceSampler(skull).build();
 
-    let numberOfLines = (isMobile || isMobileManualActivation) ? 4 : 8; // Crea 4 líneas en móvil, 8 en desktop
+    let numberOfLines = (isMobile || isMobileManualActivation) ? 4 : 5; // Crea 4 líneas en móvil, 5 en desktop
     for (let i = 0; i < numberOfLines; i++) {
         const linesMaterial = new THREE.LineBasicMaterial({
             color: colors[i % 4],
@@ -236,7 +236,7 @@ const galaxyGeometryColors = [];
 const galaxyGeometrySizes = [];
 
 // número de estrellas según si es móvil o desktop
-let numberOfStars = (isMobile || isMobileManualActivation) ? 500 : 1500; // Por ejemplo, 500 estrellas en móvil, 1500 en desktop. 
+let numberOfStars = (isMobile || isMobileManualActivation) ? 500 : 1000; // Por ejemplo, 500 estrellas en móvil, 1000 en desktop.
 
 for (let i = 0; i < numberOfStars; i++) { // << Usar la variable numberOfStars aquí
   const star = new Star();
@@ -282,8 +282,8 @@ function render(a) {
         nextDot(l);
         nextDot(l);
         nextDot(l);
-        nextDot(l);
-        nextDot(l);
+        // nextDot(l);
+        // nextDot(l);
     }
 }
       const tempVertices = new Float32Array(l.coordinates);
