@@ -7,13 +7,50 @@
 		 2px  2px 0 #000,
 		 0px  0px 6px #000;
 }
+/* Borde negro extra marcado para navbar */
+.text-outline-black-bold {
+	text-shadow:
+		-3px -3px 0 #000,
+		 3px -3px 0 #000,
+		-3px  3px 0 #000,
+		 3px  3px 0 #000,
+		-2px  0px 0 #000,
+		 2px  0px 0 #000,
+		 0px -2px 0 #000,
+		 0px  2px 0 #000,
+		 0px  0px 4px #000;
+}
+/* Clase específica para navbar - mejor alineación al hacer zoom */
+.text-outline-navbar {
+	text-shadow:
+		-0.0625rem -0.0625rem 0 #000,
+		 0.0625rem -0.0625rem 0 #000,
+		-0.0625rem  0.0625rem 0 #000,
+		 0.0625rem  0.0625rem 0 #000,
+		-0.09375rem  0rem 0 #000,
+		 0.09375rem  0rem 0 #000,
+		 0rem -0.09375rem 0 #000,
+		 0rem  0.09375rem 0 #000,
+		 0rem  0rem 0.125rem #000;
+}
 /* Borde negro para texto blanco, ideal para visibilidad sobre fondos claros */
 .text-outline-black {
 	text-shadow:
-		-1px -1px 0 #000,
-		 1px -1px 0 #000,
-		-1px  1px 0 #000,
-		 1px  1px 0 #000;
+		-1.5px -1.5px 0 #000,
+		 1.5px -1.5px 0 #000,
+		-1.5px  1.5px 0 #000,
+		 1.5px  1.5px 0 #000,
+		 0px  0px 2px #000;
+}
+
+/* Clase para quitar el outline al hacer hover */
+.hover\:text-outline-none:hover {
+	text-shadow: none;
+}
+
+/* Clase para quitar el outline al hacer hover */
+.hover\:text-outline-none:hover {
+	text-shadow: none;
 }
 @import "tailwindcss";
 
