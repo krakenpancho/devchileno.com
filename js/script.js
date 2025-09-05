@@ -319,7 +319,7 @@ function render(a) {
     new THREE.Float32BufferAttribute(tempStarsArray, 3)
   );
 
- if (isMobile || isMobileManualActivation) {
+ if (isMobile || isMobileManualActivation || !isMobile) {
 
       group.rotation.y += 0.002; 
       group.rotation.x += 0.0005; 

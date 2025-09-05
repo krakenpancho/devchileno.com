@@ -77,34 +77,36 @@ PROYECTO DESTACADO (PORTAFOLIO PERSONAL)
 
     <!-- Título con fondo gif animado para móviles y normal para escritorio jeje -->
     <div class="text-center mb-12 relative">
-      <!-- Versión escritorio (normal) -->
-      <h1 class="text-3xl md:text-4xl font-bold mb-4 orbitron hidden md:block">PORTAFOLIO PERSONAL</h1>
-      
-      <!-- Versión móvil con gif de fondo mejorado -->
-      <div class="relative md:hidden">
-        <!-- Fondo gif con overlay para destacar -->
+      <!-- Versión escritorio con gif + neón -->
+      <div class="relative hidden md:block w-full" style="min-height: 120px;">
         <div class="absolute inset-0 overflow-hidden">
-          <!-- Aumentamos opacidad y añadimos filtros para más brillo -->
-          <img src="../../images/matrix_big.gif" alt="Matrix code" 
+          <img src="/images/matrix_big.gif" alt="Matrix code" 
                class="w-full h-full object-cover opacity-60 filter saturate-150 contrast-125">
-               
-          <!-- Overlay con gradiente en lugar de negro sólido -->
           <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/30 to-black/60 mix-blend-multiply"></div>
-          
-          <!-- Capa de brillo adicional -->
           <div class="absolute inset-0 bg-fuchsia-900/10 mix-blend-overlay"></div>
         </div>
-        
-        <!-- Texto sobre el gif con efecto de resplandor -->
-        <h1 class="text-3xl font-bold py-6 orbitron relative z-10" 
-            style="text-shadow: 
-                  0 0 5px rgba(255, 255, 255, 0.6),  /* Brillo blanco cercano */
-                  0 0 10px rgba(232, 121, 249, 0.7), /* Brillo fuchsia medio */
-                  0 0 15px rgba(192, 132, 252, 0.5); /* Brillo púrpura lejano */
-                  ">
-          <span class="relative text-white">_[ PORTAFOLIO PERSONAL</span> 
-          <!-- Ya no necesitamos el span absoluto ni el span relativo interior -->
-        </h1>
+        <div class="relative z-10 flex flex-col items-center justify-center w-full py-6">
+          <h1 class="text-3xl md:text-4xl font-bold orbitron text-outline-black-lg" 
+              style="text-shadow: 0 0 5px #b9ffb9, 0 0 10px #00ff41, 0 0 15px #007f0e;">
+            _[ BLOG DE UN DEVELOPER CHILENO
+          </h1>
+        </div>
+      </div>
+      
+      <!-- Versión móvil con gif de fondo mejorado -->
+      <div class="relative md:hidden" style="min-height: 120px;">
+        <div class="absolute inset-0 overflow-hidden">
+          <img src="../../images/matrix_big.gif" alt="Matrix code" 
+               class="w-full h-full object-cover opacity-60 filter saturate-150 contrast-125">
+          <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/30 to-black/60 mix-blend-multiply"></div>
+          <div class="absolute inset-0 bg-fuchsia-900/10 mix-blend-overlay"></div>
+        </div>
+        <div class="relative z-10 flex flex-col items-center justify-center w-full py-6">
+          <h1 class="text-3xl font-bold orbitron text-outline-black-lg" 
+              style="text-shadow: 0 0 5px #b9ffb9, 0 0 10px #00ff41, 0 0 15px #007f0e;">
+            _[ BLOG DE UN DEVELOPER CHILENO
+          </h1>
+        </div>
       </div>
     </div>
   
