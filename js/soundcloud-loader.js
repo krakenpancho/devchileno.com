@@ -8,7 +8,7 @@ function loadSoundCloudPlayer() {
       iframeWrapper.style.transition = 'opacity 0.5s ease-in-out';
 
       const iframe = document.createElement('iframe');
-      iframe.src = "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1752995907&color=%23ff5500&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false&sharing=false&visual=true";
+      iframe.src = "https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/nicolas-gonzalez-vasquez/sets/rap-chileno&color=%23ff5500&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false&sharing=false&visual=true";
       iframe.frameBorder = "0";
       iframe.allow = "autoplay; encrypted-media";
       iframe.allowFullscreen = true;
