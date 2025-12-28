@@ -1,24 +1,120 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PROYECTO CANCELADO</title>
-    <style>
-        body {
-            background-color: #000;
-            color: #fff;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            font-family: Arial, sans-serif;
-            font-size: 3rem;
-        }
-    </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="dark" />
+  <title>Proyecto cancelado</title>
+  <style>
+    :root{
+      --bg:#000;
+      --fg:#fff;
+      --muted:rgba(255,255,255,.72);
+      --card:rgba(255,255,255,.06);
+      --cardBorder:rgba(255,255,255,.14);
+      --max:72rem;
+      --pad:clamp(16px, 3.2vw, 40px);
+      --h1:clamp(2rem, 6vw, 4rem);
+      --p:clamp(1rem, 2.4vw, 1.25rem);
+    }
+
+    *{ box-sizing:border-box; }
+    html,body{ height:100%; }
+    body{
+      margin:0;
+      background:var(--bg);
+      color:var(--fg);
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Helvetica Neue", sans-serif;
+      line-height:1.35;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+      display:grid;
+      place-items:center;
+      padding: var(--pad);
+    }
+
+    .wrap{
+      width:min(100%, var(--max));
+    }
+
+    .card{
+      border:1px solid var(--cardBorder);
+      background:var(--card);
+      border-radius:18px;
+      padding: clamp(18px, 4vw, 42px);
+      box-shadow: 0 12px 40px rgba(0,0,0,.55);
+    }
+
+    h1{
+      margin:0;
+      font-size:var(--h1);
+      letter-spacing:.02em;
+    }
+
+    p{
+      margin: 14px 0 0;
+      font-size: var(--p);
+      color: var(--muted);
+      max-width: 60ch;
+    }
+
+    .actions{
+      margin-top: 22px;
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+
+    a.btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding: 10px 14px;
+      border-radius: 12px;
+      border: 1px solid var(--cardBorder);
+      color: var(--fg);
+      text-decoration:none;
+      font-size: 0.95rem;
+      background: rgba(255,255,255,.04);
+      transition: transform .12s ease, background .12s ease, border-color .12s ease;
+    }
+    a.btn:hover{ transform: translateY(-1px); background: rgba(255,255,255,.08); border-color: rgba(255,255,255,.22); }
+    a.btn:active{ transform: translateY(0px); }
+
+    .sr-only{
+      position:absolute;
+      width:1px;height:1px;
+      padding:0;margin:-1px;
+      overflow:hidden;clip:rect(0,0,0,0);
+      white-space:nowrap;border:0;
+    }
+
+    /* Small phones: avoid too much vertical height and keep text centered */
+    @media (max-width: 360px){
+      .card{ border-radius: 14px; }
+      .actions{ gap:10px; }
+      a.btn{ width:100%; }
+    }
+
+    /* Desktop: a bit more breathing room */
+    @media (min-width: 900px){
+      body{ padding: clamp(28px, 4vw, 64px); }
+      .card{ padding: clamp(28px, 3vw, 56px); }
+    }
+  </style>
 </head>
 <body>
-    <h1>PROYECTO CANCELADO</h1>
+  <main class="wrap" role="main">
+    <section class="card" aria-labelledby="title">
+      <h1 id="title">PROYECTO CANCELADO</h1>
+      <p>
+        Esta página está en pausa por ahora. Si llegaste acá desde un link antiguo, vuelve más tarde.
+      </p>
+      <div class="actions" aria-label="Acciones">
+        <a class="btn" href="/">Ir al inicio</a>
+        <a class="btn" href="https://github.com/krakenpancho/devchileno.com" rel="noopener noreferrer">Ver repositorio</a>
+      </div>
+    </section>
+  </main>
 </body>
 </html>
